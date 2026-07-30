@@ -1,0 +1,12 @@
+{
+  "watch_folders": [
+    "C:\\Users\\12018\\Documents",
+    "C:\\Users\\12018\\Desktop",
+    "C:\\Users\\12018\\Downloads"
+  ],
+  "email": "",
+  "check_passwords": true,
+  "monitor_files": true,
+  "alert_on_usb": true,
+  "last_scan": "2026-07-22T23:25:47.132527"
+}

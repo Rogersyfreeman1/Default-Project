@@ -1,0 +1,27 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "opencode/gpt-5.1-codex",
+  "permission": {
+    "edit": "allow",
+    "bash": "ask",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "skill": "allow"
+  },
+  "agent": {
+    "build": {
+      "mode": "primary",
+      "permission": {
+        "edit": "allow",
+        "bash": "ask"
+      }
+    },
+    "plan": {
+      "mode": "primary",
+      "permission": {
+        "edit": "deny",
+        "bash": "deny"
+      }
+    }
+  }
+}

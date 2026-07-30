@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Journal</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #131722;
+            color: #d1d4dc;
+            min-height: 100vh;
+        }
+        .nav {
+            background: #1e222d;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #2a2e39;
+        }
+        .nav-brand { font-size: 20px; font-weight: bold; color: #fff; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: #d1d4dc; text-decoration: none; padding: 8px 16px; border-radius: 6px; }
+        .nav-links a:hover, .nav-links a.active { background: #2962ff; color: #fff; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 30px; }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .header h1 { font-size: 28px; color: #fff; }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn-primary { background: #2962ff; color: #fff; }
+        .btn-success { background: #00e676; color: #000; }
+        .btn-danger { background: #ff5252; color: #fff; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: #1e222d;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #2a2e39;
+        }
+        .stat-value { font-size: 24px; font-weight: bold; }
+        .stat-label { font-size: 12px; color: #787b86; margin-top: 5px; }
+        .profit { color: #00e676; }
+        .loss { color: #ff5252; }
+        .neutral { color: #2962ff; }
+        .journal-table {
+            background: #1e222d;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #2a2e39;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            background: #2a2e39;
+            padding: 15px;
+            text-align: left;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #787b86;
+        }
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #2a2e39;
+        }
+        tr:hover { background: #2a2e39; }
+        .direction-badge {
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .badge-long { background: rgba(0, 230, 118, 0.2); color: #00e676; }
+        .badge-short { background: rgba(255, 82, 82, 0.2); color: #ff5252; }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal.active { display: flex; }
+        .modal-content {
+            background: #1e222d;
+            border-radius: 12px;
+            padding: 30px;
+            width: 500px;
+            max-width: 90%;
+        }
+        .modal h2 { margin-bottom: 20px; color: #fff; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #787b86;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            background: #2a2e39;
+            border: 1px solid #363a45;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 14px;
+        }
+        .form-group textarea { min-height: 80px; resize: vertical; }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .modal-actions .btn { flex: 1; }
+        .notes-cell { max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .notes-cell:hover { white-space: normal; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-brand">Trading Journal</div>
+        <div class="nav-links">
+            <a href="/">Dashboard</a>
+            <a href="/education">Learn</a>
+            <a href="/journal" class="active">Journal</a>
+            <a href="/scheduler">Scheduler</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>📝 Trading Journal</h1>
+            <button class="btn btn-primary" onclick="openAddModal()">+ Add Trade</button>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value neutral" id="total-trades">0</div>
+                <div class="stat-label">Total Trades</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value profit" id="winning-trades">0</div>
+                <div class="stat-label">Winning Trades</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value loss" id="losing-trades">0</div>
+                <div class="stat-label">Losing Trades</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="win-rate">0%</div>
+                <div class="stat-label">Win Rate</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="total-pnl">$0</div>
+                <div class="stat-label">Total P&L</div>
+            </div>
+        </div>
+
+        <div class="journal-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Symbol</th>
+                        <th>Direction</th>
+                        <th>Entry</th>
+                        <th>Exit</th>
+                        <th>Size</th>
+                        <th>P&L</th>
+                        <th>Hold Time</th>
+                        <th>Notes</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="journal-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal" id="tradeModal">
+        <div class="modal-content">
+            <h2>Add Trade</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Symbol</label>
+                    <input type="text" id="modal-symbol" value="BTCUSD">
+                </div>
+                <div class="form-group">
+                    <label>Direction</label>
+                    <select id="modal-direction">
+                        <option value="long">LONG</option>
+                        <option value="short">SHORT</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Entry Price</label>
+                    <input type="number" id="modal-entry" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label>Exit Price</label>
+                    <input type="number" id="modal-exit" step="0.01">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Position Size ($)</label>
+                    <input type="number" id="modal-size" value="30000000">
+                </div>
+                <div class="form-group">
+                    <label>Hold Time (days)</label>
+                    <input type="number" id="modal-holdtime" value="1">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Entry Date</label>
+                <input type="datetime-local" id="modal-entrydate">
+            </div>
+            <div class="form-group">
+                <label>Notes</label>
+                <textarea id="modal-notes" placeholder="What did you learn? What went well? What could improve?"></textarea>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-primary" onclick="saveTrade()">Save Trade</button>
+                <button class="btn" style="background:#363a45;color:#fff;" onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let trades = JSON.parse(localStorage.getItem('tradingJournal') || '[]');
+
+        function renderTrades() {
+            const tbody = document.getElementById('journal-body');
+            tbody.innerHTML = trades.map((t, i) => `
+                <tr>
+                    <td>${new Date(t.entryDate).toLocaleDateString()}</td>
+                    <td><strong>${t.symbol}</strong></td>
+                    <td><span class="direction-badge badge-${t.direction}">${t.direction.toUpperCase()}</span></td>
+                    <td>$${t.entry.toLocaleString()}</td>
+                    <td>$${t.exit.toLocaleString()}</td>
+                    <td>$${(t.size/1000000).toFixed(1)}M</td>
+                    <td class="${t.pnl >= 0 ? 'profit' : 'loss'}">$${t.pnl.toLocaleString()}</td>
+                    <td>${t.holdTime}d</td>
+                    <td class="notes-cell">${t.notes || '-'}</td>
+                    <td><button class="btn btn-danger" style="padding:5px 10px;font-size:12px;" onclick="deleteTrade(${i})">Delete</button></td>
+                </tr>
+            `).join('');
+            updateStats();
+        }
+
+        function updateStats() {
+            const total = trades.length;
+            const wins = trades.filter(t => t.pnl > 0).length;
+            const losses = trades.filter(t => t.pnl <= 0).length;
+            const pnl = trades.reduce((a, t) => a + t.pnl, 0);
+            const winRate = total > 0 ? (wins / total * 100).toFixed(1) : 0;
+
+            document.getElementById('total-trades').textContent = total;
+            document.getElementById('winning-trades').textContent = wins;
+            document.getElementById('losing-trades').textContent = losses;
+            document.getElementById('win-rate').textContent = winRate + '%';
+            
+            const pnlEl = document.getElementById('total-pnl');
+            pnlEl.textContent = '$' + pnl.toLocaleString();
+            pnlEl.className = 'stat-value ' + (pnl >= 0 ? 'profit' : 'loss');
+        }
+
+        function openAddModal() {
+            document.getElementById('modal-entrydate').value = new Date().toISOString().slice(0, 16);
+            document.getElementById('tradeModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('tradeModal').classList.remove('active');
+        }
+
+        function saveTrade() {
+            const entry = parseFloat(document.getElementById('modal-entry').value);
+            const exit = parseFloat(document.getElementById('modal-exit').value);
+            const size = parseFloat(document.getElementById('modal-size').value);
+            const direction = document.getElementById('modal-direction').value;
+
+            let pnl;
+            if (direction === 'long') {
+                pnl = (exit - entry) * (size / entry);
+            } else {
+                pnl = (entry - exit) * (size / entry);
+            }
+
+            const trade = {
+                symbol: document.getElementById('modal-symbol').value,
+                direction: direction,
+                entry: entry,
+                exit: exit,
+                size: size,
+                holdTime: parseInt(document.getElementById('modal-holdtime').value),
+                entryDate: document.getElementById('modal-entrydate').value,
+                notes: document.getElementById('modal-notes').value,
+                pnl: Math.round(pnl)
+            };
+
+            trades.unshift(trade);
+            localStorage.setItem('tradingJournal', JSON.stringify(trades));
+            renderTrades();
+            closeModal();
+        }
+
+        function deleteTrade(index) {
+            if (confirm('Delete this trade?')) {
+                trades.splice(index, 1);
+                localStorage.setItem('tradingJournal', JSON.stringify(trades));
+                renderTrades();
+            }
+        }
+
+        renderTrades();
+    </script>
+</body>
+</html>

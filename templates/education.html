@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Trading Education</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #131722;
+            color: #d1d4dc;
+            line-height: 1.6;
+        }
+        .nav {
+            background: #1e222d;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #2a2e39;
+        }
+        .nav-brand { font-size: 20px; font-weight: bold; color: #fff; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: #d1d4dc; text-decoration: none; padding: 8px 16px; border-radius: 6px; }
+        .nav-links a:hover, .nav-links a.active { background: #2962ff; color: #fff; }
+        .hero {
+            background: linear-gradient(135deg, #1e222d 0%, #2962ff 100%);
+            padding: 80px 30px;
+            text-align: center;
+        }
+        .hero h1 { font-size: 48px; color: #fff; margin-bottom: 20px; }
+        .hero p { font-size: 18px; color: #b2bec3; max-width: 600px; margin: 0 auto; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 30px; }
+        .section-title {
+            font-size: 32px;
+            color: #fff;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .card {
+            background: #1e222d;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #2a2e39;
+        }
+        .card-header {
+            background: #2a2e39;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card-body { padding: 25px; }
+        .lesson {
+            background: #2a2e39;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .lesson:hover { background: #363a45; transform: translateX(5px); }
+        .lesson-title { font-size: 16px; font-weight: bold; color: #fff; margin-bottom: 8px; }
+        .lesson-desc { font-size: 14px; color: #787b86; }
+        .lesson-time { font-size: 12px; color: #2962ff; margin-top: 8px; }
+        .alert-box {
+            background: rgba(255, 152, 0, 0.1);
+            border: 1px solid #ff9800;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .alert-box h3 { color: #ff9800; margin-bottom: 10px; }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .stat-card {
+            background: #1e222d;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid #2a2e39;
+        }
+        .stat-number { font-size: 36px; font-weight: bold; color: #2962ff; }
+        .stat-label { font-size: 14px; color: #787b86; margin-top: 5px; }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        .modal.active { display: block; }
+        .modal-content {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #1e222d;
+            border-radius: 12px;
+            padding: 40px;
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .modal h2 { color: #fff; margin-bottom: 20px; }
+        .modal p { margin-bottom: 15px; }
+        .modal ul { margin-left: 20px; margin-bottom: 15px; }
+        .modal li { margin-bottom: 8px; }
+        .highlight { color: #00e676; font-weight: bold; }
+        .warning { color: #ff5252; font-weight: bold; }
+        .footer {
+            background: #1e222d;
+            padding: 40px 30px;
+            text-align: center;
+            border-top: 1px solid #2a2e39;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-brand">Crypto Trading Academy</div>
+        <div class="nav-links">
+            <a href="/" class="active">Dashboard</a>
+            <a href="/education">Learn</a>
+            <a href="/status">Status</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Learn to Trade Crypto</h1>
+        <p>From losing $15K in 1 hour to building a profitable strategy. Free education for your community.</p>
+    </div>
+
+    <div class="container">
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">$15K</div>
+                <div class="stat-label">Lost in 1 Hour (My Story)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">60-70%</div>
+                <div class="stat-label">Win Rate Now</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1 Year</div>
+                <div class="stat-label">Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$247M</div>
+                <div class="stat-label">Best Paper Trade</div>
+            </div>
+        </div>
+
+        <div class="alert-box">
+            <h3>⚠️ Why This Exists</h3>
+            <p>I lost $15,000 in one hour when I started trading. This education platform exists so you don't make the same mistakes I did. Learn risk management FIRST before trading with real money.</p>
+        </div>
+
+        <h2 class="section-title">📚 Risk Management Lessons</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-header">🎯 Position Sizing</div>
+                <div class="card-body">
+                    <div class="lesson" onclick="openLesson('position-sizing')">
+                        <div class="lesson-title">Why I Lost $15K in 1 Hour</div>
+                        <div class="lesson-desc">The danger of over-leveraging and poor position sizing</div>
+                        <div class="lesson-time">📖 5 min read</div>
+                    </div>
+                    <div class="lesson" onclick="openLesson('no-stop-loss')">
+                        <div class="lesson-title">Trading Without Stop Loss</div>
+                        <div class="lesson-desc">My strategy: ride the trend, never use stop loss</div>
+                        <div class="lesson-time">📖 8 min read</div>
+                    </div>
+                    <div class="lesson" onclick="openLesson('paper-trading')">
+                        <div class="lesson-title">Paper Trading is Essential</div>
+                        <div class="lesson-desc">Why you must practice with fake money first</div>
+                        <div class="lesson-time">📖 4 min read</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">📈 Trend Following</div>
+                <div class="card-body">
+                    <div class="lesson" onclick="openLesson('trend-basics')">
+                        <div class="lesson-title">Understanding Market Direction</div>
+                        <div class="lesson-desc">How to identify bullish and bearish trends</div>
+                        <div class="lesson-time">📖 6 min read</div>
+                    </div>
+                    <div class="lesson" onclick="openLesson('ride-trend')">
+                        <div class="lesson-title">Riding the Trend</div>
+                        <div class="lesson-desc">When to enter, when to exit, how to hold</div>
+                        <div class="lesson-time">📖 7 min read</div>
+                    </div>
+                    <div class="lesson" onclick="openLesson('profit-target')">
+                        <div class="lesson-title">Setting Profit Targets</div>
+                        <div class="lesson-desc">How I target $50M+ in paper trades</div>
+                        <div class="lesson-time">📖 5 min read</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">🧠 Psychology</div>
+                <div class="card-body">
+                    <div class="lesson" onclick="openLesson('emotions')">
+                        <div class="lesson-title">Controlling Emotions</div>
+                        <div class="lesson-desc">Fear, greed, and how they destroy accounts</div>
+                        <div class="lesson-time">📖 6 min read</div>
+                    </div>
+                    <div class="lesson" onclick="openLesson('patience')">
+                        <div class="lesson-title">The Power of Patience</div>
+                        <div class="lesson-desc">Why I hold trades for 3-7 days or longer</div>
+                        <div class="lesson-time">📖 4 min read</div>
+                    </div>
+                    <div class="lesson" onclick="openLesson('discipline')">
+                        <div class="lesson-title">Sticking to Your Strategy</div>
+                        <div class="lesson-desc">How to avoid impulsive decisions</div>
+                        <div class="lesson-time">📖 5 min read</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">🎓 Paper Trading Tutorials</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-header">🚀 Getting Started</div>
+                <div class="card-body">
+                    <div class="lesson" onclick="openLesson('setup-tradingview')">
+                        <div class="lesson-title">Setting Up TradingView</div>
+                        <div class="lesson-desc">Step-by-step guide to create your paper account</div>
+                        <div class="lesson-time">📖 10 min read</div>
+                    </div>
+                    <div class="lesson" onclick="openLesson('first-trade')">
+                        <div class="lesson-title">Your First Paper Trade</div>
+                        <div class="lesson-desc">How to place and manage your first trade</div>
+                        <div class="lesson-time">📖 8 min read</div>
+                    </div>
+                    <div class="lesson" onclick="openLesson('using-bot')">
+                        <div class="lesson-title">Using the Trading Bot</div>
+                        <div class="lesson-desc">How to connect and use this bot for paper trading</div>
+                        <div class="lesson-time">📖 12 min read</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">📊 Strategy Deep Dive</div>
+                <div class="card-body">
+                    <div class="lesson" onclick="openLesson('my-strategy')">
+                        <div class="lesson-title">My Complete Strategy</div>
+                        <div class="lesson-desc">The exact rules I follow every day</div>
+                        <div class="lesson-time">📖 15 min read</div>
+                    </div>
+                    <div class="lesson" onclick="openLesson('long-short')">
+                        <div class="lesson-title">Long vs Short Explained</div>
+                        <div class="lesson-desc">How to profit in both directions</div>
+                        <div class="lesson-time">📖 7 min read</div>
+                    </div>
+                    <div class="lesson" onclick="openLesson('position-size')">
+                        <div class="lesson-title">Position Sizing Formula</div>
+                        <div class="lesson-desc">30,000 x 1,000 = $30M position explained</div>
+                        <div class="lesson-time">📖 5 min read</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">💡 My Trading Rules</h2>
+        <div class="card" style="max-width: 800px; margin: 0 auto;">
+            <div class="card-body">
+                <div class="lesson">
+                    <div class="lesson-title">Rule 1: No Stop Loss</div>
+                    <div class="lesson-desc">I never use stop loss. I ride the trend until my profit target is hit.</div>
+                </div>
+                <div class="lesson">
+                    <div class="lesson-title">Rule 2: Always In The Market</div>
+                    <div class="lesson-desc">24/7 crypto trading. When one position closes, I immediately re-enter.</div>
+                </div>
+                <div class="lesson">
+                    <div class="lesson-title">Rule 3: Follow The Trend</div>
+                    <div class="lesson-desc">Green candle = Long. Red candle = Short. Always ride the direction.</div>
+                </div>
+                <div class="lesson">
+                    <div class="lesson-title">Rule 4: Profit Target Only Exit</div>
+                    <div class="lesson-desc">I only exit when I hit my profit target. Average $50M in paper trading.</div>
+                </div>
+                <div class="lesson">
+                    <div class="lesson-title">Rule 5: Paper Trade First</div>
+                    <div class="lesson-desc">Master the strategy with fake money before risking real capital.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="lessonModal">
+        <span class="modal-close" onclick="closeModal()">×</span>
+        <div class="modal-content" id="lessonContent"></div>
+    </div>
+
+    <footer class="footer">
+        <p>Free Educational Platform | Not Financial Advice | Paper Trading Only</p>
+        <p style="margin-top: 10px; color: #787b86;">Built from personal experience of losing $15K in 1 hour</p>
+    </footer>
+
+    <script>
+        const lessons = {
+            'position-sizing': `
+                <h2>Why I Lost $15K in 1 Hour</h2>
+                <p>When I first started trading, I made the biggest mistake a new trader can make: <span class="warning">I risked too much on a single trade.</span></p>
+                <p>I had $20,000 in my account. In my first hour of trading, I lost $15,000. Here's what happened:</p>
+                <ul>
+                    <li>I used <span class="warning">100x leverage</span> on a volatile crypto trade</li>
+                    <li>I didn't set a stop loss</li>
+                    <li>I didn't understand position sizing</li>
+                    <li>I let emotions control my decisions</li>
+                </ul>
+                <p><span class="highlight">The Lesson:</span> Never risk more than 1-2% of your account on a single trade. With $20K, that means max risk of $200-400 per trade.</p>
+                <p><span class="highlight">My Paper Trading Rule:</span> I use $1B paper capital with position sizes of 30,000 x 1,000 = $30M. This teaches me to manage large positions without real risk.</p>
+            `,
+            'no-stop-loss': `
+                <h2>Trading Without Stop Loss</h2>
+                <p>My strategy is controversial: <span class="highlight">I never use stop loss.</span></p>
+                <p>Why? Because stop losses get hit during normal market volatility, then the price moves in your direction after you're already out.</p>
+                <p><span class="highlight">How it works:</span></p>
+                <ul>
+                    <li>I enter a position based on trend direction</li>
+                    <li>I hold through all drawdowns</li>
+                    <li>I only exit when my profit target is hit</li>
+                    <li>Time in trade: 3 days to 7+ days</li>
+                </ul>
+                <p><span class="warning">Warning:</span> This only works with proper position sizing and paper trading capital. Never do this with money you can't afford to lose.</p>
+                <p><span class="highlight">My results:</span> 60-70% win rate over 1 year. Some trades hit $87M in 3 days, $247M in 7 days.</p>
+            `,
+            'paper-trading': `
+                <h2>Paper Trading is Essential</h2>
+                <p><span class="highlight">Paper trading = fake money trading.</span> It's how you learn without losing real money.</p>
+                <p>TradingView offers free paper trading accounts with $100,000 fake capital. Some platforms offer up to $1B fake capital.</p>
+                <p><span class="highlight">Benefits of Paper Trading:</span></p>
+                <ul>
+                    <li>Learn market mechanics risk-free</li>
+                    <li>Test your strategy before risking real money</li>
+                    <li>Build confidence and discipline</li>
+                    <li>Understand how leverage works</li>
+                    <li>Practice emotional control</li>
+                </ul>
+                <p><span class="warning">Important:</span> Treat paper trading like real money. The lessons you learn are priceless.</p>
+            `,
+            'my-strategy': `
+                <h2>My Complete Strategy</h2>
+                <p><span class="highlight">Market:</span> Cryptocurrency (BTC, ETH, etc.)</p>
+                <p><span class="highlight">Timeframe:</span> 24/7, multi-day holds</p>
+                <p><span class="highlight">Direction:</span> Follow market sentiment</p>
+                <ul>
+                    <li>Green candle / Bullish sentiment = <span class="highlight">GO LONG</span></li>
+                    <li>Red candle / Bearish sentiment = <span class="highlight">GO SHORT</span></li>
+                </ul>
+                <p><span class="highlight">Entry:</span> When trend direction is confirmed</p>
+                <p><span class="highlight">Exit:</span> When profit target is hit (average $50M in paper)</p>
+                <p><span class="highlight">Stop Loss:</span> NONE - ride the trend no matter what</p>
+                <p><span class="highlight">Position Size:</span> 30,000 x 1,000 = $30M per BTC trade</p>
+                <p><span class="highlight">Hold Time:</span> 3-7+ days depending on trend</p>
+                <p><span class="highlight">Results:</span> 60-70% win rate over 1 year</p>
+            `
+        };
+
+        function openLesson(id) {
+            const content = lessons[id];
+            if (content) {
+                document.getElementById('lessonContent').innerHTML = content;
+                document.getElementById('lessonModal').classList.add('active');
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('lessonModal').classList.remove('active');
+        }
+
+        document.getElementById('lessonModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('lessonModal')) closeModal();
+        });
+    </script>
+</body>
+</html>

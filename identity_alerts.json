@@ -1,0 +1,317 @@
+[
+  {
+    "time": "2026-07-22T23:25:05.875240",
+    "severity": "HIGH",
+    "message": "Credential file found: cacert.pem"
+  },
+  {
+    "time": "2026-07-22T23:25:06.020109",
+    "severity": "HIGH",
+    "message": "Credential file found: cacert.pem"
+  },
+  {
+    "time": "2026-07-22T23:25:06.642157",
+    "severity": "HIGH",
+    "message": "Credential file found: public_key.pem"
+  },
+  {
+    "time": "2026-07-22T23:25:06.703750",
+    "severity": "MEDIUM",
+    "message": "Data file found: block_insults.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:06.724931",
+    "severity": "MEDIUM",
+    "message": "Data file found: block_investment.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.070519",
+    "severity": "MEDIUM",
+    "message": "Data file found: mt19937-testset-1.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.105451",
+    "severity": "MEDIUM",
+    "message": "Data file found: mt19937-testset-2.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.146989",
+    "severity": "MEDIUM",
+    "message": "Data file found: pcg64-testset-1.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.182729",
+    "severity": "MEDIUM",
+    "message": "Data file found: pcg64-testset-2.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.219684",
+    "severity": "MEDIUM",
+    "message": "Data file found: pcg64dxsm-testset-1.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.253452",
+    "severity": "MEDIUM",
+    "message": "Data file found: pcg64dxsm-testset-2.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.287656",
+    "severity": "MEDIUM",
+    "message": "Data file found: philox-testset-1.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.320968",
+    "severity": "MEDIUM",
+    "message": "Data file found: philox-testset-2.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.353126",
+    "severity": "MEDIUM",
+    "message": "Data file found: sfc64-testset-1.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.376337",
+    "severity": "MEDIUM",
+    "message": "Data file found: sfc64-testset-2.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.492450",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-arccos.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.523624",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-arccosh.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.556034",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-arcsin.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.581657",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-arcsinh.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.604664",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-arctan.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.630193",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-arctanh.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.658133",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-cbrt.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.687513",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-cos.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.714397",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-cosh.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.737347",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-exp.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.760825",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-exp2.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.786864",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-expm1.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.815107",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-log.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.838423",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-log10.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.864300",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-log1p.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.889587",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-log2.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.915995",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-sin.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.939555",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-sinh.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.967389",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-tan.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:07.990181",
+    "severity": "MEDIUM",
+    "message": "Data file found: umath-validation-set-tanh.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:09.619476",
+    "severity": "HIGH",
+    "message": "Credential file found: cacert.pem"
+  },
+  {
+    "time": "2026-07-22T23:25:10.422187",
+    "severity": "MEDIUM",
+    "message": "Data file found: GLB.Ts+dSST.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:10.976080",
+    "severity": "MEDIUM",
+    "message": "Data file found: breast_cancer.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:11.007639",
+    "severity": "MEDIUM",
+    "message": "Data file found: iris.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:11.040031",
+    "severity": "MEDIUM",
+    "message": "Data file found: linnerud_exercise.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:11.085582",
+    "severity": "MEDIUM",
+    "message": "Data file found: linnerud_physiological.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:11.124632",
+    "severity": "MEDIUM",
+    "message": "Data file found: wine_data.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:18.103018",
+    "severity": "MEDIUM",
+    "message": "Data file found: my_transponder_csv_report_123150202.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:18.151454",
+    "severity": "MEDIUM",
+    "message": "Data file found: statement_b19ef791-e00b-503a-a1e9-9ac0ecf8b54a_date_02_28_2019 (1).csv"
+  },
+  {
+    "time": "2026-07-22T23:25:18.189016",
+    "severity": "MEDIUM",
+    "message": "Data file found: statement_b19ef791-e00b-503a-a1e9-9ac0ecf8b54a_date_02_28_2019.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:19.614253",
+    "severity": "MEDIUM",
+    "message": "1 Email(s) found in LICENSE.txt"
+  },
+  {
+    "time": "2026-07-22T23:25:30.706890",
+    "severity": "MEDIUM",
+    "message": "3 Email(s) found in LICENSE.txt"
+  },
+  {
+    "time": "2026-07-22T23:25:31.320623",
+    "severity": "MEDIUM",
+    "message": "2 Email(s) found in LICENSE.txt"
+  },
+  {
+    "time": "2026-07-22T23:25:32.656897",
+    "severity": "MEDIUM",
+    "message": "2 Email(s) found in LICENSE.txt"
+  },
+  {
+    "time": "2026-07-22T23:25:35.187828",
+    "severity": "MEDIUM",
+    "message": "4 Email(s) found in LICENSE.txt"
+  },
+  {
+    "time": "2026-07-22T23:25:36.772820",
+    "severity": "MEDIUM",
+    "message": "2 Email(s) found in COPYING_QHULL.txt"
+  },
+  {
+    "time": "2026-07-22T23:25:38.796535",
+    "severity": "MEDIUM",
+    "message": "25 Phone(s) found in pdist-jensenshannon-ml-iris.txt"
+  },
+  {
+    "time": "2026-07-22T23:25:38.853550",
+    "severity": "MEDIUM",
+    "message": "4 Phone(s) found in pdist-jensenshannon-ml.txt"
+  },
+  {
+    "time": "2026-07-22T23:25:39.631245",
+    "severity": "MEDIUM",
+    "message": "1 Email(s) found in LICENSE.txt"
+  },
+  {
+    "time": "2026-07-22T23:25:40.388421",
+    "severity": "MEDIUM",
+    "message": "2 Phone(s) found in README.txt"
+  },
+  {
+    "time": "2026-07-22T23:25:44.616216",
+    "severity": "MEDIUM",
+    "message": "6 Email(s) found in statement_b19ef791-e00b-503a-a1e9-9ac0ecf8b54a_date_02_28_2019 (1).csv"
+  },
+  {
+    "time": "2026-07-22T23:25:44.704950",
+    "severity": "MEDIUM",
+    "message": "6 Email(s) found in statement_b19ef791-e00b-503a-a1e9-9ac0ecf8b54a_date_02_28_2019.csv"
+  },
+  {
+    "time": "2026-07-22T23:25:44.783495",
+    "severity": "MEDIUM",
+    "message": "1 Email(s) found in transcript.txt"
+  },
+  {
+    "time": "2026-07-22T23:25:45.006020",
+    "severity": "HIGH",
+    "message": "Suspicious port 135 is listening (TCP)"
+  },
+  {
+    "time": "2026-07-22T23:25:45.048479",
+    "severity": "HIGH",
+    "message": "Suspicious port 445 is listening (TCP)"
+  },
+  {
+    "time": "2026-07-22T23:25:45.083452",
+    "severity": "HIGH",
+    "message": "Suspicious port 139 is listening (TCP)"
+  },
+  {
+    "time": "2026-07-22T23:25:45.113964",
+    "severity": "HIGH",
+    "message": "Suspicious port 135 is listening (TCP)"
+  },
+  {
+    "time": "2026-07-22T23:25:45.139702",
+    "severity": "HIGH",
+    "message": "Suspicious port 445 is listening (TCP)"
+  }
+]

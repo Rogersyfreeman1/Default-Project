@@ -1,0 +1,46 @@
+{
+  "trading": {
+    "capital": 1000000000,
+    "market": "crypto",
+    "symbol": "BTCUSD",
+    "position_size": {
+      "multiplier": 30000,
+      "factor": 1000
+    },
+    "profit_target": {
+      "average": 50000000,
+      "minimum": 10000000,
+      "maximum": 500000000
+    },
+    "hold_period": {
+      "min_days": 1,
+      "max_days": 30
+    },
+    "stop_loss": false,
+    "always_in_market": true,
+    "re_entry_delay_seconds": 0
+  },
+  "strategy": {
+    "direction": "trend_following",
+    "trend_indicator": "sentiment",
+    "exit_condition": "profit_target_only"
+  },
+  "webhook": {
+    "enabled": true,
+    "port": 8080,
+    "secret": "your_webhook_secret_here"
+  },
+  "logging": {
+    "enabled": true,
+    "file": "trading_log.txt",
+    "level": "INFO"
+  },
+  "notifications": {
+    "enabled": true,
+    "telegram": {
+      "enabled": true,
+      "bot_token": "8941809435:AAEFplfhpMAvIXpnEavSWXiD0lGmr3SM7Q4",
+      "chat_id": ""
+    }
+  }
+}

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identity Protector</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#1a1a2e">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            min-height: 100vh;
+            padding-bottom: 80px;
+        }
+        .header {
+            background: linear-gradient(135deg, #0f3460, #16213e);
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .header h1 { font-size: 1.4em; margin-bottom: 5px; }
+        .header .subtitle { font-size: 0.85em; color: #888; }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            margin-top: 8px;
+        }
+        .status-safe { background: #00b894; color: #fff; }
+        .status-warning { background: #fdcb6e; color: #333; }
+        .status-danger { background: #e17055; color: #fff; }
+        .container { max-width: 600px; margin: 0 auto; padding: 15px; }
+        .card {
+            background: #16213e;
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 15px;
+            border: 1px solid #0f3460;
+        }
+        .card h2 {
+            font-size: 1em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card h2 .icon { font-size: 1.3em; }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: transform 0.1s;
+        }
+        .btn:active { transform: scale(0.98); }
+        .btn-primary { background: #0f3460; color: #fff; }
+        .btn-danger { background: #e17055; color: #fff; }
+        .btn-success { background: #00b894; color: #fff; }
+        .btn-warning { background: #fdcb6e; color: #333; }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #0f3460;
+            border-radius: 8px;
+            background: #1a1a2e;
+            color: #eee;
+            font-size: 0.95em;
+            margin-top: 8px;
+        }
+        input:focus { outline: none; border-color: #e94560; }
+        .result {
+            margin-top: 12px;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            display: none;
+        }
+        .result.show { display: block; }
+        .result-safe { background: rgba(0,184,148,0.2); border: 1px solid #00b894; }
+        .result-danger { background: rgba(225,112,85,0.2); border: 1px solid #e17055; }
+        .result-warning { background: rgba(253,203,110,0.2); border: 1px solid #fdcb6e; }
+        .alert-list { max-height: 300px; overflow-y: auto; }
+        .alert-item {
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            background: #1a1a2e;
+        }
+        .alert-high { border-left: 3px solid #e17055; }
+        .alert-medium { border-left: 3px solid #fdcb6e; }
+        .alert-low { border-left: 3px solid #0984e3; }
+        .alert-time { font-size: 0.75em; color: #888; }
+        .strength-bar {
+            height: 6px;
+            background: #1a1a2e;
+            border-radius: 3px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+        .strength-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.3s, background 0.3s;
+        }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #16213e;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-top: 1px solid #0f3460;
+            z-index: 100;
+        }
+        .nav-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 0.7em;
+            cursor: pointer;
+            padding: 5px 15px;
+        }
+        .nav-btn.active { color: #e94560; }
+        .nav-btn .nav-icon { font-size: 1.8em; }
+        .page { display: none; }
+        .page.active { display: block; }
+        .loading { text-align: center; padding: 20px; color: #888; }
+        .spinner {
+            width: 30px; height: 30px;
+            border: 3px solid #0f3460;
+            border-top: 3px solid #e94560;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .score-circle {
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .score-label { font-size: 0.35em; font-weight: normal; }
+        .tip { font-size: 0.85em; color: #888; margin-top: 8px; padding: 8px; background: #1a1a2e; border-radius: 6px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Identity Protector</h1>
+        <div class="subtitle">Keep your identity safe</div>
+        <div class="status-badge status-safe" id="statusBadge">System Status: Checking...</div>
+    </div>
+
+    <!-- HOME PAGE -->
+    <div class="container">
+        <div class="page active" id="page-home">
+            <div class="card">
+                <div class="score-circle" id="securityScore" style="border: 3px solid #fdcb6e;">
+                    <span>?</span>
+                    <span class="score-label">Security Score</span>
+                </div>
+                <button class="btn btn-danger" onclick="runFullScan()">Run Full Scan</button>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">&#x1f512;</span> Quick Actions</h2>
+                <div class="grid-2">
+                    <button class="btn btn-primary" onclick="showPage('page-passwords')">Check Passwords</button>
+                    <button class="btn btn-primary" onclick="showPage('page-breach')">Check Breaches</button>
+                    <button class="btn btn-primary" onclick="showPage('page-wifi')">WiFi Check</button>
+                    <button class="btn btn-primary" onclick="showPage('page-generator')">Generate Password</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">&#x1f6a8;</span> Recent Alerts</h2>
+                <div class="alert-list" id="alertList">
+                    <div class="alert-low">
+                        <div>No alerts yet. Run a scan to check your security.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PASSWORD CHECK PAGE -->
+        <div class="page" id="page-passwords">
+            <div class="card">
+                <h2><span class="icon">&#x1f512;</span> Password Leak Check</h2>
+                <p style="font-size:0.85em;color:#888;margin-bottom:10px;">Checks if your password appears in known data breaches. Your password is NEVER sent in full.</p>
+                <input type="password" id="passwordInput" placeholder="Enter password to check">
+                <button class="btn btn-warning" onclick="checkPassword()">Check Password</button>
+                <div class="result" id="passwordResult"></div>
+                <div class="tip">Tip: Use passwords with 12+ characters, mixing letters, numbers, and symbols.</div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">&#x1f4a7;</span> Password Strength</h2>
+                <input type="password" id="strengthInput" placeholder="Enter password to check strength" oninput="checkStrength()">
+                <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+                <div id="strengthText" style="text-align:center;margin-top:8px;font-size:0.9em;"></div>
+            </div>
+        </div>
+
+        <!-- BREACH CHECK PAGE -->
+        <div class="page" id="page-breach">
+            <div class="card">
+                <h2><span class="icon">&#x1f4e7;</span> Email Breach Check</h2>
+                <p style="font-size:0.85em;color:#888;margin-bottom:10px;">Check if your email appeared in known data breaches.</p>
+                <input type="email" id="emailInput" placeholder="Enter your email address">
+                <button class="btn btn-danger" onclick="checkBreach()">Check Email</button>
+                <div class="result" id="breachResult"></div>
+                <div class="tip">If your email was in a breach, change your passwords immediately.</div>
+            </div>
+        </div>
+
+        <!-- WIFI CHECK PAGE -->
+        <div class="page" id="page-wifi">
+            <div class="card">
+                <h2><span class="icon">&#x1f4f6;</span> WiFi Security Tips</h2>
+                <div id="wifiTips">
+                    <div class="alert-item alert-low">
+                        <strong>WPA3</strong> - Best encryption. Your WiFi should use this.
+                    </div>
+                    <div class="alert-item alert-medium">
+                        <strong>WPA2</strong> - Good, but WPA3 is better.
+                    </div>
+                    <div class="alert-item alert-high">
+                        <strong>WEP/WPA</strong> - Outdated. Change your router settings.
+                    </div>
+                    <div class="alert-item alert-low">
+                        <strong>Open WiFi</strong> - Never do banking on open WiFi. Use a VPN.
+                    </div>
+                </div>
+                <div class="tip">On your phone: Settings > WiFi > Tap your network > Check security type.</div>
+            </div>
+        </div>
+
+        <!-- PASSWORD GENERATOR PAGE -->
+        <div class="page" id="page-generator">
+            <div class="card">
+                <h2><span class="icon">&#x1f513;</span> Password Generator</h2>
+                <div style="display:flex;gap:10px;align-items:center;margin-bottom:10px;">
+                    <input type="text" id="generatedPassword" readonly style="flex:1;font-family:monospace;">
+                    <button class="btn btn-primary" onclick="copyPassword()" style="width:auto;padding:12px 20px;">Copy</button>
+                </div>
+                <label style="font-size:0.85em;">Length: <span id="lengthValue">16</span></label>
+                <input type="range" id="passwordLength" min="8" max="32" value="16" oninput="generatePassword()" style="width:100%;">
+                <button class="btn btn-success" onclick="generatePassword()">Generate New Password</button>
+                <div class="result" id="copyResult"></div>
+                <div class="tip">Never reuse passwords. Use a different one for each account.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTTOM NAV -->
+    <nav class="nav">
+        <button class="nav-btn active" onclick="showPage('page-home')" data-page="page-home">
+            <span class="nav-icon">&#x1f3e0;</span>
+            Home
+        </button>
+        <button class="nav-btn" onclick="showPage('page-passwords')" data-page="page-passwords">
+            <span class="nav-icon">&#x1f512;</span>
+            Passwords
+        </button>
+        <button class="nav-btn" onclick="showPage('page-breach')" data-page="page-breach">
+            <span class="nav-icon">&#x1f6a8;</span>
+            Breaches
+        </button>
+        <button class="nav-btn" onclick="showPage('page-generator')" data-page="page-generator">
+            <span class="nav-icon">&#x1f513;</span>
+            Generate
+        </button>
+    </nav>
+
+    <script>
+        let alerts = [];
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector(`[data-page="${pageId}"]`).classList.add('active');
+        }
+
+        function addAlert(severity, message) {
+            const time = new Date().toLocaleTimeString();
+            alerts.unshift({ severity, message, time });
+            updateAlerts();
+        }
+
+        function updateAlerts() {
+            const list = document.getElementById('alertList');
+            if (alerts.length === 0) {
+                list.innerHTML = '<div class="alert-low"><div>No alerts yet.</div></div>';
+                return;
+            }
+            list.innerHTML = alerts.slice(0, 10).map(a => `
+                <div class="alert-item alert-${a.severity}">
+                    <div class="alert-time">${a.time}</div>
+                    <div>${a.message}</div>
+                </div>
+            `).join('');
+
+            const high = alerts.filter(a => a.severity === 'high').length;
+            const badge = document.getElementById('statusBadge');
+            if (high > 0) {
+                badge.textContent = `System Status: ${high} HIGH ALERTS`;
+                badge.className = 'status-badge status-danger';
+            } else if (alerts.length > 0) {
+                badge.textContent = `System Status: ${alerts.length} warnings`;
+                badge.className = 'status-badge status-warning';
+            } else {
+                badge.textContent = 'System Status: Protected';
+                badge.className = 'status-badge status-safe';
+            }
+        }
+
+        async function sha1(str) {
+            const buffer = new TextEncoder().encode(str);
+            const hash = await crypto.subtle.digest('SHA-1', buffer);
+            return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('').toUpperCase();
+        }
+
+        async function checkPassword() {
+            const password = document.getElementById('passwordInput').value;
+            if (!password) return;
+
+            const result = document.getElementById('passwordResult');
+            result.className = 'result show loading';
+            result.innerHTML = '<div class="spinner"></div>Checking...';
+
+            try {
+                const hash = await sha1(password);
+                const prefix = hash.substring(0, 5);
+                const suffix = hash.substring(5);
+
+                const response = await fetch(`https://api.pwnedpasswords.com/range/${prefix}`);
+                const text = await response.text();
+                const lines = text.split('\n');
+
+                let count = 0;
+                for (const line of lines) {
+                    const [hashSuffix, hashCount] = line.split(':');
+                    if (hashSuffix.trim() === suffix) {
+                        count = parseInt(hashCount.trim());
+                        break;
+                    }
+                }
+
+                if (count > 0) {
+                    result.className = 'result show result-danger';
+                    result.innerHTML = `<strong>LEAKED!</strong> Found ${count.toLocaleString()} times in data breaches.<br>Change this password immediately!`;
+                    addAlert('high', `Password found ${count.toLocaleString()} times in breaches`);
+                } else {
+                    result.className = 'result show result-safe';
+                    result.innerHTML = '<strong>Safe!</strong> Not found in any known data breaches.';
+                }
+            } catch (e) {
+                result.className = 'result show result-warning';
+                result.innerHTML = 'Could not check. Make sure you are connected to the internet.';
+            }
+        }
+
+        async function checkBreach() {
+            const email = document.getElementById('emailInput').value;
+            if (!email || !email.includes('@')) return;
+
+            const result = document.getElementById('breachResult');
+            result.className = 'result show loading';
+            result.innerHTML = '<div class="spinner"></div>Checking...';
+
+            try {
+                const response = await fetch(`https://haveibeenpwned.com/api/v3/breachedaccount/${email}`, {
+                    headers: { 'User': 'IdentityProtectionTool' }
+                });
+
+                if (response.status === 204) {
+                    result.className = 'result show result-safe';
+                    result.innerHTML = '<strong>Safe!</strong> Email not found in any known breaches.';
+                } else if (response.status === 200) {
+                    const breaches = await response.json();
+                    let html = `<strong>Found in ${breaches.length} breach(es)!</strong><br><br>`;
+                    breaches.slice(0, 5).forEach(b => {
+                        html += `<div style="margin-bottom:8px;padding:8px;background:#1a1a2e;border-radius:4px;">
+                            <strong>${b.Name}</strong> (${b.BreachDate})<br>
+                            <span style="font-size:0.85em;color:#888;">${b.PwnCount?.toLocaleString()} accounts exposed</span>
+                        </div>`;
+                    });
+                    result.className = 'result show result-danger';
+                    result.innerHTML = html;
+                    addAlert('high', `Email found in ${breaches.length} breach(es)`);
+                } else {
+                    result.className = 'result show result-warning';
+                    result.innerHTML = 'Could not check. Try again later.';
+                }
+            } catch (e) {
+                result.className = 'result show result-warning';
+                result.innerHTML = 'Could not check. Make sure you are connected to the internet.';
+            }
+        }
+
+        function checkStrength() {
+            const password = document.getElementById('strengthInput').value;
+            const fill = document.getElementById('strengthFill');
+            const text = document.getElementById('strengthText');
+
+            let score = 0;
+            if (password.length >= 8) score++;
+            if (password.length >= 12) score++;
+            if (password.length >= 16) score++;
+            if (/[A-Z]/.test(password)) score++;
+            if (/[a-z]/.test(password)) score++;
+            if (/[0-9]/.test(password)) score++;
+            if (/[^A-Za-z0-9]/.test(password)) score++;
+
+            const labels = ['Very Weak', 'Weak', 'Fair', 'Good', 'Strong', 'Very Strong', 'Excellent'];
+            const colors = ['#e17055', '#e17055', '#fdcb6e', '#fdcb6e', '#00b894', '#00b894', '#00b894'];
+
+            const percent = (score / 7) * 100;
+            fill.style.width = percent + '%';
+            fill.style.background = colors[score];
+            text.textContent = password ? labels[score] : '';
+            text.style.color = colors[score];
+        }
+
+        function generatePassword() {
+            const length = document.getElementById('passwordLength').value;
+            document.getElementById('lengthValue').textContent = length;
+            const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:,.<>?';
+            let password = '';
+            const array = new Uint32Array(length);
+            crypto.getRandomValues(array);
+            for (let i = 0; i < length; i++) {
+                password += chars[array[i] % chars.length];
+            }
+            document.getElementById('generatedPassword').value = password;
+        }
+
+        function copyPassword() {
+            const pw = document.getElementById('generatedPassword').value;
+            if (!pw) return;
+            navigator.clipboard.writeText(pw).then(() => {
+                const result = document.getElementById('copyResult');
+                result.className = 'result show result-safe';
+                result.innerHTML = 'Password copied to clipboard!';
+                setTimeout(() => result.className = 'result', 2000);
+            });
+        }
+
+        async function runFullScan() {
+            addAlert('low', 'Scan started...');
+
+            // Check connection count (simulated - real version would use backend)
+            addAlert('low', 'Checking network connections...');
+
+            // Password tips
+            addAlert('low', 'Remember: Use unique passwords for each account');
+            addAlert('low', 'Enable 2FA on all important accounts');
+
+            const score = document.getElementById('securityScore');
+            score.style.borderColor = '#00b894';
+            score.innerHTML = '<span>85</span><span class="score-label">Security Score</span>';
+
+            addAlert('low', 'Full scan complete. Check each section for details.');
+            updateAlerts();
+        }
+
+        // Init
+        generatePassword();
+    </script>
+</body>
+</html>

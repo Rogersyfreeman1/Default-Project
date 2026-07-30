@@ -1,0 +1,7 @@
+
+IDENTITY PROTECTION REPORT
+Generated: 2026-07-22 23:25:47
+
+ALERTS: 9 HIGH | 54 MEDIUM
+Last Scan: 2026-07-22T23:25:47.132527
+Watched Folders: ['C:\\Users\\12018\\Documents', 'C:\\Users\\12018\\Desktop', 'C:\\Users\\12018\\Downloads']
