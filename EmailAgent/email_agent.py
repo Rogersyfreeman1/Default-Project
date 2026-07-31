@@ -1,0 +1,226 @@
+import imaplib
+import email
+from email.header import decode_header
+from collections import Counter
+import json
+import os
+import sys
+import socket
+from datetime import datetime, timedelta
+import re
+
+YAHOO_IMAP = "imap.mail.yahoo.com"
+YAHOO_EMAIL = os.environ.get("YAHOO_EMAIL", "rogeralburo@yahoo.com")
+YAHOO_APP_PASSWORD = os.environ.get("YAHOO_APP_PASSWORD", "")
+LOG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "email_agent_report.json")
+
+SPAM_KEYWORDS = [
+    "free prize", "winner", "congratulations you", "claim your", "act now",
+    "lottery", "inheritance", "urgent", "limited time", "guaranteed",
+    "double your", "make money fast", "work from home", "crypto bonus",
+    "bitcoin giveaway", "porn", "casino", "viagra", "replica",
+    "discount code", "cash prize", "you have been selected",
+]
+
+BANK_SENDERS = [
+    "chase.com",
+]
+
+RECENT_DAYS = 30
+MAX_EMAILS = 1000
+BATCH_SIZE = 50
+
+
+def decode_mime_header(raw):
+    if not raw:
+        return ""
+    parts = decode_header(raw)
+    result = []
+    for text, charset in parts:
+        if isinstance(text, bytes):
+            try:
+                result.append(text.decode(charset or "utf-8", errors="replace"))
+            except (LookupError, TypeError):
+                result.append(text.decode("utf-8", errors="replace"))
+        else:
+            result.append(text)
+    return "".join(result).strip()
+
+
+def get_sender(msg):
+    from_header = msg.get("From", "")
+    from_decoded = decode_mime_header(from_header)
+    match = re.search(r"[<]([^<>]+)[>]", from_decoded)
+    if match:
+        return match.group(1).lower()
+    return from_decoded.lower()
+
+
+def is_bank_sender(sender):
+    for bank in BANK_SENDERS:
+        if bank in sender:
+            return True
+    return False
+
+
+def log_report(report):
+    report["last_run"] = datetime.now().isoformat()
+    with open(LOG_FILE, "w", encoding="utf-8") as f:
+        json.dump(report, f, indent=2)
+
+
+def main():
+    if not YAHOO_APP_PASSWORD:
+        print("ERROR: Set YAHOO_APP_PASSWORD environment variable first.")
+        sys.exit(1)
+
+    mail = imaplib.IMAP4_SSL(YAHOO_IMAP, 993, timeout=30)
+    try:
+        mail.login(YAHOO_EMAIL, YAHOO_APP_PASSWORD)
+        print(f"Connected to {YAHOO_EMAIL}")
+    except imaplib.IMAP4.error as e:
+        print(f"Login failed: {e}")
+        sys.exit(1)
+
+    status, _ = mail.select("INBOX")
+    if status != "OK":
+        print("Failed to open INBOX")
+        mail.logout()
+        sys.exit(1)
+
+    since_date = (datetime.now() - timedelta(days=RECENT_DAYS)).strftime("%d-%b-%Y")
+    status, data = mail.uid("SEARCH", None, f'(SINCE "{since_date}")')
+    if status != "OK" or not data[0]:
+        print("No messages found")
+        mail.logout()
+        return
+
+    ids = data[0].split()
+    ids = ids[-MAX_EMAILS:]
+    print(f"Scanning {len(ids)} recent emails...", flush=True)
+
+    sender_stats = Counter()
+    sender_subjects = {}
+    sender_first_seen = {}
+
+    messages = []
+    for start in range(0, len(ids), BATCH_SIZE):
+        batch = ids[start:start + BATCH_SIZE]
+        set_str = ",".join(n.decode() if isinstance(n, bytes) else str(n) for n in batch)
+        status, msg_data = mail.uid("FETCH", set_str, "(BODY.PEEK[HEADER.FIELDS (FROM SUBJECT DATE)])")
+        if status != "OK":
+            continue
+        for i in range(0, len(msg_data), 2):
+            if i >= len(msg_data) or not isinstance(msg_data[i], tuple):
+                continue
+            header = msg_data[i][0]
+            raw = msg_data[i][1]
+            num_match = re.match(rb"(\d+)", header)
+            if not num_match:
+                continue
+            num = num_match.group(1)
+            msg = email.message_from_bytes(raw)
+            sender = get_sender(msg)
+            messages.append((num, sender))
+            sender_stats[sender] += 1
+            if sender not in sender_subjects:
+                sender_subjects[sender] = decode_mime_header(msg.get("Subject", ""))[:120]
+                sender_first_seen[sender] = msg.get("Date", "unknown")
+        print(f"  scanned {min(start + BATCH_SIZE, len(ids))}/{len(ids)}", flush=True)
+
+    repeat_senders = {s: c for s, c in sender_stats.items() if c >= 3}
+    spam_candidates = {}
+    for sender, count in repeat_senders.items():
+        spam_candidates[sender] = {
+            "count": count,
+            "sample_subject": sender_subjects.get(sender, ""),
+            "sample_date": sender_first_seen.get(sender, ""),
+        }
+
+    moved = 0
+    skipped = 0
+    nums_to_bulk = []
+    nums_to_banks = []
+    bulk_details = []
+    banks_details = []
+    for idx, (num, sender) in enumerate(messages):
+        if idx % 50 == 0:
+            print(f"  checking {idx}/{len(messages)}", flush=True)
+        if sender in spam_candidates:
+            if is_bank_sender(sender):
+                nums_to_banks.append(num)
+                banks_details.append({
+                    "sender": sender,
+                    "subject": sender_subjects.get(sender, ""),
+                })
+            else:
+                nums_to_bulk.append(num)
+                bulk_details.append({
+                    "sender": sender,
+                    "subject": sender_subjects.get(sender, ""),
+                })
+
+    if nums_to_bulk:
+        message_set = ",".join(n.decode() if isinstance(n, bytes) else str(n) for n in nums_to_bulk)
+        print(f"Moving {len(nums_to_bulk)} spam emails to Bulk...", flush=True)
+        try:
+            mail.uid("COPY", message_set, '"Bulk"')
+            moved += len(nums_to_bulk)
+        except Exception as e:
+            print(f"  copy error: {e}", flush=True)
+            skipped += len(nums_to_bulk)
+        try:
+            mail.uid("STORE", message_set, "+FLAGS", "\\Deleted")
+        except Exception as e:
+            print(f"  delete flag error: {e}", flush=True)
+
+    if nums_to_banks:
+        message_set = ",".join(n.decode() if isinstance(n, bytes) else str(n) for n in nums_to_banks)
+        print(f"Moving {len(nums_to_banks)} bank emails to Banks folder...", flush=True)
+        try:
+            mail.uid("COPY", message_set, '"Banks"')
+            moved += len(nums_to_banks)
+        except Exception as e:
+            print(f"  copy error: {e}", flush=True)
+            skipped += len(nums_to_banks)
+        try:
+            mail.uid("STORE", message_set, "+FLAGS", "\\Deleted")
+        except Exception as e:
+            print(f"  delete flag error: {e}", flush=True)
+
+    if nums_to_bulk or nums_to_banks:
+        try:
+            mail.expunge()
+        except Exception as e:
+            print(f"  expunge error: {e}", flush=True)
+
+    report = {
+        "scanned_emails": len(ids),
+        "unique_senders": len(sender_stats),
+        "repeat_senders_detected": len(spam_candidates),
+        "repeat_sender_details": spam_candidates,
+        "emails_moved_to_bulk": len(nums_to_bulk),
+        "bulk_details": bulk_details,
+        "emails_moved_to_banks": len(nums_to_banks),
+        "banks_details": banks_details,
+        "emails_moved_total": moved,
+    }
+    log_report(report)
+
+    print(f"Scanned: {len(ids)} emails | Unique senders: {len(sender_stats)}")
+    print(f"Repeat senders detected: {len(spam_candidates)}")
+    print(f"Spam moved to Bulk: {len(nums_to_bulk)}")
+    print(f"Bank emails moved to Banks folder: {len(nums_to_banks)}")
+
+    if spam_candidates:
+        print("\nDetected repeat senders:")
+        for sender, info in spam_candidates.items():
+            print(f"  - {sender} ({info['count']} emails)")
+
+    print(f"\nReport saved to {LOG_FILE}")
+
+    mail.logout()
+
+
+if __name__ == "__main__":
+    main()
