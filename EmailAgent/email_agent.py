@@ -186,12 +186,28 @@ OFFER_KEYWORDS = [
     "buy one get one", "bogo", "free shipping",
     "flash sale", "clearance", "final sale",
     "member exclusive", "vip offer", "insider deal",
-    # Marketing spam
+    # Marketing spam / upsells
     "shop now", "order now", "click here",
     "limited stock", "while supplies last",
     "special promotion", "exclusive deal",
     "save 50%", "save 70%", "massive savings",
     "black friday", "cyber monday", "holiday sale",
+    # Upsell keywords - DELETE these
+    "you might also like", "customers also bought",
+    "based on your purchase", "recommended for you",
+    "don't forget", "still interested", "left in your cart",
+    "complete your order", "finish checkout",
+    "back in stock", "price drop", "low stock alert",
+    "trending now", "popular items", "best sellers",
+]
+
+# Transactional keywords - KEEP these
+KEEP_KEYWORDS = [
+    "order confirmation", "order confirmed", "receipt",
+    "shipping confirmation", "shipped", "tracking",
+    "payment confirmation", "payment received",
+    "account update", "security alert", "password",
+    "invoice", "transaction", "statement",
 ]
 
 SPAM_SENDERS = [
@@ -247,11 +263,27 @@ def get_sender(msg):
     return from_decoded.lower()
 
 
+def is_transactional(subject):
+    """Check if email is transactional (keep these)"""
+    if not subject:
+        return False
+    subject_lower = subject.lower()
+    for keyword in KEEP_KEYWORDS:
+        if keyword in subject_lower:
+            return True
+    return False
+
+
 def is_any_offer(subject):
     """Check if email is ANY kind of offer/promotion"""
     if not subject:
         return False
     subject_lower = subject.lower()
+    
+    # If it's transactional, don't delete it
+    if is_transactional(subject):
+        return False
+    
     for keyword in OFFER_KEYWORDS:
         if keyword in subject_lower:
             return True
