@@ -1,8 +1,63 @@
 {
   "scanned_emails": 1000,
-  "unique_senders": 482,
+  "unique_senders": 486,
   "repeat_senders_detected": 102,
   "repeat_sender_details": {
+    "newsletter@warrenhomecare.info": {
+      "count": 5,
+      "sample_subject": "Summer's here: 50% off your second custom window treatment",
+      "sample_date": "Mon, 6 Jul 2026 09:17:36 +0000 (UTC)"
+    },
+    "noreply@robinhood.com": {
+      "count": 6,
+      "sample_subject": "Funds available for investing",
+      "sample_date": "Mon, 6 Jul 2026 08:22:47 +0000 (UTC)"
+    },
+    "selbdfgstschmjgjierehjigensch@medicusdualhingedriver.com": {
+      "count": 4,
+      "sample_subject": "Debt relief with program payments that fit your budget.",
+      "sample_date": "Mon, 6 Jul 2026 07:10:08 +0000 (UTC)"
+    },
+    "updates-en@newsletter.printful.com": {
+      "count": 6,
+      "sample_subject": "Build a store that customers believe in",
+      "sample_date": "Mon, 6 Jul 2026 05:40:16 +0000 (UTC)"
+    },
+    "pseudoparenchymatous@cellular.motorpassennest.com": {
+      "count": 3,
+      "sample_subject": "Pubs can Stay Open Until 5am",
+      "sample_date": "Mon, 6 Jul 2026 05:14:56 +0000 (UTC)"
+    },
+    "noreply@novajoypulse775.com": {
+      "count": 4,
+      "sample_subject": "Rog\u200eeralburo, Kno\u200ew The\u200ese Rul\u200ees Bef\u200eore Mov\u200eing You\u200er Ret\u200eirement Sav\u200eings",
+      "sample_date": "Sun, 5 Jul 2026 23:56:04 +0000 (UTC)"
+    },
+    "noreply@auth.ace.ai": {
+      "count": 3,
+      "sample_subject": "Welcome to Ace!",
+      "sample_date": "Mon, 6 Jul 2026 04:02:32 +0000 (UTC)"
+    },
+    "noreply@joyflowpulse735.com": {
+      "count": 5,
+      "sample_subject": "Ro\ufeffgeralburo, 5\ufeff0% O\ufeffff + 2 Mo\ufeffnths Fre\ufeffe St\ufeffarts N\ufeffow",
+      "sample_date": "Mon, 6 Jul 2026 00:48:58 +0000 (UTC)"
+    },
+    "phil@momshouse.com": {
+      "count": 13,
+      "sample_subject": "Did you see this?",
+      "sample_date": "Mon, 6 Jul 2026 03:24:25 +0000 (UTC)"
+    },
+    "bryce.paul@crypto101podcast.com": {
+      "count": 12,
+      "sample_subject": "Last Chance: Our #1 Altcoin For Right Now",
+      "sample_date": "Mon, 6 Jul 2026 03:07:00 +0000 (UTC)"
+    },
+    "noreply@tm.openai.com": {
+      "count": 4,
+      "sample_subject": "Your temporary ChatGPT login code",
+      "sample_date": "Mon, 6 Jul 2026 02:05:46 +0000 (UTC)"
+    },
     "jvzoopotd@jvzoo.com": {
       "count": 14,
       "sample_subject": "No tap link = no tap pay",
@@ -14,12 +69,12 @@
       "sample_date": "Mon, 6 Jul 2026 01:04:56 +0000 (UTC)"
     },
     "updates@melaninmoney.com": {
-      "count": 8,
+      "count": 7,
       "sample_subject": "[\u23f0Final Call] 50% off ends in 3 hours",
       "sample_date": "Mon, 6 Jul 2026 01:03:19 +0000 (UTC)"
     },
     "email@email.shopify.com": {
-      "count": 9,
+      "count": 10,
       "sample_subject": "Save tons of time by automating your sales funnel",
       "sample_date": "Mon, 6 Jul 2026 00:46:05 +0000 (UTC)"
     },
@@ -27,16 +82,6 @@
       "count": 3,
       "sample_subject": "Reset password",
       "sample_date": "Mon, 6 Jul 2026 00:42:24 +0000 (UTC)"
-    },
-    "bryce.paul@crypto101podcast.com": {
-      "count": 13,
-      "sample_subject": "8 hours left (freedom coin trades under $1)",
-      "sample_date": "Mon, 6 Jul 2026 00:07:00 +0000 (UTC)"
-    },
-    "noreply@tm.openai.com": {
-      "count": 4,
-      "sample_subject": "Your temporary OpenAI login code",
-      "sample_date": "Sun, 5 Jul 2026 23:43:27 +0000 (UTC)"
     },
     "contact@glowkindfun353.com": {
       "count": 10,
@@ -93,40 +138,40 @@
       "sample_subject": "Re: Stock your new store with up to $20K in 60-day payment terms",
       "sample_date": "Sun, 5 Jul 2026 16:02:51 +0000 (UTC)"
     },
-    "optimum@mail.optimumemail1.com": {
-      "count": 6,
-      "sample_subject": "BOOM! Our July 4th offer is still crackling",
-      "sample_date": "Sun, 5 Jul 2026 14:30:02 +0000 (UTC)"
-    },
-    "phil@momshouse.com": {
-      "count": 13,
-      "sample_subject": "$30 trillion is sitting in American homes right now",
-      "sample_date": "Sun, 5 Jul 2026 13:45:55 +0000 (UTC)"
-    },
-    "no-reply@email.sears.com": {
-      "count": 7,
-      "sample_subject": "Don\u2019t miss out! Final day to save an extra 10% on tools & more, plus up to 30% off top Samsung electronics",
-      "sample_date": "Sun, 5 Jul 2026 13:10:23 +0000 (UTC)"
-    },
-    "pcrichard@e.pcrichard.com": {
+    "support@northwestregisteredagent.com": {
       "count": 3,
-      "sample_subject": "Watch every goal in stunning detail on a new Samsung TV!",
-      "sample_date": "Sun, 5 Jul 2026 12:46:24 +0000 (UTC)"
+      "sample_subject": "Lasy LLC - Action required to complete  EIN \u2013 Tax ID Number",
+      "sample_date": "Mon, 6 Jul 2026 23:45:07 +0000 (UTC)"
     },
-    "support@state-filings.com": {
+    "camerondunlap@realestatewealthnetwork.com": {
       "count": 4,
-      "sample_subject": "Explore Our Business Licenses and Permits Report",
-      "sample_date": "Sun, 5 Jul 2026 11:56:49 +0000 (UTC)"
+      "sample_subject": "The rehab number was wrong by $30K",
+      "sample_date": "Mon, 6 Jul 2026 23:10:27 +0000 (UTC)"
     },
-    "selbdfgstschmjgjierehjigensch@medicusdualhingedriver.com": {
+    "help@umzu.com": {
       "count": 5,
-      "sample_subject": "Monitoring Kit \u2013 Claim from UnitedHealthcare",
-      "sample_date": "Sun, 5 Jul 2026 05:56:46 +0000 (UTC)"
+      "sample_subject": "Don't Miss Our Extended Sale ! \ud83c\udf89",
+      "sample_date": "Mon, 6 Jul 2026 23:04:09 +0000 (UTC)"
     },
-    "prillingalgedonickennelled@nodepblog.com": {
+    "optimum@mail.optimumemail1.com": {
+      "count": 5,
+      "sample_subject": "Save $240/yr. when you leave Verizon",
+      "sample_date": "Mon, 6 Jul 2026 22:58:50 +0000 (UTC)"
+    },
+    "support@cherringtonmedia.com": {
+      "count": 7,
+      "sample_subject": "Work You Already Know",
+      "sample_date": "Mon, 6 Jul 2026 22:22:53 +0000 (UTC)"
+    },
+    "newsletter@financebucketgain.com": {
       "count": 3,
-      "sample_subject": "Take a Moment for This Survey",
-      "sample_date": "Sun, 5 Jul 2026 05:52:34 +0000 (UTC)"
+      "sample_subject": "Pay off your cre\u034f\u034fd\u034f\u034fi\u034ft card",
+      "sample_date": "Mon, 6 Jul 2026 21:38:09 +0000 (UTC)"
+    },
+    "support@zendrop.com": {
+      "count": 10,
+      "sample_subject": "\ud83c\udfac Day 1 replay is live \u2014 Day 2 starts tomorrow",
+      "sample_date": "Mon, 6 Jul 2026 20:41:54 +0000 (UTC)"
     },
     "gallantpays@gallantluxuryservice.com": {
       "count": 6,
@@ -158,13 +203,8 @@
       "sample_subject": "24 hours left on the 4th of July code",
       "sample_date": "Mon, 6 Jul 2026 16:02:50 +0000 (UTC)"
     },
-    "support@zendrop.com": {
-      "count": 10,
-      "sample_subject": "\u23f0 We're live in 1 hour \u2014 here's your link",
-      "sample_date": "Mon, 6 Jul 2026 14:56:24 +0000 (UTC)"
-    },
     "frommersnews@frommermedia.com": {
-      "count": 5,
+      "count": 6,
       "sample_subject": "California Dreamin\u2019: Golden State Parks, Wineries, and Family Fun",
       "sample_date": "Mon, 6 Jul 2026 14:34:36 +0000 (UTC)"
     },
@@ -173,50 +213,50 @@
       "sample_subject": "Up to 60% off your first 2 orders.",
       "sample_date": "Mon, 6 Jul 2026 14:06:28 +0000 (UTC)"
     },
+    "no-reply@email.sears.com": {
+      "count": 6,
+      "sample_subject": "Make your yard the envy of the neighborhood! \ud83c\udf33\ud83e\udeb4 Save up to 40% on outdoor essentials today!",
+      "sample_date": "Mon, 6 Jul 2026 14:00:51 +0000 (UTC)"
+    },
     "info@ralacademy.com": {
       "count": 4,
       "sample_subject": "Still 40% off (in case you missed it)",
       "sample_date": "Mon, 6 Jul 2026 12:08:54 +0000 (UTC)"
+    },
+    "support@state-filings.com": {
+      "count": 3,
+      "sample_subject": "Streamlined EIN Filing for Our Valued LLC Customers #CCBE779656",
+      "sample_date": "Mon, 6 Jul 2026 11:48:11 +0000 (UTC)"
     },
     "contact@glowquestform584.com": {
       "count": 6,
       "sample_subject": "Roger\u200balburo, Effor\u200btless F\u200bat Reduc\u200btion w\u200bith CoolS\u200bculpting b\u200by Laser\u200bAway",
       "sample_date": "Mon, 6 Jul 2026 08:55:08 +0000 (UTC)"
     },
-    "newsletter@warrenhomecare.info": {
-      "count": 5,
-      "sample_subject": "Summer's here: 50% off your second custom window treatment",
-      "sample_date": "Mon, 6 Jul 2026 09:17:36 +0000 (UTC)"
-    },
-    "noreply@robinhood.com": {
-      "count": 5,
-      "sample_subject": "Funds available for investing",
-      "sample_date": "Mon, 6 Jul 2026 08:22:47 +0000 (UTC)"
-    },
-    "updates-en@newsletter.printful.com": {
-      "count": 6,
-      "sample_subject": "Build a store that customers believe in",
-      "sample_date": "Mon, 6 Jul 2026 05:40:16 +0000 (UTC)"
-    },
-    "pseudoparenchymatous@cellular.motorpassennest.com": {
+    "no-reply@zoom.us": {
       "count": 3,
-      "sample_subject": "Pubs can Stay Open Until 5am",
-      "sample_date": "Mon, 6 Jul 2026 05:14:56 +0000 (UTC)"
+      "sample_subject": "Reminder: Wealth Webinar Wednesdays With Chris Naugle  starts in 1 day",
+      "sample_date": "Tue, 7 Jul 2026 17:19:23 +0000 (UTC)"
     },
-    "noreply@novajoypulse775.com": {
+    "sofi@m.sofi.org": {
+      "count": 11,
+      "sample_subject": "More ways to invest with IRA options trading.",
+      "sample_date": "Tue, 7 Jul 2026 16:34:47 +0000 (UTC)"
+    },
+    "chase@mcmap.chase.com": {
       "count": 4,
-      "sample_subject": "Rog\u200eeralburo, Kno\u200ew The\u200ese Rul\u200ees Bef\u200eore Mov\u200eing You\u200er Ret\u200eirement Sav\u200eings",
-      "sample_date": "Sun, 5 Jul 2026 23:56:04 +0000 (UTC)"
+      "sample_subject": "You're eligible, Rogelio: refer businesses to earn up to $1,000 per calendar year",
+      "sample_date": "Tue, 7 Jul 2026 15:39:21 +0000 (UTC)"
     },
-    "noreply@auth.ace.ai": {
+    "credit-card-offers@email.capitalone.com": {
       "count": 3,
-      "sample_subject": "Welcome to Ace!",
-      "sample_date": "Mon, 6 Jul 2026 04:02:32 +0000 (UTC)"
+      "sample_subject": "Rogelio, your status may have changed--see if you're guaranteed to be approved",
+      "sample_date": "Tue, 7 Jul 2026 15:32:29 +0000 (UTC)"
     },
-    "noreply@joyflowpulse735.com": {
-      "count": 5,
-      "sample_subject": "Ro\ufeffgeralburo, 5\ufeff0% O\ufeffff + 2 Mo\ufeffnths Fre\ufeffe St\ufeffarts N\ufeffow",
-      "sample_date": "Mon, 6 Jul 2026 00:48:58 +0000 (UTC)"
+    "notifications@bookbolt.io": {
+      "count": 3,
+      "sample_subject": "\ud83d\udd25 Book Bolt Lifetime is Back - Save $100 Before It's Gone",
+      "sample_date": "Tue, 7 Jul 2026 14:31:03 +0000 (UTC)"
     },
     "no-reply@mail.coinbase.com": {
       "count": 3,
@@ -238,11 +278,6 @@
       "sample_subject": "Your store deserves a product nobody else sells",
       "sample_date": "Tue, 7 Jul 2026 07:01:38 +0000 (UTC)"
     },
-    "newsletter@financebucketgain.com": {
-      "count": 3,
-      "sample_subject": "Federal Tax Settlements",
-      "sample_date": "Tue, 7 Jul 2026 06:59:57 +0000 (UTC)"
-    },
     "info@zenflowvera329.com": {
       "count": 3,
       "sample_subject": "\u200f\u200fCongrats!\u200f\u2000A\u2000$10\u200f00\u2000cr\u200fedit\u2000limi\u200ft\u2000Indi\u200fgo\u00ae\u200f\u2000Masterc\u200fard\u2000is\u2000ready\u2000for\u2000your\u2000applicati\u200fon\u2000Rogeral\u200fburo",
@@ -258,25 +293,20 @@
       "sample_subject": "Just In: Harley-Davidson at up to 70% off",
       "sample_date": "Tue, 7 Jul 2026 00:54:48 +0000 (UTC)"
     },
-    "support@northwestregisteredagent.com": {
-      "count": 3,
-      "sample_subject": "Lasy LLC - Action required to complete  EIN \u2013 Tax ID Number",
-      "sample_date": "Mon, 6 Jul 2026 23:45:07 +0000 (UTC)"
+    "hello@paperbell.com": {
+      "count": 8,
+      "sample_subject": "1\ufe0f\u20e3 your new coaching site is ready",
+      "sample_date": "Wed, 8 Jul 2026 01:03:22 +0000 (UTC)"
     },
-    "camerondunlap@realestatewealthnetwork.com": {
+    "n1nldc1c@strongjoypath300.com": {
+      "count": 8,
+      "sample_subject": "\u206c\u206cA\u206cre\u2009Y\u206cou\u2009A\u2009Homeo\u206cwner\u2009t\u206chat\u2009n\u206ceeds\u2009n\u206cew\u2009windo\u206cws?",
+      "sample_date": "Tue, 7 Jul 2026 23:29:56 +0000 (UTC)"
+    },
+    "noreply@offers.creditonebank.com": {
       "count": 4,
-      "sample_subject": "The rehab number was wrong by $30K",
-      "sample_date": "Mon, 6 Jul 2026 23:10:27 +0000 (UTC)"
-    },
-    "help@umzu.com": {
-      "count": 5,
-      "sample_subject": "Don't Miss Our Extended Sale ! \ud83c\udf89",
-      "sample_date": "Mon, 6 Jul 2026 23:04:09 +0000 (UTC)"
-    },
-    "support@cherringtonmedia.com": {
-      "count": 7,
-      "sample_subject": "Work You Already Know",
-      "sample_date": "Mon, 6 Jul 2026 22:22:53 +0000 (UTC)"
+      "sample_subject": "Congrats Rogelio! We\u2019re rewarding you with a new account offer",
+      "sample_date": "Tue, 7 Jul 2026 23:02:59 +0000 (UTC)"
     },
     "help@driversguild.org": {
       "count": 3,
@@ -308,11 +338,6 @@
       "sample_subject": "PS\udb41\udc45ST!!\udb41\udc45!! Sa\udb41\udc45ve Bi\udb41\udc45g o\udb41\udc45n Au\udb41\udc45to Repair\udb41\udc45s wi\udb41\udc45th Th\udb41\udc45is Qu\udb41\udc45ick Secr\udb41\udc45et",
       "sample_date": "Tue, 7 Jul 2026 20:46:49 +0000 (UTC)"
     },
-    "n1nldc1c@strongjoypath300.com": {
-      "count": 8,
-      "sample_subject": "\u206c\u206cP\u206cSST!\u206c!!!\u2009S\u206cave\u2009B\u206cig\u2009o\u206cn\u2009A\u206cuto\u2009Repai\u206crs\u2009w\u206cith\u2009T\u206chis\u2009Q\u206cuick\u2009Secre\u206ct",
-      "sample_date": "Tue, 7 Jul 2026 20:52:36 +0000 (UTC)"
-    },
     "partners@7figures.com": {
       "count": 3,
       "sample_subject": "zero overhead?!",
@@ -323,30 +348,15 @@
       "sample_subject": "$20 a month, $200 a month, or pennies a day. Pick one.",
       "sample_date": "Tue, 7 Jul 2026 17:59:56 +0000 (UTC)"
     },
-    "no-reply@zoom.us": {
-      "count": 3,
-      "sample_subject": "Reminder: Wealth Webinar Wednesdays With Chris Naugle  starts in 1 day",
-      "sample_date": "Tue, 7 Jul 2026 17:19:23 +0000 (UTC)"
-    },
-    "sofi@m.sofi.org": {
-      "count": 11,
-      "sample_subject": "More ways to invest with IRA options trading.",
-      "sample_date": "Tue, 7 Jul 2026 16:34:47 +0000 (UTC)"
-    },
-    "chase@mcmap.chase.com": {
+    "support@powmr.com": {
       "count": 4,
-      "sample_subject": "You're eligible, Rogelio: refer businesses to earn up to $1,000 per calendar year",
-      "sample_date": "Tue, 7 Jul 2026 15:39:21 +0000 (UTC)"
+      "sample_subject": "\ud83d\udee0\ufe0f DIY Tutorial: Step-by-Step Guide to Building a High-Performance LiFePO4 Battery Pack!",
+      "sample_date": "Wed, 8 Jul 2026 12:31:08 +0000 (UTC)"
     },
-    "credit-card-offers@email.capitalone.com": {
-      "count": 3,
-      "sample_subject": "Rogelio, your status may have changed--see if you're guaranteed to be approved",
-      "sample_date": "Tue, 7 Jul 2026 15:32:29 +0000 (UTC)"
-    },
-    "notifications@bookbolt.io": {
-      "count": 3,
-      "sample_subject": "\ud83d\udd25 Book Bolt Lifetime is Back - Save $100 Before It's Gone",
-      "sample_date": "Tue, 7 Jul 2026 14:31:03 +0000 (UTC)"
+    "e.dcsg@financecreditloompro.com": {
+      "count": 4,
+      "sample_subject": "Confirmation Receipt",
+      "sample_date": "Wed, 8 Jul 2026 12:14:47 +0000 (UTC)"
     },
     "info@upstriderofficial.com": {
       "count": 5,
@@ -357,6 +367,11 @@
       "count": 6,
       "sample_subject": "Rogeralbu\udb41\udc45ro, Summer Safe\udb41\udc45ty E\udb41\udc45ssentials for Your Ho\udb41\udc45me",
       "sample_date": "Wed, 8 Jul 2026 07:10:07 +0000 (UTC)"
+    },
+    "prillingalgedonickennelled@nodepblog.com": {
+      "count": 3,
+      "sample_subject": "Redeem your special reward before it expires",
+      "sample_date": "Wed, 8 Jul 2026 07:02:58 +0000 (UTC)"
     },
     "asflybackringssnailsmout@cooklet.cookingsubscribe.com": {
       "count": 3,
@@ -378,20 +393,15 @@
       "sample_subject": "Po\u200dor Cred\u200dit? Th\u200dis Ma\u200dy B\u200de Th\u200de Master\u200dcard Fo\u200dr Yo\u200du\u2026",
       "sample_date": "Wed, 8 Jul 2026 02:55:38 +0000 (UTC)"
     },
-    "hello@paperbell.com": {
-      "count": 8,
-      "sample_subject": "qq",
-      "sample_date": "Wed, 8 Jul 2026 03:03:26 +0000 (UTC)"
-    },
     "hello@mail.faire.com": {
       "count": 3,
       "sample_subject": "Rogelio, your welcome offer is extended",
       "sample_date": "Wed, 8 Jul 2026 01:31:15 +0000 (UTC)"
     },
-    "noreply@offers.creditonebank.com": {
-      "count": 4,
-      "sample_subject": "Congrats Rogelio! We\u2019re rewarding you with a new account offer",
-      "sample_date": "Tue, 7 Jul 2026 23:02:59 +0000 (UTC)"
+    "members@cbdriver.com": {
+      "count": 5,
+      "sample_subject": "New Driver Contract Ad - New York, NY - Vehicle: 16 ft. Box Truck, 18 ...",
+      "sample_date": "Wed, 8 Jul 2026 22:50:29 +0000 (UTC)"
     },
     "noreply@emails.creditonebank.com": {
       "count": 4,
@@ -403,15 +413,15 @@
       "sample_subject": "Reverse Mortgage Information for You",
       "sample_date": "Wed, 8 Jul 2026 18:55:41 +0000 (UTC)"
     },
-    "support@powmr.com": {
-      "count": 4,
-      "sample_subject": "\ud83d\udee0\ufe0f DIY Tutorial: Step-by-Step Guide to Building a High-Performance LiFePO4 Battery Pack!",
-      "sample_date": "Wed, 8 Jul 2026 12:31:08 +0000 (UTC)"
+    "shop@financialelevations.info": {
+      "count": 3,
+      "sample_subject": "Get Simple, Affordable Term Life Insurance with SBLI.",
+      "sample_date": "Thu, 9 Jul 2026 12:27:54 +0000 (UTC)"
     },
-    "e.dcsg@financecreditloompro.com": {
-      "count": 4,
-      "sample_subject": "Confirmation Receipt",
-      "sample_date": "Wed, 8 Jul 2026 12:14:47 +0000 (UTC)"
+    "no-reply@mail.goodreads.com": {
+      "count": 3,
+      "sample_subject": "\ud83d\udcda The Newsletter: July Must-Reads",
+      "sample_date": "Thu, 9 Jul 2026 11:04:34 +0000 (UTC)"
     },
     "info@members.netflix.com": {
       "count": 4,
@@ -423,25 +433,15 @@
       "sample_subject": "No Payments for a Year* \u2013 Replace Your Windows Now!",
       "sample_date": "Wed, 8 Jul 2026 23:59:27 +0000 (UTC)"
     },
-    "members@cbdriver.com": {
-      "count": 5,
-      "sample_subject": "New Driver Contract Ad - New York, NY - Vehicle: 16 ft. Box Truck, 18 ...",
-      "sample_date": "Wed, 8 Jul 2026 22:50:29 +0000 (UTC)"
-    },
     "info@7figures.com": {
       "count": 3,
-      "sample_subject": "STARTS IN 30 MINS! Socialism vs. Capitalism: The Real Data Behind the Debate (Episode 1) Live at 3:30 PM ET",
-      "sample_date": "Thu, 9 Jul 2026 19:01:21 +0000 (UTC)"
+      "sample_subject": "Socialism vs. Capitalism: The Real Data Behind the Debate (Episode 1) REPLAY LINK",
+      "sample_date": "Thu, 9 Jul 2026 20:47:53 +0000 (UTC)"
     },
-    "shop@financialelevations.info": {
-      "count": 3,
-      "sample_subject": "Get Simple, Affordable Term Life Insurance with SBLI.",
-      "sample_date": "Thu, 9 Jul 2026 12:27:54 +0000 (UTC)"
-    },
-    "no-reply@mail.goodreads.com": {
-      "count": 3,
-      "sample_subject": "\ud83d\udcda The Newsletter: July Must-Reads",
-      "sample_date": "Thu, 9 Jul 2026 11:04:34 +0000 (UTC)"
+    "info@digitalmaker.ai": {
+      "count": 4,
+      "sample_subject": "You asked for longer videos \ud83d\udcbb",
+      "sample_date": "Fri, 10 Jul 2026 11:38:19 +0000 (UTC)"
     },
     "hello@team.emergent.sh": {
       "count": 3,
@@ -464,7 +464,7 @@
       "sample_date": "Fri, 10 Jul 2026 17:04:52 +0000 (UTC)"
     },
     "noreply@financerisewealth.com": {
-      "count": 3,
+      "count": 4,
       "sample_subject": "Your application invitation...",
       "sample_date": "Fri, 10 Jul 2026 16:12:43 +0000 (UTC)"
     },
@@ -472,11 +472,6 @@
       "count": 3,
       "sample_subject": "Partner with a Shark",
       "sample_date": "Fri, 10 Jul 2026 15:29:10 +0000 (UTC)"
-    },
-    "info@digitalmaker.ai": {
-      "count": 4,
-      "sample_subject": "You asked for longer videos \ud83d\udcbb",
-      "sample_date": "Fri, 10 Jul 2026 11:38:19 +0000 (UTC)"
     },
     "tv@dailyproductpicks.info": {
       "count": 3,
@@ -493,30 +488,87 @@
       "sample_subject": "Get more reviews from happy customers with the Loox Review form",
       "sample_date": "Sat, 11 Jul 2026 01:55:22 +0000 (UTC)"
     },
+    "hello@e.faire.com": {
+      "count": 3,
+      "sample_subject": "Get free shipping during Faire Market when you join Insider",
+      "sample_date": "Mon, 13 Jul 2026 12:16:12 +0000 (UTC)"
+    },
+    "marcin@marcindrozdz.ai": {
+      "count": 3,
+      "sample_subject": "If Your CPA Only Calls at Tax Time, Read This.",
+      "sample_date": "Wed, 15 Jul 2026 18:17:01 +0000 (UTC)"
+    },
     "noreply@financialconceptworks.com": {
       "count": 5,
       "sample_subject": "Required Item:    Confirm    your    attached    lending    request",
       "sample_date": "Mon, 13 Jul 2026 22:42:36 +0000 (UTC)"
     },
-    "marcin@marcindrozdz.ai": {
-      "count": 3,
-      "sample_subject": "Where I'll be August 14\u201316 (and why you should join me)",
-      "sample_date": "Thu, 16 Jul 2026 19:46:10 +0000 (UTC)"
-    },
-    "emails@healthcarebalanceguide.com": {
-      "count": 3,
-      "sample_subject": "' Claim  Your Personalized  Weight  Loss  Plan  Now!..'",
-      "sample_date": "Thu, 30 Jul 2026 21:01:31 +0000 (UTC)"
-    },
     "jared@zendrop.com": {
       "count": 3,
       "sample_subject": "We\u2019ll Build A Store For You!",
       "sample_date": "Wed, 29 Jul 2026 22:15:22 +0000 (UTC)"
+    },
+    "emails@healthcarebalanceguide.com": {
+      "count": 3,
+      "sample_subject": "Now Scheduling for July & August for Cardiovascular Disease Risk Screening",
+      "sample_date": "Wed, 29 Jul 2026 14:46:27 +0000 (UTC)"
     }
   },
-  "emails_moved_to_bulk": 495,
+  "emails_moved_to_bulk": 493,
   "bulk_details": [
     {
+      "sender": "newsletter@warrenhomecare.info",
+      "subject": "Summer's here: 50% off your second custom window treatment"
+    },
+    {
+      "sender": "noreply@robinhood.com",
+      "subject": "Funds available for investing"
+    },
+    {
+      "sender": "selbdfgstschmjgjierehjigensch@medicusdualhingedriver.com",
+      "subject": "Debt relief with program payments that fit your budget."
+    },
+    {
+      "sender": "updates-en@newsletter.printful.com",
+      "subject": "Build a store that customers believe in"
+    },
+    {
+      "sender": "pseudoparenchymatous@cellular.motorpassennest.com",
+      "subject": "Pubs can Stay Open Until 5am"
+    },
+    {
+      "sender": "noreply@novajoypulse775.com",
+      "subject": "Rog\u200eeralburo, Kno\u200ew The\u200ese Rul\u200ees Bef\u200eore Mov\u200eing You\u200er Ret\u200eirement Sav\u200eings"
+    },
+    {
+      "sender": "noreply@auth.ace.ai",
+      "subject": "Welcome to Ace!"
+    },
+    {
+      "sender": "noreply@auth.ace.ai",
+      "subject": "Welcome to Ace!"
+    },
+    {
+      "sender": "noreply@auth.ace.ai",
+      "subject": "Welcome to Ace!"
+    },
+    {
+      "sender": "noreply@joyflowpulse735.com",
+      "subject": "Ro\ufeffgeralburo, 5\ufeff0% O\ufeffff + 2 Mo\ufeffnths Fre\ufeffe St\ufeffarts N\ufeffow"
+    },
+    {
+      "sender": "phil@momshouse.com",
+      "subject": "Did you see this?"
+    },
+    {
+      "sender": "bryce.paul@crypto101podcast.com",
+      "subject": "Last Chance: Our #1 Altcoin For Right Now"
+    },
+    {
+      "sender": "noreply@tm.openai.com",
+      "subject": "Your temporary ChatGPT login code"
+    },
+    {
       "sender": "jvzoopotd@jvzoo.com",
       "subject": "No tap link = no tap pay"
     },
@@ -538,11 +590,11 @@
     },
     {
       "sender": "bryce.paul@crypto101podcast.com",
-      "subject": "8 hours left (freedom coin trades under $1)"
+      "subject": "Last Chance: Our #1 Altcoin For Right Now"
     },
     {
       "sender": "noreply@tm.openai.com",
-      "subject": "Your temporary OpenAI login code"
+      "subject": "Your temporary ChatGPT login code"
     },
     {
       "sender": "contact@glowkindfun353.com",
@@ -582,7 +634,7 @@
     },
     {
       "sender": "bryce.paul@crypto101podcast.com",
-      "subject": "8 hours left (freedom coin trades under $1)"
+      "subject": "Last Chance: Our #1 Altcoin For Right Now"
     },
     {
       "sender": "updates@melaninmoney.com",
@@ -617,40 +669,48 @@
       "subject": "No tap link = no tap pay"
     },
     {
+      "sender": "email@email.shopify.com",
+      "subject": "Save tons of time by automating your sales funnel"
+    },
+    {
+      "sender": "d89aa@fastjoycool275.com",
+      "subject": "Rogeralb\u061curo, Unlo\u061cck Loan\u061cs Desi\u061cgned t\u061co Sa\u061cve Yo\u061cu Ti\u061cme an\u061cd Mone\u061cy"
+    },
+    {
+      "sender": "contact@glowkindfun353.com",
+      "subject": "Ro\u2068geralburo, Kn\u2068ow Thes\u2068e Rule\u2068s Be\u2068fore Mo\u2068ving Yo\u2068ur Re\u2068tirement Sa\u2068vings"
+    },
+    {
+      "sender": "support@northwestregisteredagent.com",
+      "subject": "Lasy LLC - Action required to complete  EIN \u2013 Tax ID Number"
+    },
+    {
+      "sender": "camerondunlap@realestatewealthnetwork.com",
+      "subject": "The rehab number was wrong by $30K"
+    },
+    {
+      "sender": "help@umzu.com",
+      "subject": "Don't Miss Our Extended Sale ! \ud83c\udf89"
+    },
+    {
       "sender": "optimum@mail.optimumemail1.com",
-      "subject": "BOOM! Our July 4th offer is still crackling"
+      "subject": "Save $240/yr. when you leave Verizon"
     },
     {
-      "sender": "phil@momshouse.com",
-      "subject": "$30 trillion is sitting in American homes right now"
+      "sender": "support@cherringtonmedia.com",
+      "subject": "Work You Already Know"
     },
     {
-      "sender": "no-reply@email.sears.com",
-      "subject": "Don\u2019t miss out! Final day to save an extra 10% on tools & more, plus up to 30% off top Samsung electronics"
+      "sender": "newsletter@financebucketgain.com",
+      "subject": "Pay off your cre\u034f\u034fd\u034f\u034fi\u034ft card"
     },
     {
-      "sender": "pcrichard@e.pcrichard.com",
-      "subject": "Watch every goal in stunning detail on a new Samsung TV!"
+      "sender": "dylan@dropservicing.com",
+      "subject": "How Fast Can You Get Sales With Drop Servicing?"
     },
     {
-      "sender": "updates@melaninmoney.com",
-      "subject": "[\u23f0Final Call] 50% off ends in 3 hours"
-    },
-    {
-      "sender": "support@state-filings.com",
-      "subject": "Explore Our Business Licenses and Permits Report"
-    },
-    {
-      "sender": "bryce.paul@crypto101podcast.com",
-      "subject": "8 hours left (freedom coin trades under $1)"
-    },
-    {
-      "sender": "selbdfgstschmjgjierehjigensch@medicusdualhingedriver.com",
-      "subject": "Monitoring Kit \u2013 Claim from UnitedHealthcare"
-    },
-    {
-      "sender": "prillingalgedonickennelled@nodepblog.com",
-      "subject": "Take a Moment for This Survey"
+      "sender": "support@zendrop.com",
+      "subject": "\ud83c\udfac Day 1 replay is live \u2014 Day 2 starts tomorrow"
     },
     {
       "sender": "jvzoopotd@jvzoo.com",
@@ -702,7 +762,7 @@
     },
     {
       "sender": "support@zendrop.com",
-      "subject": "\u23f0 We're live in 1 hour \u2014 here's your link"
+      "subject": "\ud83c\udfac Day 1 replay is live \u2014 Day 2 starts tomorrow"
     },
     {
       "sender": "frommersnews@frommermedia.com",
@@ -714,11 +774,11 @@
     },
     {
       "sender": "no-reply@email.sears.com",
-      "subject": "Don\u2019t miss out! Final day to save an extra 10% on tools & more, plus up to 30% off top Samsung electronics"
+      "subject": "Make your yard the envy of the neighborhood! \ud83c\udf33\ud83e\udeb4 Save up to 40% on outdoor essentials today!"
     },
     {
       "sender": "phil@momshouse.com",
-      "subject": "$30 trillion is sitting in American homes right now"
+      "subject": "Did you see this?"
     },
     {
       "sender": "info@ralacademy.com",
@@ -726,67 +786,51 @@
     },
     {
       "sender": "support@state-filings.com",
-      "subject": "Explore Our Business Licenses and Permits Report"
+      "subject": "Streamlined EIN Filing for Our Valued LLC Customers #CCBE779656"
     },
     {
       "sender": "noreply@tm.openai.com",
-      "subject": "Your temporary OpenAI login code"
+      "subject": "Your temporary ChatGPT login code"
     },
     {
       "sender": "contact@glowquestform584.com",
       "subject": "Roger\u200balburo, Effor\u200btless F\u200bat Reduc\u200btion w\u200bith CoolS\u200bculpting b\u200by Laser\u200bAway"
     },
     {
-      "sender": "newsletter@warrenhomecare.info",
-      "subject": "Summer's here: 50% off your second custom window treatment"
+      "sender": "no-reply@zoom.us",
+      "subject": "Reminder: Wealth Webinar Wednesdays With Chris Naugle  starts in 1 day"
     },
     {
-      "sender": "noreply@robinhood.com",
-      "subject": "Funds available for investing"
+      "sender": "help@umzu.com",
+      "subject": "Don't Miss Our Extended Sale ! \ud83c\udf89"
     },
     {
-      "sender": "selbdfgstschmjgjierehjigensch@medicusdualhingedriver.com",
-      "subject": "Monitoring Kit \u2013 Claim from UnitedHealthcare"
+      "sender": "awesomely@mail.beehiiv.com",
+      "subject": "BAD NEWS (your link won\u2019t last)"
     },
     {
-      "sender": "updates-en@newsletter.printful.com",
-      "subject": "Build a store that customers believe in"
+      "sender": "contact@glowkindfun353.com",
+      "subject": "Ro\u2068geralburo, Kn\u2068ow Thes\u2068e Rule\u2068s Be\u2068fore Mo\u2068ving Yo\u2068ur Re\u2068tirement Sa\u2068vings"
     },
     {
-      "sender": "pseudoparenchymatous@cellular.motorpassennest.com",
-      "subject": "Pubs can Stay Open Until 5am"
+      "sender": "sofi@m.sofi.org",
+      "subject": "More ways to invest with IRA options trading."
     },
     {
-      "sender": "noreply@novajoypulse775.com",
-      "subject": "Rog\u200eeralburo, Kno\u200ew The\u200ese Rul\u200ees Bef\u200eore Mov\u200eing You\u200er Ret\u200eirement Sav\u200eings"
+      "sender": "shaun@success.10xbnb.com",
+      "subject": "Sunday Student Spotlight"
     },
     {
-      "sender": "noreply@auth.ace.ai",
-      "subject": "Welcome to Ace!"
+      "sender": "credit-card-offers@email.capitalone.com",
+      "subject": "Rogelio, your status may have changed--see if you're guaranteed to be approved"
     },
     {
-      "sender": "noreply@auth.ace.ai",
-      "subject": "Welcome to Ace!"
+      "sender": "support@zendrop.com",
+      "subject": "\ud83c\udfac Day 1 replay is live \u2014 Day 2 starts tomorrow"
     },
     {
-      "sender": "noreply@auth.ace.ai",
-      "subject": "Welcome to Ace!"
-    },
-    {
-      "sender": "noreply@joyflowpulse735.com",
-      "subject": "Ro\ufeffgeralburo, 5\ufeff0% O\ufeffff + 2 Mo\ufeffnths Fre\ufeffe St\ufeffarts N\ufeffow"
-    },
-    {
-      "sender": "phil@momshouse.com",
-      "subject": "$30 trillion is sitting in American homes right now"
-    },
-    {
-      "sender": "bryce.paul@crypto101podcast.com",
-      "subject": "8 hours left (freedom coin trades under $1)"
-    },
-    {
-      "sender": "noreply@tm.openai.com",
-      "subject": "Your temporary OpenAI login code"
+      "sender": "notifications@bookbolt.io",
+      "subject": "\ud83d\udd25 Book Bolt Lifetime is Back - Save $100 Before It's Gone"
     },
     {
       "sender": "info@supliful.com",
@@ -794,7 +838,7 @@
     },
     {
       "sender": "no-reply@email.sears.com",
-      "subject": "Don\u2019t miss out! Final day to save an extra 10% on tools & more, plus up to 30% off top Samsung electronics"
+      "subject": "Make your yard the envy of the neighborhood! \ud83c\udf33\ud83e\udeb4 Save up to 40% on outdoor essentials today!"
     },
     {
       "sender": "no-reply@mail.coinbase.com",
@@ -802,11 +846,11 @@
     },
     {
       "sender": "phil@momshouse.com",
-      "subject": "$30 trillion is sitting in American homes right now"
+      "subject": "Did you see this?"
     },
     {
       "sender": "bryce.paul@crypto101podcast.com",
-      "subject": "8 hours left (freedom coin trades under $1)"
+      "subject": "Last Chance: Our #1 Altcoin For Right Now"
     },
     {
       "sender": "patricia@zendrop.com",
@@ -818,7 +862,7 @@
     },
     {
       "sender": "selbdfgstschmjgjierehjigensch@medicusdualhingedriver.com",
-      "subject": "Monitoring Kit \u2013 Claim from UnitedHealthcare"
+      "subject": "Debt relief with program payments that fit your budget."
     },
     {
       "sender": "noreply@cjdropship.com",
@@ -826,7 +870,7 @@
     },
     {
       "sender": "newsletter@financebucketgain.com",
-      "subject": "Federal Tax Settlements"
+      "subject": "Pay off your cre\u034f\u034fd\u034f\u034fi\u034ft card"
     },
     {
       "sender": "info@zenflowvera329.com",
@@ -850,7 +894,7 @@
     },
     {
       "sender": "phil@momshouse.com",
-      "subject": "$30 trillion is sitting in American homes right now"
+      "subject": "Did you see this?"
     },
     {
       "sender": "shaun@success.10xbnb.com",
@@ -861,48 +905,52 @@
       "subject": "Just In: Harley-Davidson at up to 70% off"
     },
     {
+      "sender": "noreply@joyflowpulse735.com",
+      "subject": "Ro\ufeffgeralburo, 5\ufeff0% O\ufeffff + 2 Mo\ufeffnths Fre\ufeffe St\ufeffarts N\ufeffow"
+    },
+    {
+      "sender": "shaun@success.10xbnb.com",
+      "subject": "Sunday Student Spotlight"
+    },
+    {
+      "sender": "hello@paperbell.com",
+      "subject": "1\ufe0f\u20e3 your new coaching site is ready"
+    },
+    {
+      "sender": "hello@paperbell.com",
+      "subject": "1\ufe0f\u20e3 your new coaching site is ready"
+    },
+    {
       "sender": "email@email.shopify.com",
       "subject": "Save tons of time by automating your sales funnel"
-    },
-    {
-      "sender": "d89aa@fastjoycool275.com",
-      "subject": "Rogeralb\u061curo, Unlo\u061cck Loan\u061cs Desi\u061cgned t\u061co Sa\u061cve Yo\u061cu Ti\u061cme an\u061cd Mone\u061cy"
-    },
-    {
-      "sender": "contact@glowkindfun353.com",
-      "subject": "Ro\u2068geralburo, Kn\u2068ow Thes\u2068e Rule\u2068s Be\u2068fore Mo\u2068ving Yo\u2068ur Re\u2068tirement Sa\u2068vings"
-    },
-    {
-      "sender": "support@northwestregisteredagent.com",
-      "subject": "Lasy LLC - Action required to complete  EIN \u2013 Tax ID Number"
-    },
-    {
-      "sender": "camerondunlap@realestatewealthnetwork.com",
-      "subject": "The rehab number was wrong by $30K"
-    },
-    {
-      "sender": "help@umzu.com",
-      "subject": "Don't Miss Our Extended Sale ! \ud83c\udf89"
-    },
-    {
-      "sender": "optimum@mail.optimumemail1.com",
-      "subject": "BOOM! Our July 4th offer is still crackling"
     },
     {
       "sender": "support@cherringtonmedia.com",
       "subject": "Work You Already Know"
     },
     {
-      "sender": "newsletter@financebucketgain.com",
-      "subject": "Federal Tax Settlements"
+      "sender": "hello@paperbell.com",
+      "subject": "1\ufe0f\u20e3 your new coaching site is ready"
     },
     {
-      "sender": "dylan@dropservicing.com",
-      "subject": "How Fast Can You Get Sales With Drop Servicing?"
+      "sender": "sofi@m.sofi.org",
+      "subject": "More ways to invest with IRA options trading."
     },
     {
-      "sender": "support@zendrop.com",
-      "subject": "\u23f0 We're live in 1 hour \u2014 here's your link"
+      "sender": "n1nldc1c@strongjoypath300.com",
+      "subject": "\u206c\u206cA\u206cre\u2009Y\u206cou\u2009A\u2009Homeo\u206cwner\u2009t\u206chat\u2009n\u206ceeds\u2009n\u206cew\u2009windo\u206cws?"
+    },
+    {
+      "sender": "contact@glowkindfun353.com",
+      "subject": "Ro\u2068geralburo, Kn\u2068ow Thes\u2068e Rule\u2068s Be\u2068fore Mo\u2068ving Yo\u2068ur Re\u2068tirement Sa\u2068vings"
+    },
+    {
+      "sender": "gallantpays@gallantluxuryservice.com",
+      "subject": "Gallant Luxury Service - Invoice from 07/02/2026 to 07/05/2026"
+    },
+    {
+      "sender": "noreply@offers.creditonebank.com",
+      "subject": "Congrats Rogelio! We\u2019re rewarding you with a new account offer"
     },
     {
       "sender": "camerondunlap@realestatewealthnetwork.com",
@@ -954,15 +1002,15 @@
     },
     {
       "sender": "n1nldc1c@strongjoypath300.com",
-      "subject": "\u206c\u206cP\u206cSST!\u206c!!!\u2009S\u206cave\u2009B\u206cig\u2009o\u206cn\u2009A\u206cuto\u2009Repai\u206crs\u2009w\u206cith\u2009T\u206chis\u2009Q\u206cuick\u2009Secre\u206ct"
+      "subject": "\u206c\u206cA\u206cre\u2009Y\u206cou\u2009A\u2009Homeo\u206cwner\u2009t\u206chat\u2009n\u206ceeds\u2009n\u206cew\u2009windo\u206cws?"
     },
     {
       "sender": "support@zendrop.com",
-      "subject": "\u23f0 We're live in 1 hour \u2014 here's your link"
+      "subject": "\ud83c\udfac Day 1 replay is live \u2014 Day 2 starts tomorrow"
     },
     {
       "sender": "bryce.paul@crypto101podcast.com",
-      "subject": "8 hours left (freedom coin trades under $1)"
+      "subject": "Last Chance: Our #1 Altcoin For Right Now"
     },
     {
       "sender": "d89aa@fastjoycool275.com",
@@ -993,44 +1041,48 @@
       "subject": "Rogeralb\u061curo, Unlo\u061cck Loan\u061cs Desi\u061cgned t\u061co Sa\u061cve Yo\u061cu Ti\u061cme an\u061cd Mone\u061cy"
     },
     {
-      "sender": "no-reply@zoom.us",
-      "subject": "Reminder: Wealth Webinar Wednesdays With Chris Naugle  starts in 1 day"
-    },
-    {
-      "sender": "help@umzu.com",
-      "subject": "Don't Miss Our Extended Sale ! \ud83c\udf89"
-    },
-    {
-      "sender": "awesomely@mail.beehiiv.com",
-      "subject": "BAD NEWS (your link won\u2019t last)"
-    },
-    {
-      "sender": "contact@glowkindfun353.com",
-      "subject": "Ro\u2068geralburo, Kn\u2068ow Thes\u2068e Rule\u2068s Be\u2068fore Mo\u2068ving Yo\u2068ur Re\u2068tirement Sa\u2068vings"
-    },
-    {
       "sender": "sofi@m.sofi.org",
       "subject": "More ways to invest with IRA options trading."
     },
     {
-      "sender": "shaun@success.10xbnb.com",
-      "subject": "Sunday Student Spotlight"
+      "sender": "noreply@novajoypulse775.com",
+      "subject": "Rog\u200eeralburo, Kno\u200ew The\u200ese Rul\u200ees Bef\u200eore Mov\u200eing You\u200er Ret\u200eirement Sav\u200eings"
     },
     {
-      "sender": "credit-card-offers@email.capitalone.com",
-      "subject": "Rogelio, your status may have changed--see if you're guaranteed to be approved"
+      "sender": "jvzoopotd@jvzoo.com",
+      "subject": "No tap link = no tap pay"
     },
     {
       "sender": "support@zendrop.com",
-      "subject": "\u23f0 We're live in 1 hour \u2014 here's your link"
+      "subject": "\ud83c\udfac Day 1 replay is live \u2014 Day 2 starts tomorrow"
     },
     {
-      "sender": "pcrichard@e.pcrichard.com",
-      "subject": "Watch every goal in stunning detail on a new Samsung TV!"
+      "sender": "no-reply@email.sears.com",
+      "subject": "Make your yard the envy of the neighborhood! \ud83c\udf33\ud83e\udeb4 Save up to 40% on outdoor essentials today!"
     },
     {
-      "sender": "notifications@bookbolt.io",
-      "subject": "\ud83d\udd25 Book Bolt Lifetime is Back - Save $100 Before It's Gone"
+      "sender": "phil@momshouse.com",
+      "subject": "Did you see this?"
+    },
+    {
+      "sender": "bryce.paul@crypto101podcast.com",
+      "subject": "Last Chance: Our #1 Altcoin For Right Now"
+    },
+    {
+      "sender": "uber@uber.com",
+      "subject": "Up to 60% off your first 2 orders."
+    },
+    {
+      "sender": "contact@zenflowquest219.com",
+      "subject": "\udb43\udd21\udb43\udd21We\u2007give\u2007a\u2007\udb43\udd212n\udb43\udd21d\u2007chance\u2007at\u2007cr\udb43\udd21edit.\udb43\udd21\u2007Cr\udb43\udd21edit\u2007car\udb43\udd21d\u2007o\udb43\udd21ffer\u2007inside!"
+    },
+    {
+      "sender": "support@powmr.com",
+      "subject": "\ud83d\udee0\ufe0f DIY Tutorial: Step-by-Step Guide to Building a High-Performance LiFePO4 Battery Pack!"
+    },
+    {
+      "sender": "e.dcsg@financecreditloompro.com",
+      "subject": "Confirmation Receipt"
     },
     {
       "sender": "email@email.shopify.com",
@@ -1054,7 +1106,7 @@
     },
     {
       "sender": "prillingalgedonickennelled@nodepblog.com",
-      "subject": "Take a Moment for This Survey"
+      "subject": "Redeem your special reward before it expires"
     },
     {
       "sender": "asflybackringssnailsmout@cooklet.cookingsubscribe.com",
@@ -1074,7 +1126,7 @@
     },
     {
       "sender": "n1nldc1c@strongjoypath300.com",
-      "subject": "\u206c\u206cP\u206cSST!\u206c!!!\u2009S\u206cave\u2009B\u206cig\u2009o\u206cn\u2009A\u206cuto\u2009Repai\u206crs\u2009w\u206cith\u2009T\u206chis\u2009Q\u206cuick\u2009Secre\u206ct"
+      "subject": "\u206c\u206cA\u206cre\u2009Y\u206cou\u2009A\u2009Homeo\u206cwner\u2009t\u206chat\u2009n\u206ceeds\u2009n\u206cew\u2009windo\u206cws?"
     },
     {
       "sender": "a25wqarb@serenjoypulse218.com",
@@ -1090,7 +1142,7 @@
     },
     {
       "sender": "phil@momshouse.com",
-      "subject": "$30 trillion is sitting in American homes right now"
+      "subject": "Did you see this?"
     },
     {
       "sender": "support@serenova71.com",
@@ -1098,7 +1150,7 @@
     },
     {
       "sender": "hello@paperbell.com",
-      "subject": "qq"
+      "subject": "1\ufe0f\u20e3 your new coaching site is ready"
     },
     {
       "sender": "info@brivonexaflow130.com",
@@ -1115,298 +1167,6 @@
     {
       "sender": "hello@mail.faire.com",
       "subject": "Rogelio, your welcome offer is extended"
-    },
-    {
-      "sender": "noreply@joyflowpulse735.com",
-      "subject": "Ro\ufeffgeralburo, 5\ufeff0% O\ufeffff + 2 Mo\ufeffnths Fre\ufeffe St\ufeffarts N\ufeffow"
-    },
-    {
-      "sender": "shaun@success.10xbnb.com",
-      "subject": "Sunday Student Spotlight"
-    },
-    {
-      "sender": "hello@paperbell.com",
-      "subject": "qq"
-    },
-    {
-      "sender": "hello@paperbell.com",
-      "subject": "qq"
-    },
-    {
-      "sender": "email@email.shopify.com",
-      "subject": "Save tons of time by automating your sales funnel"
-    },
-    {
-      "sender": "support@cherringtonmedia.com",
-      "subject": "Work You Already Know"
-    },
-    {
-      "sender": "hello@paperbell.com",
-      "subject": "qq"
-    },
-    {
-      "sender": "sofi@m.sofi.org",
-      "subject": "More ways to invest with IRA options trading."
-    },
-    {
-      "sender": "n1nldc1c@strongjoypath300.com",
-      "subject": "\u206c\u206cP\u206cSST!\u206c!!!\u2009S\u206cave\u2009B\u206cig\u2009o\u206cn\u2009A\u206cuto\u2009Repai\u206crs\u2009w\u206cith\u2009T\u206chis\u2009Q\u206cuick\u2009Secre\u206ct"
-    },
-    {
-      "sender": "contact@glowkindfun353.com",
-      "subject": "Ro\u2068geralburo, Kn\u2068ow Thes\u2068e Rule\u2068s Be\u2068fore Mo\u2068ving Yo\u2068ur Re\u2068tirement Sa\u2068vings"
-    },
-    {
-      "sender": "gallantpays@gallantluxuryservice.com",
-      "subject": "Gallant Luxury Service - Invoice from 07/02/2026 to 07/05/2026"
-    },
-    {
-      "sender": "noreply@offers.creditonebank.com",
-      "subject": "Congrats Rogelio! We\u2019re rewarding you with a new account offer"
-    },
-    {
-      "sender": "n1nldc1c@strongjoypath300.com",
-      "subject": "\u206c\u206cP\u206cSST!\u206c!!!\u2009S\u206cave\u2009B\u206cig\u2009o\u206cn\u2009A\u206cuto\u2009Repai\u206crs\u2009w\u206cith\u2009T\u206chis\u2009Q\u206cuick\u2009Secre\u206ct"
-    },
-    {
-      "sender": "contact@glowkindfun353.com",
-      "subject": "Ro\u2068geralburo, Kn\u2068ow Thes\u2068e Rule\u2068s Be\u2068fore Mo\u2068ving Yo\u2068ur Re\u2068tirement Sa\u2068vings"
-    },
-    {
-      "sender": "partners@7figures.com",
-      "subject": "zero overhead?!"
-    },
-    {
-      "sender": "noreply@emails.creditonebank.com",
-      "subject": "Your July Credit One Bank Statement is Now Available"
-    },
-    {
-      "sender": "support@zendrop.com",
-      "subject": "\u23f0 We're live in 1 hour \u2014 here's your link"
-    },
-    {
-      "sender": "bryce.paul@crypto101podcast.com",
-      "subject": "8 hours left (freedom coin trades under $1)"
-    },
-    {
-      "sender": "care@reliablemoneyplan.info",
-      "subject": "Reverse Mortgage Information for You"
-    },
-    {
-      "sender": "contact@strongwisejoy56.com",
-      "subject": "Rogeral\u200fburo, Fas\u200ft App\u200froval fo\u200fr Den\u200ftal Imp\u200flant Financin\u200fg"
-    },
-    {
-      "sender": "notice@servicing.synchronyfinancial.com",
-      "subject": "ROGELIO \u2013 Reminder for your PayPal Mastercard\u00ae account"
-    },
-    {
-      "sender": "dave@appbreedexchange.com",
-      "subject": "$20 a month, $200 a month, or pennies a day. Pick one."
-    },
-    {
-      "sender": "help@driversguild.org",
-      "subject": "How WHLP Helped Other Drivers \u2014 And Can Help You"
-    },
-    {
-      "sender": "awesomely@mail.beehiiv.com",
-      "subject": "BAD NEWS (your link won\u2019t last)"
-    },
-    {
-      "sender": "support@email.credible.com",
-      "subject": "Rogelio, your low-interest personal loan for $12,366 could be a few clicks away"
-    },
-    {
-      "sender": "contact@glowkindfun353.com",
-      "subject": "Ro\u2068geralburo, Kn\u2068ow Thes\u2068e Rule\u2068s Be\u2068fore Mo\u2068ving Yo\u2068ur Re\u2068tirement Sa\u2068vings"
-    },
-    {
-      "sender": "newsletter@financebucketgain.com",
-      "subject": "Federal Tax Settlements"
-    },
-    {
-      "sender": "sofi@m.sofi.org",
-      "subject": "More ways to invest with IRA options trading."
-    },
-    {
-      "sender": "support@serenova71.com",
-      "subject": "Po\u200dor Cred\u200dit? Th\u200dis Ma\u200dy B\u200de Th\u200de Master\u200dcard Fo\u200dr Yo\u200du\u2026"
-    },
-    {
-      "sender": "sofi@m.sofi.org",
-      "subject": "More ways to invest with IRA options trading."
-    },
-    {
-      "sender": "sofi@m.sofi.org",
-      "subject": "More ways to invest with IRA options trading."
-    },
-    {
-      "sender": "shaun@success.10xbnb.com",
-      "subject": "Sunday Student Spotlight"
-    },
-    {
-      "sender": "support@designrr.io",
-      "subject": "the offer is expiring, Rogelio"
-    },
-    {
-      "sender": "no-reply@zoom.us",
-      "subject": "Reminder: Wealth Webinar Wednesdays With Chris Naugle  starts in 1 day"
-    },
-    {
-      "sender": "support@shopadvisor.info",
-      "subject": "'You qualified. \"Don\u2019t miss this.\""
-    },
-    {
-      "sender": "support@cherringtonmedia.com",
-      "subject": "Work You Already Know"
-    },
-    {
-      "sender": "sofi@m.sofi.org",
-      "subject": "More ways to invest with IRA options trading."
-    },
-    {
-      "sender": "sofi@m.sofi.org",
-      "subject": "More ways to invest with IRA options trading."
-    },
-    {
-      "sender": "noreply@novajoypulse775.com",
-      "subject": "Rog\u200eeralburo, Kno\u200ew The\u200ese Rul\u200ees Bef\u200eore Mov\u200eing You\u200er Ret\u200eirement Sav\u200eings"
-    },
-    {
-      "sender": "jvzoopotd@jvzoo.com",
-      "subject": "No tap link = no tap pay"
-    },
-    {
-      "sender": "support@zendrop.com",
-      "subject": "\u23f0 We're live in 1 hour \u2014 here's your link"
-    },
-    {
-      "sender": "no-reply@email.sears.com",
-      "subject": "Don\u2019t miss out! Final day to save an extra 10% on tools & more, plus up to 30% off top Samsung electronics"
-    },
-    {
-      "sender": "phil@momshouse.com",
-      "subject": "$30 trillion is sitting in American homes right now"
-    },
-    {
-      "sender": "bryce.paul@crypto101podcast.com",
-      "subject": "8 hours left (freedom coin trades under $1)"
-    },
-    {
-      "sender": "uber@uber.com",
-      "subject": "Up to 60% off your first 2 orders."
-    },
-    {
-      "sender": "contact@zenflowquest219.com",
-      "subject": "\udb43\udd21\udb43\udd21We\u2007give\u2007a\u2007\udb43\udd212n\udb43\udd21d\u2007chance\u2007at\u2007cr\udb43\udd21edit.\udb43\udd21\u2007Cr\udb43\udd21edit\u2007car\udb43\udd21d\u2007o\udb43\udd21ffer\u2007inside!"
-    },
-    {
-      "sender": "support@powmr.com",
-      "subject": "\ud83d\udee0\ufe0f DIY Tutorial: Step-by-Step Guide to Building a High-Performance LiFePO4 Battery Pack!"
-    },
-    {
-      "sender": "e.dcsg@financecreditloompro.com",
-      "subject": "Confirmation Receipt"
-    },
-    {
-      "sender": "info@members.netflix.com",
-      "subject": "This is your kind of sci-fi"
-    },
-    {
-      "sender": "noreply@joyflowpulse735.com",
-      "subject": "Ro\ufeffgeralburo, 5\ufeff0% O\ufeffff + 2 Mo\ufeffnths Fre\ufeffe St\ufeffarts N\ufeffow"
-    },
-    {
-      "sender": "selbdfgstschmjgjierehjigensch@medicusdualhingedriver.com",
-      "subject": "Monitoring Kit \u2013 Claim from UnitedHealthcare"
-    },
-    {
-      "sender": "contact@bcac4p.com",
-      "subject": "Rogeralbu\udb41\udc45ro, Summer Safe\udb41\udc45ty E\udb41\udc45ssentials for Your Ho\udb41\udc45me"
-    },
-    {
-      "sender": "updates-en@newsletter.printful.com",
-      "subject": "Build a store that customers believe in"
-    },
-    {
-      "sender": "hello@mail.faire.com",
-      "subject": "Rogelio, your welcome offer is extended"
-    },
-    {
-      "sender": "support@brightflowpulse759.com",
-      "subject": "Rogeralbur\udb40\udd07o, Summe\udb40\udd07r I\udb40\udd07s H\udb40\udd07ere! K\udb40\udd07eep E\udb40\udd07yes o\udb40\udd07n Y\udb40\udd07our H\udb40\udd07ome, Anywh\udb40\udd07ere"
-    },
-    {
-      "sender": "d89aa@fastjoycool275.com",
-      "subject": "Rogeralb\u061curo, Unlo\u061cck Loan\u061cs Desi\u061cgned t\u061co Sa\u061cve Yo\u061cu Ti\u061cme an\u061cd Mone\u061cy"
-    },
-    {
-      "sender": "sofi@m.sofi.org",
-      "subject": "More ways to invest with IRA options trading."
-    },
-    {
-      "sender": "contact@glowquestform584.com",
-      "subject": "Roger\u200balburo, Effor\u200btless F\u200bat Reduc\u200btion w\u200bith CoolS\u200bculpting b\u200by Laser\u200bAway"
-    },
-    {
-      "sender": "phil@momshouse.com",
-      "subject": "$30 trillion is sitting in American homes right now"
-    },
-    {
-      "sender": "hello@paperbell.com",
-      "subject": "qq"
-    },
-    {
-      "sender": "support@serenova71.com",
-      "subject": "Po\u200dor Cred\u200dit? Th\u200dis Ma\u200dy B\u200de Th\u200de Master\u200dcard Fo\u200dr Yo\u200du\u2026"
-    },
-    {
-      "sender": "d89aa@fastjoycool275.com",
-      "subject": "Rogeralb\u061curo, Unlo\u061cck Loan\u061cs Desi\u061cgned t\u061co Sa\u061cve Yo\u061cu Ti\u061cme an\u061cd Mone\u061cy"
-    },
-    {
-      "sender": "jvzoopotd@jvzoo.com",
-      "subject": "No tap link = no tap pay"
-    },
-    {
-      "sender": "support@cherringtonmedia.com",
-      "subject": "Work You Already Know"
-    },
-    {
-      "sender": "info@brivonexaflow130.com",
-      "subject": "PS\udb41\udc45ST!!\udb41\udc45!! Sa\udb41\udc45ve Bi\udb41\udc45g o\udb41\udc45n Au\udb41\udc45to Repair\udb41\udc45s wi\udb41\udc45th Th\udb41\udc45is Qu\udb41\udc45ick Secr\udb41\udc45et"
-    },
-    {
-      "sender": "contact@bcac4p.com",
-      "subject": "Rogeralbu\udb41\udc45ro, Summer Safe\udb41\udc45ty E\udb41\udc45ssentials for Your Ho\udb41\udc45me"
-    },
-    {
-      "sender": "d89aa@fastjoycool275.com",
-      "subject": "Rogeralb\u061curo, Unlo\u061cck Loan\u061cs Desi\u061cgned t\u061co Sa\u061cve Yo\u061cu Ti\u061cme an\u061cd Mone\u061cy"
-    },
-    {
-      "sender": "shaun@success.10xbnb.com",
-      "subject": "Sunday Student Spotlight"
-    },
-    {
-      "sender": "support@elegantnestplan.com",
-      "subject": "No Payments for a Year* \u2013 Replace Your Windows Now!"
-    },
-    {
-      "sender": "email@email.shopify.com",
-      "subject": "Save tons of time by automating your sales funnel"
-    },
-    {
-      "sender": "optimum@mail.optimumemail1.com",
-      "subject": "BOOM! Our July 4th offer is still crackling"
-    },
-    {
-      "sender": "n1nldc1c@strongjoypath300.com",
-      "subject": "\u206c\u206cP\u206cSST!\u206c!!!\u2009S\u206cave\u2009B\u206cig\u2009o\u206cn\u2009A\u206cuto\u2009Repai\u206crs\u2009w\u206cith\u2009T\u206chis\u2009Q\u206cuick\u2009Secre\u206ct"
-    },
-    {
-      "sender": "camerondunlap@realestatewealthnetwork.com",
-      "subject": "The rehab number was wrong by $30K"
     },
     {
       "sender": "members@cbdriver.com",
@@ -1453,60 +1213,80 @@
       "subject": "More ways to invest with IRA options trading."
     },
     {
-      "sender": "gallantpays@gallantluxuryservice.com",
-      "subject": "Gallant Luxury Service - Invoice from 07/02/2026 to 07/05/2026"
-    },
-    {
-      "sender": "noreply@offers.creditonebank.com",
-      "subject": "Congrats Rogelio! We\u2019re rewarding you with a new account offer"
-    },
-    {
-      "sender": "support@zendrop.com",
-      "subject": "\u23f0 We're live in 1 hour \u2014 here's your link"
+      "sender": "n1nldc1c@strongjoypath300.com",
+      "subject": "\u206c\u206cA\u206cre\u2009Y\u206cou\u2009A\u2009Homeo\u206cwner\u2009t\u206chat\u2009n\u206ceeds\u2009n\u206cew\u2009windo\u206cws?"
     },
     {
       "sender": "contact@glowkindfun353.com",
       "subject": "Ro\u2068geralburo, Kn\u2068ow Thes\u2068e Rule\u2068s Be\u2068fore Mo\u2068ving Yo\u2068ur Re\u2068tirement Sa\u2068vings"
     },
     {
-      "sender": "d89aa@fastjoycool275.com",
-      "subject": "Rogeralb\u061curo, Unlo\u061cck Loan\u061cs Desi\u061cgned t\u061co Sa\u061cve Yo\u061cu Ti\u061cme an\u061cd Mone\u061cy"
+      "sender": "partners@7figures.com",
+      "subject": "zero overhead?!"
     },
     {
-      "sender": "info@supliful.com",
-      "subject": "\ud83e\udd41 Two NEW performance whey protein blends just landed!"
+      "sender": "noreply@emails.creditonebank.com",
+      "subject": "Your July Credit One Bank Statement is Now Available"
+    },
+    {
+      "sender": "support@zendrop.com",
+      "subject": "\ud83c\udfac Day 1 replay is live \u2014 Day 2 starts tomorrow"
     },
     {
       "sender": "bryce.paul@crypto101podcast.com",
-      "subject": "8 hours left (freedom coin trades under $1)"
+      "subject": "Last Chance: Our #1 Altcoin For Right Now"
     },
     {
-      "sender": "info@7figures.com",
-      "subject": "STARTS IN 30 MINS! Socialism vs. Capitalism: The Real Data Behind the Debate (Episode 1) Live at 3:30 PM ET"
+      "sender": "care@reliablemoneyplan.info",
+      "subject": "Reverse Mortgage Information for You"
     },
     {
       "sender": "contact@strongwisejoy56.com",
       "subject": "Rogeral\u200fburo, Fas\u200ft App\u200froval fo\u200fr Den\u200ftal Imp\u200flant Financin\u200fg"
     },
     {
-      "sender": "no-reply@zoom.us",
-      "subject": "Reminder: Wealth Webinar Wednesdays With Chris Naugle  starts in 1 day"
+      "sender": "notice@servicing.synchronyfinancial.com",
+      "subject": "ROGELIO \u2013 Reminder for your PayPal Mastercard\u00ae account"
     },
     {
-      "sender": "info@7figures.com",
-      "subject": "STARTS IN 30 MINS! Socialism vs. Capitalism: The Real Data Behind the Debate (Episode 1) Live at 3:30 PM ET"
+      "sender": "dave@appbreedexchange.com",
+      "subject": "$20 a month, $200 a month, or pennies a day. Pick one."
     },
     {
-      "sender": "phil@momshouse.com",
-      "subject": "$30 trillion is sitting in American homes right now"
+      "sender": "help@driversguild.org",
+      "subject": "How WHLP Helped Other Drivers \u2014 And Can Help You"
     },
     {
-      "sender": "jvzoopotd@jvzoo.com",
-      "subject": "No tap link = no tap pay"
+      "sender": "awesomely@mail.beehiiv.com",
+      "subject": "BAD NEWS (your link won\u2019t last)"
+    },
+    {
+      "sender": "support@email.credible.com",
+      "subject": "Rogelio, your low-interest personal loan for $12,366 could be a few clicks away"
     },
     {
       "sender": "contact@glowkindfun353.com",
       "subject": "Ro\u2068geralburo, Kn\u2068ow Thes\u2068e Rule\u2068s Be\u2068fore Mo\u2068ving Yo\u2068ur Re\u2068tirement Sa\u2068vings"
+    },
+    {
+      "sender": "newsletter@financebucketgain.com",
+      "subject": "Pay off your cre\u034f\u034fd\u034f\u034fi\u034ft card"
+    },
+    {
+      "sender": "sofi@m.sofi.org",
+      "subject": "More ways to invest with IRA options trading."
+    },
+    {
+      "sender": "support@serenova71.com",
+      "subject": "Po\u200dor Cred\u200dit? Th\u200dis Ma\u200dy B\u200de Th\u200de Master\u200dcard Fo\u200dr Yo\u200du\u2026"
+    },
+    {
+      "sender": "sofi@m.sofi.org",
+      "subject": "More ways to invest with IRA options trading."
+    },
+    {
+      "sender": "sofi@m.sofi.org",
+      "subject": "More ways to invest with IRA options trading."
     },
     {
       "sender": "shaun@success.10xbnb.com",
@@ -1517,36 +1297,28 @@
       "subject": "the offer is expiring, Rogelio"
     },
     {
-      "sender": "awesomely@mail.beehiiv.com",
-      "subject": "BAD NEWS (your link won\u2019t last)"
+      "sender": "no-reply@zoom.us",
+      "subject": "Reminder: Wealth Webinar Wednesdays With Chris Naugle  starts in 1 day"
     },
     {
-      "sender": "support@zendrop.com",
-      "subject": "\u23f0 We're live in 1 hour \u2014 here's your link"
-    },
-    {
-      "sender": "camerondunlap@realestatewealthnetwork.com",
-      "subject": "The rehab number was wrong by $30K"
+      "sender": "support@shopadvisor.info",
+      "subject": "'You qualified. \"Don\u2019t miss this.\""
     },
     {
       "sender": "support@cherringtonmedia.com",
       "subject": "Work You Already Know"
     },
     {
-      "sender": "pcrichard@e.pcrichard.com",
-      "subject": "Watch every goal in stunning detail on a new Samsung TV!"
-    },
-    {
-      "sender": "no-reply@email.sears.com",
-      "subject": "Don\u2019t miss out! Final day to save an extra 10% on tools & more, plus up to 30% off top Samsung electronics"
+      "sender": "sofi@m.sofi.org",
+      "subject": "More ways to invest with IRA options trading."
     },
     {
       "sender": "phil@momshouse.com",
-      "subject": "$30 trillion is sitting in American homes right now"
+      "subject": "Did you see this?"
     },
     {
       "sender": "bryce.paul@crypto101podcast.com",
-      "subject": "8 hours left (freedom coin trades under $1)"
+      "subject": "Last Chance: Our #1 Altcoin For Right Now"
     },
     {
       "sender": "patricia@zendrop.com",
@@ -1577,100 +1349,104 @@
       "subject": "PS\udb41\udc45ST!!\udb41\udc45!! Sa\udb41\udc45ve Bi\udb41\udc45g o\udb41\udc45n Au\udb41\udc45to Repair\udb41\udc45s wi\udb41\udc45th Th\udb41\udc45is Qu\udb41\udc45ick Secr\udb41\udc45et"
     },
     {
-      "sender": "frommersnews@frommermedia.com",
-      "subject": "California Dreamin\u2019: Golden State Parks, Wineries, and Family Fun"
+      "sender": "info@members.netflix.com",
+      "subject": "This is your kind of sci-fi"
     },
     {
-      "sender": "asflybackringssnailsmout@cooklet.cookingsubscribe.com",
-      "subject": "Tom Cruise\u2019s secret for staying hard"
-    },
-    {
-      "sender": "noreply@emails.creditonebank.com",
-      "subject": "Your July Credit One Bank Statement is Now Available"
-    },
-    {
-      "sender": "noreply@emails.creditonebank.com",
-      "subject": "Your July Credit One Bank Statement is Now Available"
-    },
-    {
-      "sender": "noreply@emails.creditonebank.com",
-      "subject": "Your July Credit One Bank Statement is Now Available"
-    },
-    {
-      "sender": "noreply@glowjoycool186.com",
-      "subject": "Rogeral\udb41\udd88buro, A\udb41\udd88DT Pla\udb41\udd88ns Tailore\udb41\udd88d f\udb41\udd88or Y\udb41\udd88ou"
-    },
-    {
-      "sender": "hello@team.emergent.sh",
-      "subject": "You have 10 free credits left"
+      "sender": "noreply@joyflowpulse735.com",
+      "subject": "Ro\ufeffgeralburo, 5\ufeff0% O\ufeffff + 2 Mo\ufeffnths Fre\ufeffe St\ufeffarts N\ufeffow"
     },
     {
       "sender": "selbdfgstschmjgjierehjigensch@medicusdualhingedriver.com",
-      "subject": "Monitoring Kit \u2013 Claim from UnitedHealthcare"
-    },
-    {
-      "sender": "support@brightflowpulse759.com",
-      "subject": "Rogeralbur\udb40\udd07o, Summe\udb40\udd07r I\udb40\udd07s H\udb40\udd07ere! K\udb40\udd07eep E\udb40\udd07yes o\udb40\udd07n Y\udb40\udd07our H\udb40\udd07ome, Anywh\udb40\udd07ere"
-    },
-    {
-      "sender": "hello@team.emergent.sh",
-      "subject": "You have 10 free credits left"
-    },
-    {
-      "sender": "randomlovefew@write.eyepaperpin.com",
-      "subject": "Build Your Own Pancake Snack Board for Breakfast"
-    },
-    {
-      "sender": "a25wqarb@serenjoypulse218.com",
-      "subject": "Roge\udb42\udd38ralburo, Pl\udb42\udd38an Ahead: Term Li\udb42\udd38fe Insuran\udb42\udd38ce Made Simple"
-    },
-    {
-      "sender": "email@email.shopify.com",
-      "subject": "Save tons of time by automating your sales funnel"
-    },
-    {
-      "sender": "updates-en@newsletter.printful.com",
-      "subject": "Build a store that customers believe in"
-    },
-    {
-      "sender": "n1nldc1c@strongjoypath300.com",
-      "subject": "\u206c\u206cP\u206cSST!\u206c!!!\u2009S\u206cave\u2009B\u206cig\u2009o\u206cn\u2009A\u206cuto\u2009Repai\u206crs\u2009w\u206cith\u2009T\u206chis\u2009Q\u206cuick\u2009Secre\u206ct"
-    },
-    {
-      "sender": "noreply@glowjoycool186.com",
-      "subject": "Rogeral\udb41\udd88buro, A\udb41\udd88DT Pla\udb41\udd88ns Tailore\udb41\udd88d f\udb41\udd88or Y\udb41\udd88ou"
-    },
-    {
-      "sender": "support@serenova71.com",
-      "subject": "Po\u200dor Cred\u200dit? Th\u200dis Ma\u200dy B\u200de Th\u200de Master\u200dcard Fo\u200dr Yo\u200du\u2026"
-    },
-    {
-      "sender": "bryce.paul@crypto101podcast.com",
-      "subject": "8 hours left (freedom coin trades under $1)"
-    },
-    {
-      "sender": "hello@paperbell.com",
-      "subject": "qq"
-    },
-    {
-      "sender": "notifications@bookbolt.io",
-      "subject": "\ud83d\udd25 Book Bolt Lifetime is Back - Save $100 Before It's Gone"
+      "subject": "Debt relief with program payments that fit your budget."
     },
     {
       "sender": "contact@bcac4p.com",
       "subject": "Rogeralbu\udb41\udc45ro, Summer Safe\udb41\udc45ty E\udb41\udc45ssentials for Your Ho\udb41\udc45me"
     },
     {
-      "sender": "shaun@success.10xbnb.com",
-      "subject": "Sunday Student Spotlight"
+      "sender": "updates-en@newsletter.printful.com",
+      "subject": "Build a store that customers believe in"
     },
     {
-      "sender": "noreply@glowjoycool186.com",
-      "subject": "Rogeral\udb41\udd88buro, A\udb41\udd88DT Pla\udb41\udd88ns Tailore\udb41\udd88d f\udb41\udd88or Y\udb41\udd88ou"
+      "sender": "hello@mail.faire.com",
+      "subject": "Rogelio, your welcome offer is extended"
+    },
+    {
+      "sender": "support@brightflowpulse759.com",
+      "subject": "Rogeralbur\udb40\udd07o, Summe\udb40\udd07r I\udb40\udd07s H\udb40\udd07ere! K\udb40\udd07eep E\udb40\udd07yes o\udb40\udd07n Y\udb40\udd07our H\udb40\udd07ome, Anywh\udb40\udd07ere"
+    },
+    {
+      "sender": "d89aa@fastjoycool275.com",
+      "subject": "Rogeralb\u061curo, Unlo\u061cck Loan\u061cs Desi\u061cgned t\u061co Sa\u061cve Yo\u061cu Ti\u061cme an\u061cd Mone\u061cy"
+    },
+    {
+      "sender": "sofi@m.sofi.org",
+      "subject": "More ways to invest with IRA options trading."
+    },
+    {
+      "sender": "contact@glowquestform584.com",
+      "subject": "Roger\u200balburo, Effor\u200btless F\u200bat Reduc\u200btion w\u200bith CoolS\u200bculpting b\u200by Laser\u200bAway"
+    },
+    {
+      "sender": "phil@momshouse.com",
+      "subject": "Did you see this?"
+    },
+    {
+      "sender": "hello@paperbell.com",
+      "subject": "1\ufe0f\u20e3 your new coaching site is ready"
+    },
+    {
+      "sender": "support@serenova71.com",
+      "subject": "Po\u200dor Cred\u200dit? Th\u200dis Ma\u200dy B\u200de Th\u200de Master\u200dcard Fo\u200dr Yo\u200du\u2026"
+    },
+    {
+      "sender": "d89aa@fastjoycool275.com",
+      "subject": "Rogeralb\u061curo, Unlo\u061cck Loan\u061cs Desi\u061cgned t\u061co Sa\u061cve Yo\u061cu Ti\u061cme an\u061cd Mone\u061cy"
     },
     {
       "sender": "jvzoopotd@jvzoo.com",
       "subject": "No tap link = no tap pay"
+    },
+    {
+      "sender": "support@cherringtonmedia.com",
+      "subject": "Work You Already Know"
+    },
+    {
+      "sender": "info@brivonexaflow130.com",
+      "subject": "PS\udb41\udc45ST!!\udb41\udc45!! Sa\udb41\udc45ve Bi\udb41\udc45g o\udb41\udc45n Au\udb41\udc45to Repair\udb41\udc45s wi\udb41\udc45th Th\udb41\udc45is Qu\udb41\udc45ick Secr\udb41\udc45et"
+    },
+    {
+      "sender": "contact@bcac4p.com",
+      "subject": "Rogeralbu\udb41\udc45ro, Summer Safe\udb41\udc45ty E\udb41\udc45ssentials for Your Ho\udb41\udc45me"
+    },
+    {
+      "sender": "d89aa@fastjoycool275.com",
+      "subject": "Rogeralb\u061curo, Unlo\u061cck Loan\u061cs Desi\u061cgned t\u061co Sa\u061cve Yo\u061cu Ti\u061cme an\u061cd Mone\u061cy"
+    },
+    {
+      "sender": "shaun@success.10xbnb.com",
+      "subject": "Sunday Student Spotlight"
+    },
+    {
+      "sender": "support@elegantnestplan.com",
+      "subject": "No Payments for a Year* \u2013 Replace Your Windows Now!"
+    },
+    {
+      "sender": "email@email.shopify.com",
+      "subject": "Save tons of time by automating your sales funnel"
+    },
+    {
+      "sender": "optimum@mail.optimumemail1.com",
+      "subject": "Save $240/yr. when you leave Verizon"
+    },
+    {
+      "sender": "n1nldc1c@strongjoypath300.com",
+      "subject": "\u206c\u206cA\u206cre\u2009Y\u206cou\u2009A\u2009Homeo\u206cwner\u2009t\u206chat\u2009n\u206ceeds\u2009n\u206cew\u2009windo\u206cws?"
+    },
+    {
+      "sender": "camerondunlap@realestatewealthnetwork.com",
+      "subject": "The rehab number was wrong by $30K"
     },
     {
       "sender": "support@elegantnestplan.com",
@@ -1710,123 +1486,103 @@
     },
     {
       "sender": "info@7figures.com",
-      "subject": "STARTS IN 30 MINS! Socialism vs. Capitalism: The Real Data Behind the Debate (Episode 1) Live at 3:30 PM ET"
+      "subject": "Socialism vs. Capitalism: The Real Data Behind the Debate (Episode 1) REPLAY LINK"
     },
     {
       "sender": "n1nldc1c@strongjoypath300.com",
-      "subject": "\u206c\u206cP\u206cSST!\u206c!!!\u2009S\u206cave\u2009B\u206cig\u2009o\u206cn\u2009A\u206cuto\u2009Repai\u206crs\u2009w\u206cith\u2009T\u206chis\u2009Q\u206cuick\u2009Secre\u206ct"
+      "subject": "\u206c\u206cA\u206cre\u2009Y\u206cou\u2009A\u2009Homeo\u206cwner\u2009t\u206chat\u2009n\u206ceeds\u2009n\u206cew\u2009windo\u206cws?"
+    },
+    {
+      "sender": "gallantpays@gallantluxuryservice.com",
+      "subject": "Gallant Luxury Service - Invoice from 07/02/2026 to 07/05/2026"
+    },
+    {
+      "sender": "noreply@offers.creditonebank.com",
+      "subject": "Congrats Rogelio! We\u2019re rewarding you with a new account offer"
+    },
+    {
+      "sender": "support@zendrop.com",
+      "subject": "\ud83c\udfac Day 1 replay is live \u2014 Day 2 starts tomorrow"
     },
     {
       "sender": "contact@glowkindfun353.com",
       "subject": "Ro\u2068geralburo, Kn\u2068ow Thes\u2068e Rule\u2068s Be\u2068fore Mo\u2068ving Yo\u2068ur Re\u2068tirement Sa\u2068vings"
     },
     {
-      "sender": "support@zendrop.com",
-      "subject": "\u23f0 We're live in 1 hour \u2014 here's your link"
+      "sender": "d89aa@fastjoycool275.com",
+      "subject": "Rogeralb\u061curo, Unlo\u061cck Loan\u061cs Desi\u061cgned t\u061co Sa\u061cve Yo\u061cu Ti\u061cme an\u061cd Mone\u061cy"
     },
     {
-      "sender": "support@thetacticalgrid.com",
-      "subject": "If you take pills to lower your blood pressure..."
+      "sender": "info@supliful.com",
+      "subject": "\ud83e\udd41 Two NEW performance whey protein blends just landed!"
     },
     {
-      "sender": "email.readly@globalcreditvault.com",
-      "subject": "Required    ltem: Confirm   your    attached Iending request"
+      "sender": "bryce.paul@crypto101podcast.com",
+      "subject": "Last Chance: Our #1 Altcoin For Right Now"
+    },
+    {
+      "sender": "info@7figures.com",
+      "subject": "Socialism vs. Capitalism: The Real Data Behind the Debate (Episode 1) REPLAY LINK"
     },
     {
       "sender": "contact@strongwisejoy56.com",
       "subject": "Rogeral\u200fburo, Fas\u200ft App\u200froval fo\u200fr Den\u200ftal Imp\u200flant Financin\u200fg"
     },
     {
-      "sender": "partners@7figures.com",
-      "subject": "zero overhead?!"
+      "sender": "no-reply@zoom.us",
+      "subject": "Reminder: Wealth Webinar Wednesdays With Chris Naugle  starts in 1 day"
     },
     {
-      "sender": "sofi@m.sofi.org",
-      "subject": "More ways to invest with IRA options trading."
+      "sender": "info@7figures.com",
+      "subject": "Socialism vs. Capitalism: The Real Data Behind the Debate (Episode 1) REPLAY LINK"
     },
     {
-      "sender": "notice@servicing.synchronyfinancial.com",
-      "subject": "ROGELIO \u2013 Reminder for your PayPal Mastercard\u00ae account"
+      "sender": "phil@momshouse.com",
+      "subject": "Did you see this?"
     },
     {
-      "sender": "dave@appbreedexchange.com",
-      "subject": "$20 a month, $200 a month, or pennies a day. Pick one."
-    },
-    {
-      "sender": "shop@financialelevations.info",
-      "subject": "Get Simple, Affordable Term Life Insurance with SBLI."
-    },
-    {
-      "sender": "no-reply@email.sears.com",
-      "subject": "Don\u2019t miss out! Final day to save an extra 10% on tools & more, plus up to 30% off top Samsung electronics"
-    },
-    {
-      "sender": "teamleaders@hihomegroup.com",
-      "subject": "\ud83c\udf3a Hawaii Weekend: Dog Agility & Ukulele Festival \ud83d\udc36"
-    },
-    {
-      "sender": "support@powmr.com",
-      "subject": "\ud83d\udee0\ufe0f DIY Tutorial: Step-by-Step Guide to Building a High-Performance LiFePO4 Battery Pack!"
-    },
-    {
-      "sender": "hello@paperbell.com",
-      "subject": "qq"
-    },
-    {
-      "sender": "noreply@financerisewealth.com",
-      "subject": "Your application invitation..."
-    },
-    {
-      "sender": "shaun@success.10xbnb.com",
-      "subject": "Sunday Student Spotlight"
-    },
-    {
-      "sender": "hello@email2.faire.com",
-      "subject": "Re: Stock your new store with up to $20K in 60-day payment terms"
-    },
-    {
-      "sender": "support@designrr.io",
-      "subject": "the offer is expiring, Rogelio"
+      "sender": "jvzoopotd@jvzoo.com",
+      "subject": "No tap link = no tap pay"
     },
     {
       "sender": "contact@glowkindfun353.com",
       "subject": "Ro\u2068geralburo, Kn\u2068ow Thes\u2068e Rule\u2068s Be\u2068fore Mo\u2068ving Yo\u2068ur Re\u2068tirement Sa\u2068vings"
     },
     {
-      "sender": "credit-card-offers@email.capitalone.com",
-      "subject": "Rogelio, your status may have changed--see if you're guaranteed to be approved"
+      "sender": "shaun@success.10xbnb.com",
+      "subject": "Sunday Student Spotlight"
     },
     {
-      "sender": "sofi@m.sofi.org",
-      "subject": "More ways to invest with IRA options trading."
+      "sender": "support@designrr.io",
+      "subject": "the offer is expiring, Rogelio"
+    },
+    {
+      "sender": "awesomely@mail.beehiiv.com",
+      "subject": "BAD NEWS (your link won\u2019t last)"
+    },
+    {
+      "sender": "support@zendrop.com",
+      "subject": "\ud83c\udfac Day 1 replay is live \u2014 Day 2 starts tomorrow"
+    },
+    {
+      "sender": "camerondunlap@realestatewealthnetwork.com",
+      "subject": "The rehab number was wrong by $30K"
     },
     {
       "sender": "support@cherringtonmedia.com",
       "subject": "Work You Already Know"
     },
     {
-      "sender": "noreply@tm.openai.com",
-      "subject": "Your temporary OpenAI login code"
-    },
-    {
-      "sender": "info@pfsbroker.com",
-      "subject": "Partner with a Shark"
-    },
-    {
-      "sender": "support@zendrop.com",
-      "subject": "\u23f0 We're live in 1 hour \u2014 here's your link"
-    },
-    {
-      "sender": "support@alexanderlige.com",
-      "subject": "24 hours left on the 4th of July code"
+      "sender": "no-reply@email.sears.com",
+      "subject": "Make your yard the envy of the neighborhood! \ud83c\udf33\ud83e\udeb4 Save up to 40% on outdoor essentials today!"
     },
     {
       "sender": "optimum@mail.optimumemail1.com",
-      "subject": "BOOM! Our July 4th offer is still crackling"
+      "subject": "Save $240/yr. when you leave Verizon"
     },
     {
       "sender": "optimum@mail.optimumemail1.com",
-      "subject": "BOOM! Our July 4th offer is still crackling"
+      "subject": "Save $240/yr. when you leave Verizon"
     },
     {
       "sender": "d89aa@fastjoycool275.com",
@@ -1838,7 +1594,7 @@
     },
     {
       "sender": "bryce.paul@crypto101podcast.com",
-      "subject": "8 hours left (freedom coin trades under $1)"
+      "subject": "Last Chance: Our #1 Altcoin For Right Now"
     },
     {
       "sender": "awesomely@mail.beehiiv.com",
@@ -1846,7 +1602,7 @@
     },
     {
       "sender": "phil@momshouse.com",
-      "subject": "$30 trillion is sitting in American homes right now"
+      "subject": "Did you see this?"
     },
     {
       "sender": "no-reply@mail.coinbase.com",
@@ -1877,72 +1633,88 @@
       "subject": "You asked for longer videos \ud83d\udcbb"
     },
     {
-      "sender": "info@digitalmaker.ai",
-      "subject": "You asked for longer videos \ud83d\udcbb"
-    },
-    {
-      "sender": "a25wqarb@serenjoypulse218.com",
-      "subject": "Roge\udb42\udd38ralburo, Pl\udb42\udd38an Ahead: Term Li\udb42\udd38fe Insuran\udb42\udd38ce Made Simple"
-    },
-    {
-      "sender": "tv@dailyproductpicks.info",
-      "subject": "Action            needed:              Protect your files now"
-    },
-    {
-      "sender": "info@zenflowvera329.com",
-      "subject": "\u200f\u200fCongrats!\u200f\u2000A\u2000$10\u200f00\u2000cr\u200fedit\u2000limi\u200ft\u2000Indi\u200fgo\u00ae\u200f\u2000Masterc\u200fard\u2000is\u2000ready\u2000for\u2000your\u2000applicati\u200fon\u2000Rogeral\u200fburo"
-    },
-    {
-      "sender": "deals@unifiedcartitems.com",
-      "subject": "Transform   Your   Space   With   Photo   Prints"
-    },
-    {
-      "sender": "newsletter@warrenhomecare.info",
-      "subject": "Summer's here: 50% off your second custom window treatment"
-    },
-    {
-      "sender": "prillingalgedonickennelled@nodepblog.com",
-      "subject": "Take a Moment for This Survey"
+      "sender": "frommersnews@frommermedia.com",
+      "subject": "California Dreamin\u2019: Golden State Parks, Wineries, and Family Fun"
     },
     {
       "sender": "asflybackringssnailsmout@cooklet.cookingsubscribe.com",
       "subject": "Tom Cruise\u2019s secret for staying hard"
     },
     {
+      "sender": "noreply@emails.creditonebank.com",
+      "subject": "Your July Credit One Bank Statement is Now Available"
+    },
+    {
+      "sender": "noreply@emails.creditonebank.com",
+      "subject": "Your July Credit One Bank Statement is Now Available"
+    },
+    {
+      "sender": "noreply@emails.creditonebank.com",
+      "subject": "Your July Credit One Bank Statement is Now Available"
+    },
+    {
+      "sender": "noreply@glowjoycool186.com",
+      "subject": "Rogeral\udb41\udd88buro, A\udb41\udd88DT Pla\udb41\udd88ns Tailore\udb41\udd88d f\udb41\udd88or Y\udb41\udd88ou"
+    },
+    {
+      "sender": "hello@team.emergent.sh",
+      "subject": "You have 10 free credits left"
+    },
+    {
+      "sender": "selbdfgstschmjgjierehjigensch@medicusdualhingedriver.com",
+      "subject": "Debt relief with program payments that fit your budget."
+    },
+    {
+      "sender": "support@brightflowpulse759.com",
+      "subject": "Rogeralbur\udb40\udd07o, Summe\udb40\udd07r I\udb40\udd07s H\udb40\udd07ere! K\udb40\udd07eep E\udb40\udd07yes o\udb40\udd07n Y\udb40\udd07our H\udb40\udd07ome, Anywh\udb40\udd07ere"
+    },
+    {
+      "sender": "hello@team.emergent.sh",
+      "subject": "You have 10 free credits left"
+    },
+    {
+      "sender": "randomlovefew@write.eyepaperpin.com",
+      "subject": "Build Your Own Pancake Snack Board for Breakfast"
+    },
+    {
+      "sender": "a25wqarb@serenjoypulse218.com",
+      "subject": "Roge\udb42\udd38ralburo, Pl\udb42\udd38an Ahead: Term Li\udb42\udd38fe Insuran\udb42\udd38ce Made Simple"
+    },
+    {
+      "sender": "email@email.shopify.com",
+      "subject": "Save tons of time by automating your sales funnel"
+    },
+    {
+      "sender": "updates-en@newsletter.printful.com",
+      "subject": "Build a store that customers believe in"
+    },
+    {
       "sender": "n1nldc1c@strongjoypath300.com",
-      "subject": "\u206c\u206cP\u206cSST!\u206c!!!\u2009S\u206cave\u2009B\u206cig\u2009o\u206cn\u2009A\u206cuto\u2009Repai\u206crs\u2009w\u206cith\u2009T\u206chis\u2009Q\u206cuick\u2009Secre\u206ct"
+      "subject": "\u206c\u206cA\u206cre\u2009Y\u206cou\u2009A\u2009Homeo\u206cwner\u2009t\u206chat\u2009n\u206ceeds\u2009n\u206cew\u2009windo\u206cws?"
+    },
+    {
+      "sender": "noreply@glowjoycool186.com",
+      "subject": "Rogeral\udb41\udd88buro, A\udb41\udd88DT Pla\udb41\udd88ns Tailore\udb41\udd88d f\udb41\udd88or Y\udb41\udd88ou"
+    },
+    {
+      "sender": "support@serenova71.com",
+      "subject": "Po\u200dor Cred\u200dit? Th\u200dis Ma\u200dy B\u200de Th\u200de Master\u200dcard Fo\u200dr Yo\u200du\u2026"
+    },
+    {
+      "sender": "bryce.paul@crypto101podcast.com",
+      "subject": "Last Chance: Our #1 Altcoin For Right Now"
     },
     {
       "sender": "hello@paperbell.com",
-      "subject": "qq"
+      "subject": "1\ufe0f\u20e3 your new coaching site is ready"
     },
     {
-      "sender": "jvzoopotd@jvzoo.com",
-      "subject": "No tap link = no tap pay"
+      "sender": "notifications@bookbolt.io",
+      "subject": "\ud83d\udd25 Book Bolt Lifetime is Back - Save $100 Before It's Gone"
     },
     {
       "sender": "contact@bcac4p.com",
       "subject": "Rogeralbu\udb41\udc45ro, Summer Safe\udb41\udc45ty E\udb41\udc45ssentials for Your Ho\udb41\udc45me"
-    },
-    {
-      "sender": "info@supliful.com",
-      "subject": "\ud83e\udd41 Two NEW performance whey protein blends just landed!"
-    },
-    {
-      "sender": "info@brivonexaflow130.com",
-      "subject": "PS\udb41\udc45ST!!\udb41\udc45!! Sa\udb41\udc45ve Bi\udb41\udc45g o\udb41\udc45n Au\udb41\udc45to Repair\udb41\udc45s wi\udb41\udc45th Th\udb41\udc45is Qu\udb41\udc45ick Secr\udb41\udc45et"
-    },
-    {
-      "sender": "leanna@loox.app",
-      "subject": "Get more reviews from happy customers with the Loox Review form"
-    },
-    {
-      "sender": "shop@poshmark.com",
-      "subject": "Just In: Harley-Davidson at up to 70% off"
-    },
-    {
-      "sender": "contact@glowquestform584.com",
-      "subject": "Roger\u200balburo, Effor\u200btless F\u200bat Reduc\u200btion w\u200bith CoolS\u200bculpting b\u200by Laser\u200bAway"
     },
     {
       "sender": "shaun@success.10xbnb.com",
@@ -1953,8 +1725,8 @@
       "subject": "Rogeral\udb41\udd88buro, A\udb41\udd88DT Pla\udb41\udd88ns Tailore\udb41\udd88d f\udb41\udd88or Y\udb41\udd88ou"
     },
     {
-      "sender": "email@email.shopify.com",
-      "subject": "Save tons of time by automating your sales funnel"
+      "sender": "jvzoopotd@jvzoo.com",
+      "subject": "No tap link = no tap pay"
     },
     {
       "sender": "support@elegantnestplan.com",
@@ -2009,8 +1781,236 @@
       "subject": "New Driver Contract Ad - New York, NY - Vehicle: 16 ft. Box Truck, 18 ..."
     },
     {
+      "sender": "contact@glowkindfun353.com",
+      "subject": "Ro\u2068geralburo, Kn\u2068ow Thes\u2068e Rule\u2068s Be\u2068fore Mo\u2068ving Yo\u2068ur Re\u2068tirement Sa\u2068vings"
+    },
+    {
+      "sender": "support@zendrop.com",
+      "subject": "\ud83c\udfac Day 1 replay is live \u2014 Day 2 starts tomorrow"
+    },
+    {
+      "sender": "support@thetacticalgrid.com",
+      "subject": "If you take pills to lower your blood pressure..."
+    },
+    {
+      "sender": "email.readly@globalcreditvault.com",
+      "subject": "Required    ltem: Confirm   your    attached Iending request"
+    },
+    {
+      "sender": "contact@strongwisejoy56.com",
+      "subject": "Rogeral\u200fburo, Fas\u200ft App\u200froval fo\u200fr Den\u200ftal Imp\u200flant Financin\u200fg"
+    },
+    {
+      "sender": "partners@7figures.com",
+      "subject": "zero overhead?!"
+    },
+    {
+      "sender": "sofi@m.sofi.org",
+      "subject": "More ways to invest with IRA options trading."
+    },
+    {
+      "sender": "notice@servicing.synchronyfinancial.com",
+      "subject": "ROGELIO \u2013 Reminder for your PayPal Mastercard\u00ae account"
+    },
+    {
+      "sender": "dave@appbreedexchange.com",
+      "subject": "$20 a month, $200 a month, or pennies a day. Pick one."
+    },
+    {
+      "sender": "shop@financialelevations.info",
+      "subject": "Get Simple, Affordable Term Life Insurance with SBLI."
+    },
+    {
+      "sender": "no-reply@email.sears.com",
+      "subject": "Make your yard the envy of the neighborhood! \ud83c\udf33\ud83e\udeb4 Save up to 40% on outdoor essentials today!"
+    },
+    {
+      "sender": "teamleaders@hihomegroup.com",
+      "subject": "\ud83c\udf3a Hawaii Weekend: Dog Agility & Ukulele Festival \ud83d\udc36"
+    },
+    {
+      "sender": "support@powmr.com",
+      "subject": "\ud83d\udee0\ufe0f DIY Tutorial: Step-by-Step Guide to Building a High-Performance LiFePO4 Battery Pack!"
+    },
+    {
+      "sender": "hello@paperbell.com",
+      "subject": "1\ufe0f\u20e3 your new coaching site is ready"
+    },
+    {
+      "sender": "noreply@financerisewealth.com",
+      "subject": "Your application invitation..."
+    },
+    {
+      "sender": "shaun@success.10xbnb.com",
+      "subject": "Sunday Student Spotlight"
+    },
+    {
+      "sender": "hello@email2.faire.com",
+      "subject": "Re: Stock your new store with up to $20K in 60-day payment terms"
+    },
+    {
+      "sender": "support@designrr.io",
+      "subject": "the offer is expiring, Rogelio"
+    },
+    {
+      "sender": "contact@glowkindfun353.com",
+      "subject": "Ro\u2068geralburo, Kn\u2068ow Thes\u2068e Rule\u2068s Be\u2068fore Mo\u2068ving Yo\u2068ur Re\u2068tirement Sa\u2068vings"
+    },
+    {
+      "sender": "credit-card-offers@email.capitalone.com",
+      "subject": "Rogelio, your status may have changed--see if you're guaranteed to be approved"
+    },
+    {
+      "sender": "sofi@m.sofi.org",
+      "subject": "More ways to invest with IRA options trading."
+    },
+    {
+      "sender": "support@cherringtonmedia.com",
+      "subject": "Work You Already Know"
+    },
+    {
+      "sender": "noreply@tm.openai.com",
+      "subject": "Your temporary ChatGPT login code"
+    },
+    {
+      "sender": "info@pfsbroker.com",
+      "subject": "Partner with a Shark"
+    },
+    {
+      "sender": "support@zendrop.com",
+      "subject": "\ud83c\udfac Day 1 replay is live \u2014 Day 2 starts tomorrow"
+    },
+    {
+      "sender": "support@alexanderlige.com",
+      "subject": "24 hours left on the 4th of July code"
+    },
+    {
+      "sender": "registrar@registrar.shopify.com",
+      "subject": "Action required - Verify your domain\u2019s contact information"
+    },
+    {
+      "sender": "support@spiffy.co",
+      "subject": "ACTION REQUIRED: Payment failed for AI Inner Circle"
+    },
+    {
+      "sender": "info@zenflowvera329.com",
+      "subject": "\u200f\u200fCongrats!\u200f\u2000A\u2000$10\u200f00\u2000cr\u200fedit\u2000limi\u200ft\u2000Indi\u200fgo\u00ae\u200f\u2000Masterc\u200fard\u2000is\u2000ready\u2000for\u2000your\u2000applicati\u200fon\u2000Rogeral\u200fburo"
+    },
+    {
+      "sender": "support@shopadvisor.info",
+      "subject": "'You qualified. \"Don\u2019t miss this.\""
+    },
+    {
+      "sender": "faves@hello.design.com",
+      "subject": "We've found these for Jrg international Inc."
+    },
+    {
+      "sender": "support@designrr.io",
+      "subject": "the offer is expiring, Rogelio"
+    },
+    {
+      "sender": "info@supliful.com",
+      "subject": "\ud83e\udd41 Two NEW performance whey protein blends just landed!"
+    },
+    {
+      "sender": "info@digitalmaker.ai",
+      "subject": "You asked for longer videos \ud83d\udcbb"
+    },
+    {
+      "sender": "a25wqarb@serenjoypulse218.com",
+      "subject": "Roge\udb42\udd38ralburo, Pl\udb42\udd38an Ahead: Term Li\udb42\udd38fe Insuran\udb42\udd38ce Made Simple"
+    },
+    {
+      "sender": "tv@dailyproductpicks.info",
+      "subject": "Action            needed:              Protect your files now"
+    },
+    {
+      "sender": "info@zenflowvera329.com",
+      "subject": "\u200f\u200fCongrats!\u200f\u2000A\u2000$10\u200f00\u2000cr\u200fedit\u2000limi\u200ft\u2000Indi\u200fgo\u00ae\u200f\u2000Masterc\u200fard\u2000is\u2000ready\u2000for\u2000your\u2000applicati\u200fon\u2000Rogeral\u200fburo"
+    },
+    {
+      "sender": "deals@unifiedcartitems.com",
+      "subject": "Transform   Your   Space   With   Photo   Prints"
+    },
+    {
+      "sender": "newsletter@warrenhomecare.info",
+      "subject": "Summer's here: 50% off your second custom window treatment"
+    },
+    {
+      "sender": "prillingalgedonickennelled@nodepblog.com",
+      "subject": "Redeem your special reward before it expires"
+    },
+    {
+      "sender": "asflybackringssnailsmout@cooklet.cookingsubscribe.com",
+      "subject": "Tom Cruise\u2019s secret for staying hard"
+    },
+    {
+      "sender": "n1nldc1c@strongjoypath300.com",
+      "subject": "\u206c\u206cA\u206cre\u2009Y\u206cou\u2009A\u2009Homeo\u206cwner\u2009t\u206chat\u2009n\u206ceeds\u2009n\u206cew\u2009windo\u206cws?"
+    },
+    {
+      "sender": "hello@paperbell.com",
+      "subject": "1\ufe0f\u20e3 your new coaching site is ready"
+    },
+    {
+      "sender": "jvzoopotd@jvzoo.com",
+      "subject": "No tap link = no tap pay"
+    },
+    {
+      "sender": "contact@bcac4p.com",
+      "subject": "Rogeralbu\udb41\udc45ro, Summer Safe\udb41\udc45ty E\udb41\udc45ssentials for Your Ho\udb41\udc45me"
+    },
+    {
+      "sender": "info@supliful.com",
+      "subject": "\ud83e\udd41 Two NEW performance whey protein blends just landed!"
+    },
+    {
+      "sender": "info@brivonexaflow130.com",
+      "subject": "PS\udb41\udc45ST!!\udb41\udc45!! Sa\udb41\udc45ve Bi\udb41\udc45g o\udb41\udc45n Au\udb41\udc45to Repair\udb41\udc45s wi\udb41\udc45th Th\udb41\udc45is Qu\udb41\udc45ick Secr\udb41\udc45et"
+    },
+    {
+      "sender": "leanna@loox.app",
+      "subject": "Get more reviews from happy customers with the Loox Review form"
+    },
+    {
+      "sender": "shop@poshmark.com",
+      "subject": "Just In: Harley-Davidson at up to 70% off"
+    },
+    {
+      "sender": "contact@glowquestform584.com",
+      "subject": "Roger\u200balburo, Effor\u200btless F\u200bat Reduc\u200btion w\u200bith CoolS\u200bculpting b\u200by Laser\u200bAway"
+    },
+    {
+      "sender": "shaun@success.10xbnb.com",
+      "subject": "Sunday Student Spotlight"
+    },
+    {
+      "sender": "noreply@glowjoycool186.com",
+      "subject": "Rogeral\udb41\udd88buro, A\udb41\udd88DT Pla\udb41\udd88ns Tailore\udb41\udd88d f\udb41\udd88or Y\udb41\udd88ou"
+    },
+    {
+      "sender": "email@email.shopify.com",
+      "subject": "Save tons of time by automating your sales funnel"
+    },
+    {
+      "sender": "updates@melaninmoney.com",
+      "subject": "[\u23f0Final Call] 50% off ends in 3 hours"
+    },
+    {
+      "sender": "faves@hello.design.com",
+      "subject": "We've found these for Jrg international Inc."
+    },
+    {
+      "sender": "notice@servicing.synchronyfinancial.com",
+      "subject": "ROGELIO \u2013 Reminder for your PayPal Mastercard\u00ae account"
+    },
+    {
       "sender": "notifications@bookbolt.io",
       "subject": "\ud83d\udd25 Book Bolt Lifetime is Back - Save $100 Before It's Gone"
+    },
+    {
+      "sender": "hello@e.faire.com",
+      "subject": "Get free shipping during Faire Market when you join Insider"
     },
     {
       "sender": "newsletter@warrenhomecare.info",
@@ -2061,32 +2061,24 @@
       "subject": "Rogelio, your welcome offer is extended"
     },
     {
-      "sender": "registrar@registrar.shopify.com",
-      "subject": "Action required - Verify your domain\u2019s contact information"
+      "sender": "marcin@marcindrozdz.ai",
+      "subject": "If Your CPA Only Calls at Tax Time, Read This."
     },
     {
-      "sender": "support@spiffy.co",
-      "subject": "ACTION REQUIRED: Payment failed for AI Inner Circle"
+      "sender": "care@reliablemoneyplan.info",
+      "subject": "Reverse Mortgage Information for You"
     },
     {
-      "sender": "info@zenflowvera329.com",
-      "subject": "\u200f\u200fCongrats!\u200f\u2000A\u2000$10\u200f00\u2000cr\u200fedit\u2000limi\u200ft\u2000Indi\u200fgo\u00ae\u200f\u2000Masterc\u200fard\u2000is\u2000ready\u2000for\u2000your\u2000applicati\u200fon\u2000Rogeral\u200fburo"
+      "sender": "support@powmr.com",
+      "subject": "\ud83d\udee0\ufe0f DIY Tutorial: Step-by-Step Guide to Building a High-Performance LiFePO4 Battery Pack!"
     },
     {
-      "sender": "support@shopadvisor.info",
-      "subject": "'You qualified. \"Don\u2019t miss this.\""
+      "sender": "help@driversguild.org",
+      "subject": "How WHLP Helped Other Drivers \u2014 And Can Help You"
     },
     {
-      "sender": "faves@hello.design.com",
-      "subject": "We've found these for Jrg international Inc."
-    },
-    {
-      "sender": "support@designrr.io",
-      "subject": "the offer is expiring, Rogelio"
-    },
-    {
-      "sender": "info@supliful.com",
-      "subject": "\ud83e\udd41 Two NEW performance whey protein blends just landed!"
+      "sender": "noreply@financegrowthsuper.info",
+      "subject": "PersonaI Loans From $100 - $40,000\u2026"
     },
     {
       "sender": "registrar@registrar.shopify.com",
@@ -2137,16 +2129,28 @@
       "subject": "Required Item:    Confirm    your    attached    lending    request"
     },
     {
-      "sender": "updates@melaninmoney.com",
-      "subject": "[\u23f0Final Call] 50% off ends in 3 hours"
+      "sender": "info@supliful.com",
+      "subject": "\ud83e\udd41 Two NEW performance whey protein blends just landed!"
     },
     {
-      "sender": "faves@hello.design.com",
-      "subject": "We've found these for Jrg international Inc."
+      "sender": "support@alexanderlige.com",
+      "subject": "24 hours left on the 4th of July code"
     },
     {
-      "sender": "notice@servicing.synchronyfinancial.com",
-      "subject": "ROGELIO \u2013 Reminder for your PayPal Mastercard\u00ae account"
+      "sender": "uber@uber.com",
+      "subject": "Up to 60% off your first 2 orders."
+    },
+    {
+      "sender": "info@upstriderofficial.com",
+      "subject": "\ud83d\udd25 New Personalised 30K+ Ecosystem\u2122 update....... \ud83d\ude2c\ud83d\udd25"
+    },
+    {
+      "sender": "brook@smartcapitaldecisions.com",
+      "subject": "Your Car Insurance Just Got an Upgrade \u2014 Save Up to 50%"
+    },
+    {
+      "sender": "noreply@financialconceptworks.com",
+      "subject": "Required Item:    Confirm    your    attached    lending    request"
     },
     {
       "sender": "updates-en@newsletter.printful.com",
@@ -2166,7 +2170,7 @@
     },
     {
       "sender": "marcin@marcindrozdz.ai",
-      "subject": "Where I'll be August 14\u201316 (and why you should join me)"
+      "subject": "If Your CPA Only Calls at Tax Time, Read This."
     },
     {
       "sender": "hello@email2.faire.com",
@@ -2201,78 +2205,6 @@
       "subject": "Your Car Insurance Just Got an Upgrade \u2014 Save Up to 50%"
     },
     {
-      "sender": "marcin@marcindrozdz.ai",
-      "subject": "Where I'll be August 14\u201316 (and why you should join me)"
-    },
-    {
-      "sender": "care@reliablemoneyplan.info",
-      "subject": "Reverse Mortgage Information for You"
-    },
-    {
-      "sender": "support@powmr.com",
-      "subject": "\ud83d\udee0\ufe0f DIY Tutorial: Step-by-Step Guide to Building a High-Performance LiFePO4 Battery Pack!"
-    },
-    {
-      "sender": "help@driversguild.org",
-      "subject": "How WHLP Helped Other Drivers \u2014 And Can Help You"
-    },
-    {
-      "sender": "noreply@financegrowthsuper.info",
-      "subject": "PersonaI Loans From $100 - $40,000\u2026"
-    },
-    {
-      "sender": "support@powmr.com",
-      "subject": "\ud83d\udee0\ufe0f DIY Tutorial: Step-by-Step Guide to Building a High-Performance LiFePO4 Battery Pack!"
-    },
-    {
-      "sender": "support@state-filings.com",
-      "subject": "Explore Our Business Licenses and Permits Report"
-    },
-    {
-      "sender": "support@email.credible.com",
-      "subject": "Rogelio, your low-interest personal loan for $12,366 could be a few clicks away"
-    },
-    {
-      "sender": "teamleaders@hihomegroup.com",
-      "subject": "\ud83c\udf3a Hawaii Weekend: Dog Agility & Ukulele Festival \ud83d\udc36"
-    },
-    {
-      "sender": "info@supliful.com",
-      "subject": "\ud83e\udd41 Two NEW performance whey protein blends just landed!"
-    },
-    {
-      "sender": "support@alexanderlige.com",
-      "subject": "24 hours left on the 4th of July code"
-    },
-    {
-      "sender": "uber@uber.com",
-      "subject": "Up to 60% off your first 2 orders."
-    },
-    {
-      "sender": "info@upstriderofficial.com",
-      "subject": "\ud83d\udd25 New Personalised 30K+ Ecosystem\u2122 update....... \ud83d\ude2c\ud83d\udd25"
-    },
-    {
-      "sender": "brook@smartcapitaldecisions.com",
-      "subject": "Your Car Insurance Just Got an Upgrade \u2014 Save Up to 50%"
-    },
-    {
-      "sender": "noreply@financialconceptworks.com",
-      "subject": "Required Item:    Confirm    your    attached    lending    request"
-    },
-    {
-      "sender": "support@state-filings.com",
-      "subject": "Explore Our Business Licenses and Permits Report"
-    },
-    {
-      "sender": "tv@dailyproductpicks.info",
-      "subject": "Action            needed:              Protect your files now"
-    },
-    {
-      "sender": "randomlovefew@write.eyepaperpin.com",
-      "subject": "Build Your Own Pancake Snack Board for Breakfast"
-    },
-    {
       "sender": "info@pfsbroker.com",
       "subject": "Partner with a Shark"
     },
@@ -2283,6 +2215,42 @@
     {
       "sender": "deals@unifiedcartitems.com",
       "subject": "Transform   Your   Space   With   Photo   Prints"
+    },
+    {
+      "sender": "support@powmr.com",
+      "subject": "\ud83d\udee0\ufe0f DIY Tutorial: Step-by-Step Guide to Building a High-Performance LiFePO4 Battery Pack!"
+    },
+    {
+      "sender": "support@state-filings.com",
+      "subject": "Streamlined EIN Filing for Our Valued LLC Customers #CCBE779656"
+    },
+    {
+      "sender": "support@email.credible.com",
+      "subject": "Rogelio, your low-interest personal loan for $12,366 could be a few clicks away"
+    },
+    {
+      "sender": "teamleaders@hihomegroup.com",
+      "subject": "\ud83c\udf3a Hawaii Weekend: Dog Agility & Ukulele Festival \ud83d\udc36"
+    },
+    {
+      "sender": "no-reply@mail.goodreads.com",
+      "subject": "\ud83d\udcda The Newsletter: July Must-Reads"
+    },
+    {
+      "sender": "support@state-filings.com",
+      "subject": "Streamlined EIN Filing for Our Valued LLC Customers #CCBE779656"
+    },
+    {
+      "sender": "tv@dailyproductpicks.info",
+      "subject": "Action            needed:              Protect your files now"
+    },
+    {
+      "sender": "randomlovefew@write.eyepaperpin.com",
+      "subject": "Build Your Own Pancake Snack Board for Breakfast"
+    },
+    {
+      "sender": "hello@e.faire.com",
+      "subject": "Get free shipping during Faire Market when you join Insider"
     },
     {
       "sender": "shop@poshmark.com",
@@ -2301,8 +2269,20 @@
       "subject": "Action            needed:              Protect your files now"
     },
     {
-      "sender": "no-reply@mail.goodreads.com",
-      "subject": "\ud83d\udcda The Newsletter: July Must-Reads"
+      "sender": "jared@zendrop.com",
+      "subject": "We\u2019ll Build A Store For You!"
+    },
+    {
+      "sender": "help@umzu.com",
+      "subject": "Don't Miss Our Extended Sale ! \ud83c\udf89"
+    },
+    {
+      "sender": "emails@healthcarebalanceguide.com",
+      "subject": "Now Scheduling for July & August for Cardiovascular Disease Risk Screening"
+    },
+    {
+      "sender": "jared@zendrop.com",
+      "subject": "We\u2019ll Build A Store For You!"
     },
     {
       "sender": "no-reply@mail.goodreads.com",
@@ -2333,122 +2313,6 @@
       "subject": "Lasy LLC - Action required to complete  EIN \u2013 Tax ID Number"
     },
     {
-      "sender": "phil@momshouse.com",
-      "subject": "$30 trillion is sitting in American homes right now"
-    },
-    {
-      "sender": "email@email.shopify.com",
-      "subject": "Save tons of time by automating your sales funnel"
-    },
-    {
-      "sender": "noreply@financialconceptworks.com",
-      "subject": "Required Item:    Confirm    your    attached    lending    request"
-    },
-    {
-      "sender": "care@reliablemoneyplan.info",
-      "subject": "Reverse Mortgage Information for You"
-    },
-    {
-      "sender": "info@upstriderofficial.com",
-      "subject": "\ud83d\udd25 New Personalised 30K+ Ecosystem\u2122 update....... \ud83d\ude2c\ud83d\udd25"
-    },
-    {
-      "sender": "randomlovefew@write.eyepaperpin.com",
-      "subject": "Build Your Own Pancake Snack Board for Breakfast"
-    },
-    {
-      "sender": "help@umzu.com",
-      "subject": "Don't Miss Our Extended Sale ! \ud83c\udf89"
-    },
-    {
-      "sender": "emails@healthcarebalanceguide.com",
-      "subject": "' Claim  Your Personalized  Weight  Loss  Plan  Now!..'"
-    },
-    {
-      "sender": "noreply@email.openai.com",
-      "subject": "Your Codex download link"
-    },
-    {
-      "sender": "info@members.netflix.com",
-      "subject": "This is your kind of sci-fi"
-    },
-    {
-      "sender": "jared@zendrop.com",
-      "subject": "We\u2019ll Build A Store For You!"
-    },
-    {
-      "sender": "help@umzu.com",
-      "subject": "Don't Miss Our Extended Sale ! \ud83c\udf89"
-    },
-    {
-      "sender": "emails@healthcarebalanceguide.com",
-      "subject": "' Claim  Your Personalized  Weight  Loss  Plan  Now!..'"
-    },
-    {
-      "sender": "jared@zendrop.com",
-      "subject": "We\u2019ll Build A Store For You!"
-    },
-    {
-      "sender": "shaun@success.10xbnb.com",
-      "subject": "Sunday Student Spotlight"
-    },
-    {
-      "sender": "phil@momshouse.com",
-      "subject": "$30 trillion is sitting in American homes right now"
-    },
-    {
-      "sender": "shop@poshmark.com",
-      "subject": "Just In: Harley-Davidson at up to 70% off"
-    },
-    {
-      "sender": "members@cbdriver.com",
-      "subject": "New Driver Contract Ad - New York, NY - Vehicle: 16 ft. Box Truck, 18 ..."
-    },
-    {
-      "sender": "credit-card-offers@email.capitalone.com",
-      "subject": "Rogelio, your status may have changed--see if you're guaranteed to be approved"
-    },
-    {
-      "sender": "gallantpays@gallantluxuryservice.com",
-      "subject": "Gallant Luxury Service - Invoice from 07/02/2026 to 07/05/2026"
-    },
-    {
-      "sender": "jvzoopotd@jvzoo.com",
-      "subject": "No tap link = no tap pay"
-    },
-    {
-      "sender": "emails@healthcarebalanceguide.com",
-      "subject": "' Claim  Your Personalized  Weight  Loss  Plan  Now!..'"
-    },
-    {
-      "sender": "info@upstriderofficial.com",
-      "subject": "\ud83d\udd25 New Personalised 30K+ Ecosystem\u2122 update....... \ud83d\ude2c\ud83d\udd25"
-    },
-    {
-      "sender": "marcin@marcindrozdz.ai",
-      "subject": "Where I'll be August 14\u201316 (and why you should join me)"
-    },
-    {
-      "sender": "no-reply@email.sears.com",
-      "subject": "Don\u2019t miss out! Final day to save an extra 10% on tools & more, plus up to 30% off top Samsung electronics"
-    },
-    {
-      "sender": "noreply@financialconceptworks.com",
-      "subject": "Required Item:    Confirm    your    attached    lending    request"
-    },
-    {
-      "sender": "teamleaders@hihomegroup.com",
-      "subject": "\ud83c\udf3a Hawaii Weekend: Dog Agility & Ukulele Festival \ud83d\udc36"
-    },
-    {
-      "sender": "help@umzu.com",
-      "subject": "Don't Miss Our Extended Sale ! \ud83c\udf89"
-    },
-    {
-      "sender": "shaun@success.10xbnb.com",
-      "subject": "Sunday Student Spotlight"
-    },
-    {
       "sender": "info@pfsbroker.com",
       "subject": "Partner with a Shark"
     },
@@ -2458,11 +2322,11 @@
     },
     {
       "sender": "optimum@mail.optimumemail1.com",
-      "subject": "BOOM! Our July 4th offer is still crackling"
+      "subject": "Save $240/yr. when you leave Verizon"
     },
     {
       "sender": "bryce.paul@crypto101podcast.com",
-      "subject": "8 hours left (freedom coin trades under $1)"
+      "subject": "Last Chance: Our #1 Altcoin For Right Now"
     },
     {
       "sender": "no-reply@mail.coinbase.com",
@@ -2495,37 +2359,141 @@
     {
       "sender": "care@reliablemoneyplan.info",
       "subject": "Reverse Mortgage Information for You"
+    },
+    {
+      "sender": "phil@momshouse.com",
+      "subject": "Did you see this?"
+    },
+    {
+      "sender": "email@email.shopify.com",
+      "subject": "Save tons of time by automating your sales funnel"
+    },
+    {
+      "sender": "noreply@financialconceptworks.com",
+      "subject": "Required Item:    Confirm    your    attached    lending    request"
+    },
+    {
+      "sender": "care@reliablemoneyplan.info",
+      "subject": "Reverse Mortgage Information for You"
+    },
+    {
+      "sender": "info@upstriderofficial.com",
+      "subject": "\ud83d\udd25 New Personalised 30K+ Ecosystem\u2122 update....... \ud83d\ude2c\ud83d\udd25"
+    },
+    {
+      "sender": "randomlovefew@write.eyepaperpin.com",
+      "subject": "Build Your Own Pancake Snack Board for Breakfast"
+    },
+    {
+      "sender": "help@umzu.com",
+      "subject": "Don't Miss Our Extended Sale ! \ud83c\udf89"
+    },
+    {
+      "sender": "emails@healthcarebalanceguide.com",
+      "subject": "Now Scheduling for July & August for Cardiovascular Disease Risk Screening"
+    },
+    {
+      "sender": "noreply@email.openai.com",
+      "subject": "Your Codex download link"
+    },
+    {
+      "sender": "info@members.netflix.com",
+      "subject": "This is your kind of sci-fi"
+    },
+    {
+      "sender": "noreply@financerisewealth.com",
+      "subject": "Your application invitation..."
+    },
+    {
+      "sender": "phil@momshouse.com",
+      "subject": "Did you see this?"
+    },
+    {
+      "sender": "frommersnews@frommermedia.com",
+      "subject": "California Dreamin\u2019: Golden State Parks, Wineries, and Family Fun"
+    },
+    {
+      "sender": "noreply@robinhood.com",
+      "subject": "Funds available for investing"
+    },
+    {
+      "sender": "prillingalgedonickennelled@nodepblog.com",
+      "subject": "Redeem your special reward before it expires"
+    },
+    {
+      "sender": "hello@e.faire.com",
+      "subject": "Get free shipping during Faire Market when you join Insider"
+    },
+    {
+      "sender": "email@email.shopify.com",
+      "subject": "Save tons of time by automating your sales funnel"
+    },
+    {
+      "sender": "shaun@success.10xbnb.com",
+      "subject": "Sunday Student Spotlight"
+    },
+    {
+      "sender": "phil@momshouse.com",
+      "subject": "Did you see this?"
+    },
+    {
+      "sender": "shop@poshmark.com",
+      "subject": "Just In: Harley-Davidson at up to 70% off"
+    },
+    {
+      "sender": "members@cbdriver.com",
+      "subject": "New Driver Contract Ad - New York, NY - Vehicle: 16 ft. Box Truck, 18 ..."
+    },
+    {
+      "sender": "credit-card-offers@email.capitalone.com",
+      "subject": "Rogelio, your status may have changed--see if you're guaranteed to be approved"
+    },
+    {
+      "sender": "gallantpays@gallantluxuryservice.com",
+      "subject": "Gallant Luxury Service - Invoice from 07/02/2026 to 07/05/2026"
+    },
+    {
+      "sender": "jvzoopotd@jvzoo.com",
+      "subject": "No tap link = no tap pay"
+    },
+    {
+      "sender": "emails@healthcarebalanceguide.com",
+      "subject": "Now Scheduling for July & August for Cardiovascular Disease Risk Screening"
+    },
+    {
+      "sender": "info@upstriderofficial.com",
+      "subject": "\ud83d\udd25 New Personalised 30K+ Ecosystem\u2122 update....... \ud83d\ude2c\ud83d\udd25"
+    },
+    {
+      "sender": "marcin@marcindrozdz.ai",
+      "subject": "If Your CPA Only Calls at Tax Time, Read This."
+    },
+    {
+      "sender": "no-reply@email.sears.com",
+      "subject": "Make your yard the envy of the neighborhood! \ud83c\udf33\ud83e\udeb4 Save up to 40% on outdoor essentials today!"
+    },
+    {
+      "sender": "noreply@financialconceptworks.com",
+      "subject": "Required Item:    Confirm    your    attached    lending    request"
+    },
+    {
+      "sender": "teamleaders@hihomegroup.com",
+      "subject": "\ud83c\udf3a Hawaii Weekend: Dog Agility & Ukulele Festival \ud83d\udc36"
+    },
+    {
+      "sender": "help@umzu.com",
+      "subject": "Don't Miss Our Extended Sale ! \ud83c\udf89"
+    },
+    {
+      "sender": "shaun@success.10xbnb.com",
+      "subject": "Sunday Student Spotlight"
     }
   ],
   "emails_moved_to_banks": 20,
   "banks_details": [
     {
-      "sender": "no.reply.alerts@chase.com",
-      "subject": "You have new activity on your credit report"
-    },
-    {
       "sender": "chase@mcmap.chase.com",
       "subject": "You're eligible, Rogelio: refer businesses to earn up to $1,000 per calendar year"
-    },
-    {
-      "sender": "no.reply.alerts@chase.com",
-      "subject": "You have new activity on your credit report"
-    },
-    {
-      "sender": "no.reply.alerts@chase.com",
-      "subject": "You have new activity on your credit report"
-    },
-    {
-      "sender": "no.reply.alerts@chase.com",
-      "subject": "You have new activity on your credit report"
-    },
-    {
-      "sender": "chase@mcmap.chase.com",
-      "subject": "You're eligible, Rogelio: refer businesses to earn up to $1,000 per calendar year"
-    },
-    {
-      "sender": "no.reply.alerts@chase.com",
-      "subject": "You have new activity on your credit report"
     },
     {
       "sender": "no.reply.alerts@chase.com",
@@ -2556,20 +2524,44 @@
       "subject": "You have new activity on your credit report"
     },
     {
+      "sender": "no.reply.alerts@chase.com",
+      "subject": "You have new activity on your credit report"
+    },
+    {
+      "sender": "no.reply.alerts@chase.com",
+      "subject": "You have new activity on your credit report"
+    },
+    {
+      "sender": "no.reply.alerts@chase.com",
+      "subject": "You have new activity on your credit report"
+    },
+    {
+      "sender": "no.reply.alerts@chase.com",
+      "subject": "You have new activity on your credit report"
+    },
+    {
+      "sender": "no.reply.alerts@chase.com",
+      "subject": "You have new activity on your credit report"
+    },
+    {
+      "sender": "no.reply.alerts@chase.com",
+      "subject": "You have new activity on your credit report"
+    },
+    {
+      "sender": "no.reply.alerts@chase.com",
+      "subject": "You have new activity on your credit report"
+    },
+    {
+      "sender": "no.reply.alerts@chase.com",
+      "subject": "You have new activity on your credit report"
+    },
+    {
       "sender": "chase@mcmap.chase.com",
       "subject": "You're eligible, Rogelio: refer businesses to earn up to $1,000 per calendar year"
     },
     {
-      "sender": "no.reply.alerts@chase.com",
-      "subject": "You have new activity on your credit report"
-    },
-    {
-      "sender": "no.reply.alerts@chase.com",
-      "subject": "You have new activity on your credit report"
-    },
-    {
-      "sender": "no.reply.alerts@chase.com",
-      "subject": "You have new activity on your credit report"
+      "sender": "chase@mcmap.chase.com",
+      "subject": "You're eligible, Rogelio: refer businesses to earn up to $1,000 per calendar year"
     },
     {
       "sender": "no.reply.alerts@chase.com",
@@ -2580,6 +2572,6 @@
       "subject": "You have new activity on your credit report"
     }
   ],
-  "emails_moved_total": 515,
-  "last_run": "2026-07-31T22:51:42.791632"
+  "emails_moved_total": 513,
+  "last_run": "2026-08-01T09:00:30.298682"
 }

@@ -173,6 +173,19 @@ SPAM_SENDERS = [
     "noreply@", "no-reply@", "marketing@", "promo@", "offers@",
     "deals@", "sales@", "newsletter@", "info@", "hello@",
     "notifications@", "updates@", "alerts@",
+    "mail@", "email@", "campaign@", "blast@", "bulk@",
+    "auto@", "system@", "service@", "support@",
+]
+
+# Companies known for selling data
+KNOWN_DATA_BROKERS = [
+    "leadgen", "leads", "telemarketing", "solicitation",
+    "advertising", "affiliate", "partner", "referral",
+    "insurance", "warranty", "extended", "finance",
+    "credit", "loan", "debt", "consolidation",
+    "pharmacy", "supplements", "weight loss", "anti-aging",
+    "dating", "singles", "match", "meet",
+    "gambling", "casino", "bet", "poker",
 ]
 
 BANK_SENDERS = [
@@ -216,6 +229,42 @@ def is_likely_spam_sender(sender):
     sender_lower = sender.lower()
     for prefix in SPAM_SENDERS:
         if prefix in sender_lower:
+            return True
+    # Check for known data broker patterns
+    for broker in KNOWN_DATA_BROKERS:
+        if broker in sender_lower:
+            return True
+    return False
+
+
+def load_blocked_domains():
+    """Load list of permanently blocked domains"""
+    blocked_file = os.path.join(BASE_DIR, "blocked_domains.json")
+    if os.path.exists(blocked_file):
+        with open(blocked_file, "r") as f:
+            return json.load(f)
+    return []
+
+
+def save_blocked_domain(domain):
+    """Add domain to permanent block list"""
+    blocked_file = os.path.join(BASE_DIR, "blocked_domains.json")
+    blocked = load_blocked_domains()
+    if domain not in blocked:
+        blocked.append(domain)
+        with open(blocked_file, "w") as f:
+            json.dump(blocked, f, indent=2)
+        return True
+    return False
+
+
+def is_blocked_domain(sender):
+    """Check if sender domain is permanently blocked"""
+    blocked = load_blocked_domains()
+    if not blocked:
+        return False
+    for domain in blocked:
+        if domain.lower() in sender.lower():
             return True
     return False
 
@@ -318,8 +367,8 @@ def main():
         if idx % 50 == 0:
             print(f"  checking {idx}/{len(messages)}", flush=True)
         
-        # Check if spam by repeat count OR by sender pattern
-        is_spam = sender in spam_candidates or is_likely_spam_sender(sender)
+        # Check if spam by repeat count OR by sender pattern OR blocked domain
+        is_spam = sender in spam_candidates or is_likely_spam_sender(sender) or is_blocked_domain(sender)
         
         if is_spam:
             if is_bank_sender(sender):
