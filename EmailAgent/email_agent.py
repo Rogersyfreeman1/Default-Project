@@ -305,6 +305,62 @@ def is_likely_spam_sender(sender):
     return False
 
 
+def load_read_history():
+    """Load history of which emails were read"""
+    history_file = os.path.join(BASE_DIR, "read_history.json")
+    if os.path.exists(history_file):
+        with open(history_file, "r") as f:
+            return json.load(f)
+    return {"read_senders": [], "ignored_senders": [], "ignore_count": {}}
+
+
+def save_read_history(history):
+    """Save read history"""
+    history_file = os.path.join(BASE_DIR, "read_history.json")
+    with open(history_file, "w") as f:
+        json.dump(history, f, indent=2)
+
+
+def is_ignored_sender(sender, history):
+    """Check if sender is ignored (you never read their emails)"""
+    # Check if sender is in ignored list
+    if sender in history.get("ignored_senders", []):
+        return True
+    
+    # Check ignore count - if ignored 3+ times, auto-ignore
+    ignore_count = history.get("ignore_count", {})
+    if ignore_count.get(sender, 0) >= 3:
+        return True
+    
+    return False
+
+
+def mark_as_read(sender, history):
+    """Mark sender as read (you opened their email)"""
+    if sender not in history.get("read_senders", []):
+        history.setdefault("read_senders", []).append(sender)
+    # Remove from ignored if it was there
+    if sender in history.get("ignored_senders", []):
+        history["ignored_senders"].remove(sender)
+    # Reset ignore count
+    history.setdefault("ignore_count", {}).pop(sender, None)
+    save_read_history(history)
+
+
+def mark_as_ignored(sender, history):
+    """Mark sender as ignored (you didn't read their email)"""
+    history.setdefault("ignore_count", {})
+    history["ignore_count"][sender] = history["ignore_count"].get(sender, 0) + 1
+    
+    # If ignored 3+ times, add to permanent ignore list
+    if history["ignore_count"][sender] >= 3:
+        if sender not in history.get("ignored_senders", []):
+            history.setdefault("ignored_senders", []).append(sender)
+            print(f"  Auto-ignoring: {sender} (ignored 3 times)")
+    
+    save_read_history(history)
+
+
 def load_allowed_senders():
     """Load list of approved senders (you want these emails)"""
     allowed_file = os.path.join(BASE_DIR, "allowed_senders.json")
@@ -490,16 +546,22 @@ def main():
         if idx % 50 == 0:
             print(f"  checking {idx}/{len(messages)}", flush=True)
         
+        # Load read history
+        read_history = load_read_history()
+        
         # AUTO-ERASE MODE: Delete anything NOT in your allowed list
         # Also delete ALL offers even from allowed senders
+        # Also delete if you never read their emails
         subject = sender_subjects.get(sender, "")
         is_offer = is_any_offer(subject)
+        is_ignored = is_ignored_sender(sender, read_history)
         
         is_spam = (
             sender in spam_candidates or 
             is_likely_spam_sender(sender) or 
             is_blocked_domain(sender) or
             is_offer or  # Delete offers even from banks
+            is_ignored or  # Delete if you never read
             (not is_bank_sender(sender) and not is_allowed_sender(sender))
         )
         
