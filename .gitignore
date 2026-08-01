@@ -1,5 +1,22 @@
+# Output files
+output/
+temp_frames/
+template_cache/
+
+# Cache files
+shopify_cache/
+music/music_cache.json
+
+# Python
 __pycache__/
 *.pyc
-*.zip
-*.log
-EmailAgent/credentials.json
+*.pyo
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
