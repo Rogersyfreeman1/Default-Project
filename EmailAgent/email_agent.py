@@ -237,6 +237,25 @@ def is_likely_spam_sender(sender):
     return False
 
 
+def load_allowed_senders():
+    """Load list of approved senders (you want these emails)"""
+    allowed_file = os.path.join(BASE_DIR, "allowed_senders.json")
+    if os.path.exists(allowed_file):
+        with open(allowed_file, "r") as f:
+            return json.load(f)
+    return []
+
+
+def is_allowed_sender(sender):
+    """Check if sender is approved"""
+    allowed = load_allowed_senders()
+    sender_lower = sender.lower()
+    for allowed_sender in allowed:
+        if allowed_sender.lower() in sender_lower:
+            return True
+    return False
+
+
 def load_blocked_domains():
     """Load list of permanently blocked domains"""
     blocked_file = os.path.join(BASE_DIR, "blocked_domains.json")
@@ -366,17 +385,27 @@ def main():
             "sample_date": sender_first_seen.get(sender, ""),
         }
 
-    # Step 1: Unsubscribe from spam before deleting
-    print("\n--- Step 1: Unsubscribing from spam ---", flush=True)
-    nums_to_unsub = [num for num, sender in messages if sender in spam_candidates and not is_bank_sender(sender)]
+    # AUTO-ERASE MODE: Process all non-approved senders
+    print("\n--- AUTO-ERASE: Processing unapproved senders ---", flush=True)
+    
+    # Get all unique senders that are not allowed
+    unapproved_senders = set()
+    for num, sender in messages:
+        if not is_allowed_sender(sender) and not is_bank_sender(sender):
+            unapproved_senders.add(sender)
+    
+    print(f"  Found {len(unapproved_senders)} unapproved senders", flush=True)
+    
+    # Unsubscribe from all unapproved senders
+    nums_to_unsub = [num for num, sender in messages if not is_allowed_sender(sender) and not is_bank_sender(sender)]
     unsubscribed, unsub_failed, unsub_results = process_unsubscribes(mail, nums_to_unsub, sender_subjects)
     print(f"  Unsubscribed: {unsubscribed} | Failed: {unsub_failed}", flush=True)
     
-    # Step 2: Auto-block all spam domains permanently
-    print("\n--- Step 2: Blocking spam domains ---", flush=True)
+    # Block all unapproved domains permanently
+    print("\n--- Blocking unapproved domains ---", flush=True)
     blocked_count = 0
-    for sender in spam_candidates.keys():
-        if not is_bank_sender(sender) and "@" in sender:
+    for sender in unapproved_senders:
+        if "@" in sender:
             domain = sender.split("@")[1]
             if save_blocked_domain(domain):
                 blocked_count += 1
@@ -393,8 +422,14 @@ def main():
         if idx % 50 == 0:
             print(f"  checking {idx}/{len(messages)}", flush=True)
         
-        # Check if spam by repeat count OR by sender pattern OR blocked domain
-        is_spam = sender in spam_candidates or is_likely_spam_sender(sender) or is_blocked_domain(sender)
+        # AUTO-ERASE MODE: Delete anything NOT in your allowed list
+        # If sender is not approved, it's spam - unsubscribe and delete
+        is_spam = (
+            sender in spam_candidates or 
+            is_likely_spam_sender(sender) or 
+            is_blocked_domain(sender) or
+            (not is_bank_sender(sender) and not is_allowed_sender(sender))
+        )
         
         if is_spam:
             if is_bank_sender(sender):
@@ -447,11 +482,13 @@ def main():
     report = {
         "scanned_emails": len(ids),
         "unique_senders": len(sender_stats),
+        "unapproved_senders": len(unapproved_senders),
         "repeat_senders_detected": len(spam_candidates),
         "repeat_sender_details": spam_candidates,
         "unsubscribed": unsubscribed,
         "unsub_failed": unsub_failed,
         "unsub_details": unsub_results,
+        "domains_blocked": blocked_count,
         "emails_moved_to_bulk": len(nums_to_bulk),
         "bulk_details": bulk_details,
         "emails_moved_to_banks": len(nums_to_banks),
@@ -460,11 +497,14 @@ def main():
     }
     log_report(report)
 
-    print(f"\nScanned: {len(ids)} emails | Unique senders: {len(sender_stats)}")
-    print(f"Repeat senders detected: {len(spam_candidates)}")
-    print(f"Unsubscribed: {unsubscribed} | Failed: {unsub_failed}")
-    print(f"Spam moved to Bulk: {len(nums_to_bulk)}")
-    print(f"Bank emails moved to Banks folder: {len(nums_to_banks)}")
+    print(f"\n=== AUTO-ERASE REPORT ===")
+    print(f"Scanned: {len(ids)} emails")
+    print(f"Unapproved senders: {len(unapproved_senders)}")
+    print(f"Unsubscribed: {unsubscribed}")
+    print(f"Domains blocked: {blocked_count}")
+    print(f"Moved to Bulk: {len(nums_to_bulk)}")
+    print(f"Bank emails saved: {len(nums_to_banks)}")
+    print(f"=========================")
 
     if spam_candidates:
         print("\nDetected repeat senders:")
