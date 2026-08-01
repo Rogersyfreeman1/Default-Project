@@ -269,6 +269,21 @@ def is_blocked_domain(sender):
     return False
 
 
+def save_blocked_domain(domain):
+    """Add domain to permanent block list"""
+    blocked_file = os.path.join(BASE_DIR, "blocked_domains.json")
+    blocked = []
+    if os.path.exists(blocked_file):
+        with open(blocked_file, "r") as f:
+            blocked = json.load(f)
+    if domain not in blocked:
+        blocked.append(domain)
+        with open(blocked_file, "w") as f:
+            json.dump(blocked, f, indent=2)
+        return True
+    return False
+
+
 def is_bank_sender(sender):
     for bank in BANK_SENDERS:
         if bank in sender:
@@ -356,6 +371,17 @@ def main():
     nums_to_unsub = [num for num, sender in messages if sender in spam_candidates and not is_bank_sender(sender)]
     unsubscribed, unsub_failed, unsub_results = process_unsubscribes(mail, nums_to_unsub, sender_subjects)
     print(f"  Unsubscribed: {unsubscribed} | Failed: {unsub_failed}", flush=True)
+    
+    # Step 2: Auto-block all spam domains permanently
+    print("\n--- Step 2: Blocking spam domains ---", flush=True)
+    blocked_count = 0
+    for sender in spam_candidates.keys():
+        if not is_bank_sender(sender) and "@" in sender:
+            domain = sender.split("@")[1]
+            if save_blocked_domain(domain):
+                blocked_count += 1
+                print(f"  Blocked: {domain}")
+    print(f"  Blocked {blocked_count} domains permanently", flush=True)
     
     moved = 0
     skipped = 0
