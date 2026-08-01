@@ -13,6 +13,7 @@ from ad_studio import AdStudio
 from music_manager import MusicManager
 from shopify_integration import ShopifyStore, ProductVideoCreator
 from notion_integration import NotionManager
+from github_integration import GitHubManager
 
 
 def clear():
@@ -37,13 +38,14 @@ def print_main_menu():
     print("  2.  Create Text-Only Video")
     print("  3.  Use Ad Template (Sale, Launch, etc.)")
     print("  4.  Batch Create Multiple Videos")
-    print("  5.  Shopify Store (Auto-create from products)")
+    print("  5.  Shopify Store (Products)")
     print("  6.  Notion (Tasks & Projects)")
-    print("  7.  Music Manager (Add & Preview Music)")
-    print("  8.  View Templates & Platforms")
-    print("  9.  View Output Folder")
-    print("  10. Help & Tutorials")
-    print("  11. Exit")
+    print("  7.  GitHub (Repos & Issues)")
+    print("  8.  Music Manager")
+    print("  9.  View Templates & Platforms")
+    print("  10. View Output Folder")
+    print("  11. Help & Tutorials")
+    print("  12. Exit")
     print()
 
 
@@ -653,6 +655,154 @@ def shopify_manager():
         input("\n  Press Enter to continue...")
 
 
+def github_manager():
+    """GitHub Manager"""
+    manager = GitHubManager()
+    
+    while True:
+        print("\n" + "=" * 60)
+        print("  GITHUB MANAGER")
+        print("=" * 60)
+        
+        if manager.is_configured():
+            print(f"  Connected as: {manager.config.get('username', 'Unknown')}")
+            print("  " + "-" * 56)
+        
+        print("  1.  Setup / Change Connection")
+        print("  2.  View My Profile")
+        print("  3.  View All Repositories")
+        print("  4.  View Repository Issues")
+        print("  5.  View Recent Commits")
+        print("  6.  Create New Issue")
+        print("  7.  Search Repositories")
+        print("  8.  Back to Main Menu")
+        print()
+        
+        choice = input("  Select (1-8): ").strip()
+        
+        if choice == '1':
+            print("\n  Setup GitHub Connection")
+            print("  " + "-" * 56)
+            print("  Option 1: Public repos only (username only)")
+            print("  Option 2: All repos (username + token)")
+            print()
+            print("  To get token:")
+            print("  1. Go to https://github.com/settings/tokens")
+            print("  2. Click 'Generate new token'")
+            print("  3. Select 'repo' scope")
+            print("  4. Copy the token")
+            print()
+            
+            username = input("  GitHub username: ").strip()
+            token = input("  Token (or Enter for public only): ").strip()
+            
+            if username:
+                if manager.setup(username, token if token else None):
+                    print("\n  Connected successfully!")
+                    user = manager.get_user_info()
+                    manager.print_user_info(user)
+                else:
+                    print("\n  Connection failed. Check username.")
+            else:
+                print("  Please enter a username.")
+        
+        elif choice == '2':
+            if not manager.is_configured():
+                print("  Please setup GitHub first (option 1)")
+                continue
+            
+            user = manager.get_user_info()
+            manager.print_user_info(user)
+        
+        elif choice == '3':
+            if not manager.is_configured():
+                print("  Please setup GitHub first (option 1)")
+                continue
+            
+            try:
+                repos = manager.get_repos()
+                manager.print_repos(repos)
+            except Exception as e:
+                print(f"  Error: {e}")
+        
+        elif choice == '4':
+            if not manager.is_configured():
+                print("  Please setup GitHub first (option 1)")
+                continue
+            
+            try:
+                repos = manager.get_repos()
+                manager.print_repos(repos)
+                
+                if repos:
+                    repo_name = input("\n  Enter repo name: ").strip()
+                    issues = manager.get_issues(repo_name)
+                    manager.print_issues(issues)
+            except Exception as e:
+                print(f"  Error: {e}")
+        
+        elif choice == '5':
+            if not manager.is_configured():
+                print("  Please setup GitHub first (option 1)")
+                continue
+            
+            try:
+                repos = manager.get_repos()
+                manager.print_repos(repos)
+                
+                if repos:
+                    repo_name = input("\n  Enter repo name: ").strip()
+                    commits = manager.get_commits(repo_name)
+                    manager.print_commits(commits)
+            except Exception as e:
+                print(f"  Error: {e}")
+        
+        elif choice == '6':
+            if not manager.is_configured():
+                print("  Please setup GitHub first (option 1)")
+                continue
+            
+            try:
+                repos = manager.get_repos()
+                manager.print_repos(repos)
+                
+                if repos:
+                    repo_name = input("\n  Enter repo name: ").strip()
+                    title = input("  Issue title: ").strip()
+                    body = input("  Issue description: ").strip()
+                    labels_input = input("  Labels (comma-separated): ").strip()
+                    labels = [l.strip() for l in labels_input.split(",")] if labels_input else []
+                    
+                    result = manager.create_issue(repo_name, title, body, labels)
+                    if result:
+                        print(f"\n  Issue created: {result['url']}")
+            except Exception as e:
+                print(f"  Error: {e}")
+        
+        elif choice == '7':
+            if not manager.is_configured():
+                print("  Please setup GitHub first (option 1)")
+                continue
+            
+            query = input("  Search term: ").strip()
+            if query:
+                try:
+                    repos = manager.search_repos(query)
+                    if repos:
+                        print("\n  Search Results:")
+                        for r in repos:
+                            print(f"  • {r['name']}: {r['description']}")
+                    else:
+                        print("  No repos found.")
+                except Exception as e:
+                    print(f"  Error: {e}")
+        
+        elif choice == '8':
+            break
+        
+        input("\n  Press Enter to continue...")
+
+
 def notion_manager():
     """Notion Tasks & Projects Manager"""
     manager = NotionManager()
@@ -1024,7 +1174,7 @@ def main():
         print_banner()
         print_main_menu()
 
-        choice = input("Select option (1-11): ").strip()
+        choice = input("Select option (1-12): ").strip()
 
         if choice == '1':
             create_from_images()
@@ -1039,14 +1189,16 @@ def main():
         elif choice == '6':
             notion_manager()
         elif choice == '7':
-            music_manager()
+            github_manager()
         elif choice == '8':
-            view_info()
+            music_manager()
         elif choice == '9':
-            view_output()
+            view_info()
         elif choice == '10':
-            show_help()
+            view_output()
         elif choice == '11':
+            show_help()
+        elif choice == '12':
             print("\nThank you for using Lassy AdCraft Studio!")
             break
         else:
