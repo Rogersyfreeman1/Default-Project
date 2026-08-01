@@ -12,6 +12,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from ad_studio import AdStudio
 from music_manager import MusicManager
 from shopify_integration import ShopifyStore, ProductVideoCreator
+from notion_integration import NotionManager
 
 
 def clear():
@@ -37,11 +38,12 @@ def print_main_menu():
     print("  3.  Use Ad Template (Sale, Launch, etc.)")
     print("  4.  Batch Create Multiple Videos")
     print("  5.  Shopify Store (Auto-create from products)")
-    print("  6.  Music Manager (Add & Preview Music)")
-    print("  7.  View Templates & Platforms")
-    print("  8.  View Output Folder")
-    print("  9.  Help & Tutorials")
-    print("  10. Exit")
+    print("  6.  Notion (Tasks & Projects)")
+    print("  7.  Music Manager (Add & Preview Music)")
+    print("  8.  View Templates & Platforms")
+    print("  9.  View Output Folder")
+    print("  10. Help & Tutorials")
+    print("  11. Exit")
     print()
 
 
@@ -651,6 +653,195 @@ def shopify_manager():
         input("\n  Press Enter to continue...")
 
 
+def notion_manager():
+    """Notion Tasks & Projects Manager"""
+    manager = NotionManager()
+    
+    while True:
+        print("\n" + "=" * 60)
+        print("  NOTION MANAGER")
+        print("=" * 60)
+        
+        if manager.is_configured():
+            print("  Status: Connected ✓")
+            print("  " + "-" * 56)
+        
+        print("  1.  Setup / Change Connection")
+        print("  2.  View All Pages")
+        print("  3.  View All Databases")
+        print("  4.  View Tasks from Database")
+        print("  5.  Add New Task")
+        print("  6.  Update Task Status")
+        print("  7.  Create New Page")
+        print("  8.  Search Pages")
+        print("  9.  Back to Main Menu")
+        print()
+        
+        choice = input("  Select (1-9): ").strip()
+        
+        if choice == '1':
+            print("\n  Setup Notion Connection")
+            print("  " + "-" * 56)
+            print("  How to get your token:")
+            print("  1. Go to https://www.notion.so/my-integrations")
+            print("  2. Click 'New integration'")
+            print("  3. Name it 'AdStudio'")
+            print("  4. Select your workspace")
+            print("  5. Click 'Submit'")
+            print("  6. Copy the token (starts with ntn_)")
+            print()
+            print("  IMPORTANT: Share pages/databases with the integration!")
+            print("  Click '...' on a page → 'Connect to' → 'AdStudio'")
+            print()
+            
+            token = input("  Enter your Notion token: ").strip()
+            
+            if token:
+                if manager.setup(token):
+                    print("\n  Connected successfully!")
+                    pages = manager.search_pages()
+                    print(f"  Found {len(pages)} pages")
+                else:
+                    print("\n  Connection failed. Check your token.")
+            else:
+                print("  Please enter a token.")
+        
+        elif choice == '2':
+            if not manager.is_configured():
+                print("  Please setup Notion first (option 1)")
+                continue
+            
+            try:
+                pages = manager.search_pages()
+                manager.print_pages(pages)
+            except Exception as e:
+                print(f"  Error: {e}")
+        
+        elif choice == '3':
+            if not manager.is_configured():
+                print("  Please setup Notion first (option 1)")
+                continue
+            
+            try:
+                databases = manager.get_databases()
+                manager.print_databases(databases)
+            except Exception as e:
+                print(f"  Error: {e}")
+        
+        elif choice == '4':
+            if not manager.is_configured():
+                print("  Please setup Notion first (option 1)")
+                continue
+            
+            try:
+                databases = manager.get_databases()
+                manager.print_databases(databases)
+                
+                if databases:
+                    idx = int(input("\n  Select database number: ")) - 1
+                    if 0 <= idx < len(databases):
+                        tasks = manager.get_database_items(databases[idx]["id"])
+                        manager.print_tasks(tasks)
+            except Exception as e:
+                print(f"  Error: {e}")
+        
+        elif choice == '5':
+            if not manager.is_configured():
+                print("  Please setup Notion first (option 1)")
+                continue
+            
+            try:
+                databases = manager.get_databases()
+                manager.print_databases(databases)
+                
+                if databases:
+                    idx = int(input("\n  Select database for task: ")) - 1
+                    if 0 <= idx < len(databases):
+                        title = input("  Task title: ").strip()
+                        status = input("  Status (Not started/In progress/Done): ").strip() or "Not started"
+                        priority = input("  Priority (Low/Medium/High): ").strip()
+                        due_date = input("  Due date (YYYY-MM-DD or Enter to skip): ").strip()
+                        
+                        result = manager.add_task(
+                            databases[idx]["id"],
+                            title,
+                            status=status,
+                            priority=priority,
+                            due_date=due_date if due_date else None
+                        )
+                        print(f"\n  Task added: {result['title']}")
+            except Exception as e:
+                print(f"  Error: {e}")
+        
+        elif choice == '6':
+            if not manager.is_configured():
+                print("  Please setup Notion first (option 1)")
+                continue
+            
+            try:
+                databases = manager.get_databases()
+                manager.print_databases(databases)
+                
+                if databases:
+                    db_idx = int(input("\n  Select database: ")) - 1
+                    if 0 <= db_idx < len(databases):
+                        tasks = manager.get_database_items(databases[db_idx]["id"])
+                        manager.print_tasks(tasks)
+                        
+                        if tasks:
+                            task_idx = int(input("\n  Select task number: ")) - 1
+                            if 0 <= task_idx < len(tasks):
+                                print("  Status options: Not started, In progress, Done")
+                                new_status = input("  New status: ").strip()
+                                if manager.update_task_status(tasks[task_idx]["id"], new_status):
+                                    print("  Task updated!")
+                                else:
+                                    print("  Failed to update task.")
+            except Exception as e:
+                print(f"  Error: {e}")
+        
+        elif choice == '7':
+            if not manager.is_configured():
+                print("  Please setup Notion first (option 1)")
+                continue
+            
+            try:
+                pages = manager.search_pages()
+                manager.print_pages(pages)
+                
+                if pages:
+                    idx = int(input("\n  Select parent page number: ")) - 1
+                    if 0 <= idx < len(pages):
+                        title = input("  New page title: ").strip()
+                        content = input("  Page content (or Enter to skip): ").strip()
+                        
+                        result = manager.create_page(
+                            pages[idx]["id"],
+                            title,
+                            content
+                        )
+                        print(f"\n  Page created: {result['url']}")
+            except Exception as e:
+                print(f"  Error: {e}")
+        
+        elif choice == '8':
+            if not manager.is_configured():
+                print("  Please setup Notion first (option 1)")
+                continue
+            
+            query = input("  Search term: ").strip()
+            try:
+                pages = manager.search_pages(query)
+                manager.print_pages(pages)
+            except Exception as e:
+                print(f"  Error: {e}")
+        
+        elif choice == '9':
+            break
+        
+        input("\n  Press Enter to continue...")
+
+
 def music_manager():
     """Music Manager submenu"""
     manager = MusicManager()
@@ -833,7 +1024,7 @@ def main():
         print_banner()
         print_main_menu()
 
-        choice = input("Select option (1-10): ").strip()
+        choice = input("Select option (1-11): ").strip()
 
         if choice == '1':
             create_from_images()
@@ -846,14 +1037,16 @@ def main():
         elif choice == '5':
             shopify_manager()
         elif choice == '6':
-            music_manager()
+            notion_manager()
         elif choice == '7':
-            view_info()
+            music_manager()
         elif choice == '8':
-            view_output()
+            view_info()
         elif choice == '9':
-            show_help()
+            view_output()
         elif choice == '10':
+            show_help()
+        elif choice == '11':
             print("\nThank you for using Lassy AdCraft Studio!")
             break
         else:
