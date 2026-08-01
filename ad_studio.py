@@ -1,5 +1,5 @@
 """
-AdStudio Pro - Professional Video Generator for Ads
+Lassy AdCraft Studio - Professional Video Generator for Ads
 Full-featured video creation with transitions, music, animations
 """
 
@@ -15,7 +15,7 @@ import random
 
 
 class AdStudio:
-    """Professional Video Studio for Creating Ad Videos"""
+    """Lassy AdCraft Studio - Professional Video Studio for Creating Ad Videos"""
 
     # Platform Templates
     PLATFORMS = {

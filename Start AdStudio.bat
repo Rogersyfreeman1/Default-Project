@@ -1,6 +1,7 @@
 @echo off
 echo ============================================
-echo    ADSTUDIO PRO - Professional Video Studio
+echo    LASSY ADCRAFT STUDIO
+echo    Professional Video Generator for Ads
 echo ============================================
 echo.
 

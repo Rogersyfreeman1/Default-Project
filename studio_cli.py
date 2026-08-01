@@ -21,7 +21,8 @@ def clear():
 def print_banner():
     clear()
     print("=" * 60)
-    print("     ADSTUDIO PRO - PROFESSIONAL VIDEO GENERATOR")
+    print("     LASSY ADCRAFT STUDIO")
+    print("     Professional Video Generator for Ads")
     print("=" * 60)
     print("  Create stunning videos for your social media ads")
     print("=" * 60)
@@ -853,7 +854,7 @@ def main():
         elif choice == '9':
             show_help()
         elif choice == '10':
-            print("\nThank you for using AdStudio Pro!")
+            print("\nThank you for using Lassy AdCraft Studio!")
             break
         else:
             print("\nInvalid option. Please try again.")
