@@ -8,6 +8,9 @@ import sys
 import socket
 from datetime import datetime, timedelta
 import re
+import urllib.request
+import urllib.parse
+from html.parser import HTMLParser
 
 YAHOO_IMAP = "imap.mail.yahoo.com"
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -25,6 +28,134 @@ def load_credentials():
             creds = json.load(f)
         return creds.get("email", ""), creds.get("app_password", "")
     return "", ""
+
+class UnsubscribeLinkParser(HTMLParser):
+    """Extract unsubscribe links from email HTML"""
+    def __init__(self):
+        super().__init__()
+        self.links = []
+        self.in_link = False
+        self.current_href = ""
+    
+    def handle_starttag(self, tag, attrs):
+        if tag == "a":
+            for attr, value in attrs:
+                if attr == "href" and value:
+                    self.current_href = value
+                    self.in_link = True
+    
+    def handle_data(self, data):
+        if self.in_link:
+            text = data.lower()
+            if any(word in text for word in ["unsubscribe", "opt out", "remove", "stop emails"]):
+                self.links.append(self.current_href)
+            self.in_link = False
+            self.current_href = ""
+
+
+def extract_unsubscribe_links(msg):
+    """Extract unsubscribe links from email message"""
+    links = []
+    
+    # Check List-Unsubscribe header (most reliable)
+    list_unsub = msg.get("List-Unsubscribe", "")
+    if list_unsub:
+        url_match = re.search(r'<(https?://[^>]+)>', list_unsub)
+        if url_match:
+            links.append(url_match.group(1))
+    
+    # Check email body for unsubscribe links
+    if msg.is_multipart():
+        for part in msg.walk():
+            content_type = part.get_content_type()
+            if content_type in ["text/html", "text/plain"]:
+                try:
+                    body = part.get_payload(decode=True)
+                    if body:
+                        body_str = body.decode("utf-8", errors="ignore")
+                        # Find unsubscribe links in HTML
+                        parser = UnsubscribeLinkParser()
+                        parser.feed(body_str)
+                        links.extend(parser.links)
+                        # Also find plain text URLs
+                        url_matches = re.findall(r'https?://[^\s<>"]+unsubscribe[^\s<>"]*', body_str, re.IGNORECASE)
+                        links.extend(url_matches)
+                except:
+                    pass
+    else:
+        try:
+            body = msg.get_payload(decode=True)
+            if body:
+                body_str = body.decode("utf-8", errors="ignore")
+                parser = UnsubscribeLinkParser()
+                parser.feed(body_str)
+                links.extend(parser.links)
+                url_matches = re.findall(r'https?://[^\s<>"]+unsubscribe[^\s<>"]*', body_str, re.IGNORECASE)
+                links.extend(url_matches)
+        except:
+            pass
+    
+    # Deduplicate
+    return list(set(links))
+
+
+def unsubscribe_from_sender(url, timeout=10):
+    """Visit unsubscribe URL to unsubscribe"""
+    try:
+        # Add common headers to look like a browser
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+        }
+        req = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(req, timeout=timeout) as response:
+            status = response.getcode()
+            return status == 200
+    except Exception as e:
+        print(f"  Unsubscribe error: {e}")
+        return False
+
+
+def process_unsubscribes(mail, message_nums, sender_subjects, dry_run=False):
+    """Process unsubscribe links for spam emails"""
+    unsubscribed = 0
+    failed = 0
+    results = []
+    
+    for num in message_nums:
+        try:
+            # Fetch email
+            status, msg_data = mail.uid("FETCH", num, "(RFC822)")
+            if status != "OK":
+                continue
+            
+            raw = msg_data[0][1]
+            msg = email.message_from_bytes(raw)
+            sender = get_sender(msg)
+            subject = sender_subjects.get(sender, "")
+            
+            # Extract unsubscribe links
+            links = extract_unsubscribe_links(msg)
+            
+            if links:
+                print(f"  Found unsubscribe link for: {sender}")
+                if not dry_run:
+                    for link in links:
+                        if unsubscribe_from_sender(link):
+                            unsubscribed += 1
+                            results.append({"sender": sender, "status": "success", "url": link})
+                            print(f"    Unsubscribed: {sender}")
+                            break
+                else:
+                    print(f"    Would unsubscribe: {link}")
+            else:
+                print(f"  No unsubscribe link: {sender}")
+                failed += 1
+                
+        except Exception as e:
+            print(f"  Error processing {num}: {e}")
+    
+    return unsubscribed, failed, results
+
 
 SPAM_KEYWORDS = [
     "free prize", "winner", "congratulations you", "claim your", "act now",
@@ -150,6 +281,12 @@ def main():
             "sample_date": sender_first_seen.get(sender, ""),
         }
 
+    # Step 1: Unsubscribe from spam before deleting
+    print("\n--- Step 1: Unsubscribing from spam ---", flush=True)
+    nums_to_unsub = [num for num, sender in messages if sender in spam_candidates and not is_bank_sender(sender)]
+    unsubscribed, unsub_failed, unsub_results = process_unsubscribes(mail, nums_to_unsub, sender_subjects)
+    print(f"  Unsubscribed: {unsubscribed} | Failed: {unsub_failed}", flush=True)
+    
     moved = 0
     skipped = 0
     nums_to_bulk = []
@@ -212,6 +349,9 @@ def main():
         "unique_senders": len(sender_stats),
         "repeat_senders_detected": len(spam_candidates),
         "repeat_sender_details": spam_candidates,
+        "unsubscribed": unsubscribed,
+        "unsub_failed": unsub_failed,
+        "unsub_details": unsub_results,
         "emails_moved_to_bulk": len(nums_to_bulk),
         "bulk_details": bulk_details,
         "emails_moved_to_banks": len(nums_to_banks),
@@ -220,8 +360,9 @@ def main():
     }
     log_report(report)
 
-    print(f"Scanned: {len(ids)} emails | Unique senders: {len(sender_stats)}")
+    print(f"\nScanned: {len(ids)} emails | Unique senders: {len(sender_stats)}")
     print(f"Repeat senders detected: {len(spam_candidates)}")
+    print(f"Unsubscribed: {unsubscribed} | Failed: {unsub_failed}")
     print(f"Spam moved to Bulk: {len(nums_to_bulk)}")
     print(f"Bank emails moved to Banks folder: {len(nums_to_banks)}")
 
