@@ -10,9 +10,21 @@ from datetime import datetime, timedelta
 import re
 
 YAHOO_IMAP = "imap.mail.yahoo.com"
-YAHOO_EMAIL = os.environ.get("YAHOO_EMAIL", "rogeralburo@yahoo.com")
-YAHOO_APP_PASSWORD = os.environ.get("YAHOO_APP_PASSWORD", "")
-LOG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "email_agent_report.json")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+LOG_FILE = os.path.join(BASE_DIR, "email_agent_report.json")
+CREDENTIALS_FILE = os.path.join(BASE_DIR, "credentials.json")
+
+
+def load_credentials():
+    email = os.environ.get("YAHOO_EMAIL", "")
+    password = os.environ.get("YAHOO_APP_PASSWORD", "")
+    if email and password:
+        return email, password
+    if os.path.exists(CREDENTIALS_FILE):
+        with open(CREDENTIALS_FILE, "r", encoding="utf-8") as f:
+            creds = json.load(f)
+        return creds.get("email", ""), creds.get("app_password", "")
+    return "", ""
 
 SPAM_KEYWORDS = [
     "free prize", "winner", "congratulations you", "claim your", "act now",
@@ -70,8 +82,9 @@ def log_report(report):
 
 
 def main():
-    if not YAHOO_APP_PASSWORD:
-        print("ERROR: Set YAHOO_APP_PASSWORD environment variable first.")
+    YAHOO_EMAIL, YAHOO_APP_PASSWORD = load_credentials()
+    if not YAHOO_EMAIL or not YAHOO_APP_PASSWORD:
+        print("ERROR: Set YAHOO_EMAIL and YAHOO_APP_PASSWORD environment variables or create credentials.json.")
         sys.exit(1)
 
     mail = imaplib.IMAP4_SSL(YAHOO_IMAP, 993, timeout=30)
