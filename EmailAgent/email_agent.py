@@ -163,15 +163,25 @@ SPAM_KEYWORDS = [
     "double your", "make money fast", "work from home", "crypto bonus",
     "bitcoin giveaway", "porn", "casino", "viagra", "replica",
     "discount code", "cash prize", "you have been selected",
+    "unsubscribe", "opt out", "remove me", "stop emails",
+    "special offer", "exclusive deal", "limited offer", "act fast",
+    "buy now", "order now", "subscribe now", "free trial",
+    "no cost", "risk free", "satisfaction guaranteed", "money back",
+]
+
+SPAM_SENDERS = [
+    "noreply@", "no-reply@", "marketing@", "promo@", "offers@",
+    "deals@", "sales@", "newsletter@", "info@", "hello@",
+    "notifications@", "updates@", "alerts@",
 ]
 
 BANK_SENDERS = [
     "chase.com",
 ]
 
-RECENT_DAYS = 30
-MAX_EMAILS = 1000
-BATCH_SIZE = 50
+RECENT_DAYS = 365
+MAX_EMAILS = 50000
+BATCH_SIZE = 100
 
 
 def decode_mime_header(raw):
@@ -197,6 +207,17 @@ def get_sender(msg):
     if match:
         return match.group(1).lower()
     return from_decoded.lower()
+
+
+def is_likely_spam_sender(sender):
+    """Check if sender email looks like spam"""
+    if not sender:
+        return False
+    sender_lower = sender.lower()
+    for prefix in SPAM_SENDERS:
+        if prefix in sender_lower:
+            return True
+    return False
 
 
 def is_bank_sender(sender):
@@ -296,7 +317,11 @@ def main():
     for idx, (num, sender) in enumerate(messages):
         if idx % 50 == 0:
             print(f"  checking {idx}/{len(messages)}", flush=True)
-        if sender in spam_candidates:
+        
+        # Check if spam by repeat count OR by sender pattern
+        is_spam = sender in spam_candidates or is_likely_spam_sender(sender)
+        
+        if is_spam:
             if is_bank_sender(sender):
                 nums_to_banks.append(num)
                 banks_details.append({
