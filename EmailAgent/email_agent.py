@@ -169,8 +169,9 @@ SPAM_KEYWORDS = [
     "no cost", "risk free", "satisfaction guaranteed", "money back",
 ]
 
-# Credit card offer keywords - DELETE these even from banks
+# ALL offer keywords - DELETE ANY email with these
 OFFER_KEYWORDS = [
+    # Credit card offers
     "pre-approved", "preapproved", "apply now", "special offer",
     "exclusive offer", "limited time offer", "act now",
     "credit line increase", "balance transfer", "0% apr",
@@ -178,6 +179,19 @@ OFFER_KEYWORDS = [
     "earn more points", "upgrade your card", "new card offer",
     "pre-selected", "you've been selected", "congratulations",
     "offer expires", "respond by", "deadline",
+    # General offers
+    "discount", "sale", "deal", "promo", "coupon",
+    "save big", "save now", "limited time", "hurry",
+    "don't miss", "last chance", "going fast",
+    "buy one get one", "bogo", "free shipping",
+    "flash sale", "clearance", "final sale",
+    "member exclusive", "vip offer", "insider deal",
+    # Marketing spam
+    "shop now", "order now", "click here",
+    "limited stock", "while supplies last",
+    "special promotion", "exclusive deal",
+    "save 50%", "save 70%", "massive savings",
+    "black friday", "cyber monday", "holiday sale",
 ]
 
 SPAM_SENDERS = [
@@ -233,8 +247,8 @@ def get_sender(msg):
     return from_decoded.lower()
 
 
-def is_credit_card_offer(subject):
-    """Check if email is a credit card offer"""
+def is_any_offer(subject):
+    """Check if email is ANY kind of offer/promotion"""
     if not subject:
         return False
     subject_lower = subject.lower()
@@ -445,9 +459,9 @@ def main():
             print(f"  checking {idx}/{len(messages)}", flush=True)
         
         # AUTO-ERASE MODE: Delete anything NOT in your allowed list
-        # Also delete credit card OFFERS even from allowed banks
+        # Also delete ALL offers even from allowed senders
         subject = sender_subjects.get(sender, "")
-        is_offer = is_credit_card_offer(subject)
+        is_offer = is_any_offer(subject)
         
         is_spam = (
             sender in spam_candidates or 
