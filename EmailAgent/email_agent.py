@@ -169,6 +169,17 @@ SPAM_KEYWORDS = [
     "no cost", "risk free", "satisfaction guaranteed", "money back",
 ]
 
+# Credit card offer keywords - DELETE these even from banks
+OFFER_KEYWORDS = [
+    "pre-approved", "preapproved", "apply now", "special offer",
+    "exclusive offer", "limited time offer", "act now",
+    "credit line increase", "balance transfer", "0% apr",
+    "no annual fee", "rewards bonus", "cash back bonus",
+    "earn more points", "upgrade your card", "new card offer",
+    "pre-selected", "you've been selected", "congratulations",
+    "offer expires", "respond by", "deadline",
+]
+
 SPAM_SENDERS = [
     "noreply@", "no-reply@", "marketing@", "promo@", "offers@",
     "deals@", "sales@", "newsletter@", "info@", "hello@",
@@ -220,6 +231,17 @@ def get_sender(msg):
     if match:
         return match.group(1).lower()
     return from_decoded.lower()
+
+
+def is_credit_card_offer(subject):
+    """Check if email is a credit card offer"""
+    if not subject:
+        return False
+    subject_lower = subject.lower()
+    for keyword in OFFER_KEYWORDS:
+        if keyword in subject_lower:
+            return True
+    return False
 
 
 def is_likely_spam_sender(sender):
@@ -423,11 +445,15 @@ def main():
             print(f"  checking {idx}/{len(messages)}", flush=True)
         
         # AUTO-ERASE MODE: Delete anything NOT in your allowed list
-        # If sender is not approved, it's spam - unsubscribe and delete
+        # Also delete credit card OFFERS even from allowed banks
+        subject = sender_subjects.get(sender, "")
+        is_offer = is_credit_card_offer(subject)
+        
         is_spam = (
             sender in spam_candidates or 
             is_likely_spam_sender(sender) or 
             is_blocked_domain(sender) or
+            is_offer or  # Delete offers even from banks
             (not is_bank_sender(sender) and not is_allowed_sender(sender))
         )
         
