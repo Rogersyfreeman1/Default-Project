@@ -99,19 +99,16 @@ def extract_unsubscribe_links(msg):
     return list(set(links))
 
 
-def unsubscribe_from_sender(url, timeout=10):
+def unsubscribe_from_sender(url, timeout=5):
     """Visit unsubscribe URL to unsubscribe"""
     try:
-        # Add common headers to look like a browser
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
         }
         req = urllib.request.Request(url, headers=headers)
         with urllib.request.urlopen(req, timeout=timeout) as response:
-            status = response.getcode()
-            return status == 200
-    except Exception as e:
-        print(f"  Unsubscribe error: {e}")
+            return response.getcode() == 200
+    except:
         return False
 
 
@@ -235,7 +232,7 @@ BANK_SENDERS = [
 
 RECENT_DAYS = 365
 MAX_EMAILS = 50000
-BATCH_SIZE = 100
+BATCH_SIZE = 200
 
 
 def decode_mime_header(raw):
@@ -509,8 +506,8 @@ def main():
             "sample_date": sender_first_seen.get(sender, ""),
         }
 
-    # AUTO-ERASE MODE: Process all non-approved senders
-    print("\n--- AUTO-ERASE: Processing unapproved senders ---", flush=True)
+    # FAST MODE: Block and delete without slow unsubscribe
+    print("\n--- FAST MODE: Blocking and deleting ---", flush=True)
     
     # Get all unique senders that are not allowed
     unapproved_senders = set()
@@ -520,20 +517,13 @@ def main():
     
     print(f"  Found {len(unapproved_senders)} unapproved senders", flush=True)
     
-    # Unsubscribe from all unapproved senders
-    nums_to_unsub = [num for num, sender in messages if not is_allowed_sender(sender) and not is_bank_sender(sender)]
-    unsubscribed, unsub_failed, unsub_results = process_unsubscribes(mail, nums_to_unsub, sender_subjects)
-    print(f"  Unsubscribed: {unsubscribed} | Failed: {unsub_failed}", flush=True)
-    
     # Block all unapproved domains permanently
-    print("\n--- Blocking unapproved domains ---", flush=True)
     blocked_count = 0
     for sender in unapproved_senders:
         if "@" in sender:
             domain = sender.split("@")[1]
             if save_blocked_domain(domain):
                 blocked_count += 1
-                print(f"  Blocked: {domain}")
     print(f"  Blocked {blocked_count} domains permanently", flush=True)
     
     moved = 0
